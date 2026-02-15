@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- AI-EDIT: META_DESCRIPTION -->
+    <meta name="description" content="かわいく、しっかりしたソファを探す30代女性向けに、コンパクトで多色展開の『BONIR ソファ』の座り心地やサイズ感、コスパまで徹底レビューします。" />
+    <title>レビュー記事 | MonoSense</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              mono: { bg: '#f8f4e9', main: '#ff8c42', accent: '#d4a574', text: '#4a4a4a', amazon: '#FF9900', yahoo: '#FF0033' },
+            },
+            fontFamily: { sans: ['"Noto Sans JP"', 'sans-serif'], hand: ['"Indie Flower"', 'cursive'] },
+          },
+        },
+      };
+    </script>
+    <style>
+      html { scroll-behavior: smooth; }
+      .pros-list li::before { content: "✔"; color: green; font-weight: bold; margin-right: 8px; }
+      .cons-list li::before { content: "✖"; color: red; font-weight: bold; margin-right: 8px; }
+      .animate-fade-in { animation: fadeIn 0.3s ease-in-out; }
+      @keyframes fadeIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+    <script src="products.js"></script>
+  </head>
+  <body class="bg-mono-bg text-mono-text font-sans flex flex-col min-h-screen">
+    <header class="sticky top-0 z-50 bg-[#f8f4e9]/95 backdrop-blur-sm shadow-sm border-b border-mono-accent/20">
+      <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+        <a href="index.html" class="flex items-center gap-2 group">
+          <div class="w-10 h-10 group-hover:scale-110 transition-transform shadow-sm rounded-full bg-orange-100 overflow-hidden">
+             <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="MonoSenseロゴ">
+              <circle cx="50" cy="50" r="50" fill="#ff8c42" />
+              <path d="M15 25 L20 40 H30" fill="none" stroke="white" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M25 40 H85 L78 75 H35 L25 40 Z" fill="white" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+              <circle cx="42" cy="85" r="6" fill="none" stroke="white" stroke-width="4" />
+              <circle cx="70" cy="85" r="6" fill="none" stroke="white" stroke-width="4" />
+              <g transform="translate(0, -2)">
+                <circle cx="45" cy="40" r="11" fill="white" stroke="black" stroke-width="2" />
+                <circle cx="47" cy="40" r="4" fill="black" />
+                <circle cx="67" cy="40" r="11" fill="white" stroke="black" stroke-width="2" />
+                <circle cx="65" cy="40" r="4" fill="black" />
+              </g>
+            </svg>
+          </div>
+          <h1 class="text-2xl font-bold tracking-tight text-mono-text">Mono<span class="text-mono-main">Sense</span></h1>
+        </a>
+        <nav class="hidden md:flex gap-2 text-sm font-bold text-gray-600 items-center">
+          <a href="index.html" class="px-4 py-2 rounded-full hover:bg-orange-100 hover:text-mono-main transition-colors">ホーム</a>
+          <a href="index.html#comparison" class="px-4 py-2 rounded-full hover:bg-orange-100 hover:text-mono-main transition-colors">注目アイテム</a>
+          <a href="category-list.html" class="px-4 py-2 rounded-full hover:bg-orange-100 hover:text-mono-main transition-colors">カテゴリ</a>
+          <a href="#contact" class="px-4 py-2 bg-mono-main text-white rounded-full hover:bg-orange-500 transition-colors shadow-md ml-2">お問い合わせ</a>
+        </nav>
+        <button id="menu-btn" class="md:hidden p-2 text-gray-600" aria-label="メニューを開く">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+        </button>
+      </div>
+      <nav id="mobile-menu" class="hidden md:hidden bg-white border-b border-gray-100 p-4 absolute w-full shadow-lg z-50 animate-fade-in">
+        <div class="flex flex-col gap-4 text-center font-bold text-gray-600">
+          <a href="index.html" class="py-2 hover:bg-orange-50 rounded-lg">ホーム</a>
+          <a href="category-list.html" class="py-2 hover:bg-orange-50 rounded-lg">カテゴリ</a>
+        </div>
+      </nav>
+    </header>
+
+
+
+    <main class="flex-grow container mx-auto px-4 py-8 max-w-4xl">
+      <!-- 1. パンくずリスト (カテゴリ専用) -->
+      <nav class="text-sm text-gray-500 mb-6 overflow-x-auto whitespace-nowrap">
+        <a href="index.html" class="hover:underline hover:text-mono-main">ホーム</a>
+        <span class="mx-2">></span>
+        <a href="category-list.html" class="hover:underline hover:text-mono-main">カテゴリ一覧</a>
+        <span class="mx-2">></span>
+        <a href="category-list.html#furniture" class="hover:underline hover:text-mono-main">家具・インテリア</a>
+        <span class="mx-2">></span>
+        <!-- 自動更新対象: js-title -->
+        <span class="font-bold text-mono-text js-title"><!-- AI-EDIT: PRODUCT_TITLE -->BONIR ソファ</span>
+      </nav>
+
+
+
+      <!-- 2. 商品タイトルエリア -->
+      <section class="mb-12">
+        <span class="inline-block bg-orange-100 text-mono-main px-3 py-1 rounded-full text-xs font-bold mb-2">レビュー</span>
+        <h1 class="text-3xl md:text-4xl font-bold mb-6 leading-tight border-b-4 border-mono-main/20 pb-4">
+          <!-- 自動更新対象: js-title -->
+          <span class="js-title"><!-- AI-EDIT: PRODUCT_TITLE -->BONIR ソファ</span>を徹底レビュー
+        </h1>
+
+
+
+        <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100">
+          <div class="flex flex-col md:flex-row">
+            <div class="md:w-1/2 bg-gray-200 min-h-[300px] relative group">
+              <!-- 自動更新対象: js-image -->
+              <img src="https://item-shopping.c.yimg.jp/i/n/bonir-yhs_61175-61176_i_20251226153917" alt="BONIR ソファの商品画像" class="js-image w-full h-full object-cover absolute inset-0 transition-transform duration-500 group-hover:scale-105" />
+            </div>
+            <div class="md:w-1/2 p-6 md:p-8 flex flex-col justify-center bg-white">
+              <h2 class="text-xl font-bold text-gray-800 mb-2 js-title"><!-- AI-EDIT: PRODUCT_TITLE -->BONIR ソファ</h2>
+              <p class="text-sm text-gray-500 mb-4 js-desc"><!-- AI-EDIT: PRODUCT_SHORT_DESCRIPTION -->かわいく部屋になじむ、コンパクトなのにしっかり座れる多色展開の2.5人掛けソファ。</p>
+              
+              <div class="flex items-center mb-4 bg-orange-50 p-3 rounded-lg w-fit">
+                <div class="flex text-yellow-400 text-xl mr-2">★★★★☆</div>
+                <span class="font-bold text-lg text-gray-700 js-score"><!-- AI-EDIT: SCORE -->4.6</span><span class="text-gray-400 text-sm ml-1">/ 5.0</span>
+              </div>
+
+
+
+              <p class="text-gray-600 mb-6 font-bold">参考価格：<span class="text-2xl text-red-500">¥<span class="js-price"><!-- AI-EDIT: PRICE -->22,280</span></span><span class="text-xs text-gray-500 ml-2">（2026/2/14 時点）</span></p>
+
+
+
+              <div class="grid grid-cols-1 gap-3">
+                <!-- AI-EDIT: AMAZON_URL_TOP -->
+                <a href="#" target="_blank" class="js-amazon-link js-amazon-link-top flex items-center justify-center gap-2 bg-[#FF9900] hover:bg-[#ffad33] text-white font-bold py-3 px-4 rounded-xl shadow transition-transform transform hover:-translate-y-1">
+                  Amazonで見る
+                </a>
+                <!-- AI-EDIT: YAHOO_URL_TOP -->
+                <a href="https://yahoo.jp/sByA2u" target="_blank" class="js-yahoo-link js-yahoo-link-top flex items-center justify-center gap-2 bg-[#FF0033] hover:bg-[#ff1a47] text-white font-bold py-3 px-4 rounded-xl shadow transition-transform transform hover:-translate-y-1">
+                  Yahoo!ショッピングで見る
+                </a>
+              </div>
+              <p class="text-xs text-gray-400 mt-2 text-center">※アフィリエイトリンクを含みます</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+      <!-- 3. 商品説明 (詳細レビュー) -->
+      <section class="mb-12">
+        <h3 class="text-2xl font-bold mb-6 border-l-4 border-mono-main pl-4 flex items-center"><span class="text-3xl mr-2">📖</span> 商品の特徴・詳細</h3>
+        <div class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-gray-100 leading-relaxed text-gray-700 space-y-4">
+          <!-- AI-EDIT: PRODUCT_DETAIL_REVIEW -->
+          <p>「かわいく、しっかりしたソファがほしい」「でも部屋はそんなに広くないし、できればコスパも重視したい」――そんな30代女性のわがままな願いを、絶妙なバランスで叶えてくれるのが「BONIR ソファ」です。2.5人掛けサイズでゆったり座れるのに、横幅は約160cmクラスのコンパクト設計なので、ワンルームや1LDKのリビングにも置きやすいのが特徴。見た目もふんわり愛らしく、インテリアに“かわいさ”をプラスしてくれます。</p>
+          <p>まず目を引くのは、多種多様なカラー展開です。ナチュラルなベージュやグレー系なら北欧インテリアやナチュラルテイストの部屋にぴったりで、くすみカラー系を選べば韓国インテリア風のニュアンス感も簡単に演出できます。アクセントカラーを選べば、一気に「おしゃれな部屋」の印象に近づき、ラグやクッションとのコーディネートも楽しみやすくなります。「ソファを主役に部屋づくりを楽しみたい」という家具好きさんには、色選びからワクワクできる一台です。</p>
+          <p>コンパクトながら、座り心地はしっかりめの設計です。座面には適度な厚みと硬さがあり、沈み込みすぎないため、長時間座っていても姿勢が崩れにくいのがポイント。テレビを見ながらゆったりくつろぐのはもちろん、テーブルと合わせて作業をしたり、在宅ワーク用の“ソファデスクスタイル”にも使いやすい固さです。ふんわり見えても「腰が沈みすぎて疲れる…」という不安を抑え、デイリーに使える実用性をきちんと備えています。</p>
+          <p>背もたれは、背中から肩あたりまでをふんわり受け止めてくれる高さで、クッションを足せばさらにリラックス感がアップします。付属のクッションを腰当てとして使えば、長時間座っていてもラクな姿勢を保ちやすく、読書や映画鑑賞の時間がぐっと快適になります。座面の奥行きもほどよく、あぐらをかいたり、片足をソファに乗せたりと、気分に合わせた座り方でくつろげるのも魅力です。</p>
+          <p>サイズ感も、30代の一人暮らし・二人暮らしにちょうどよいバランスです。2人で座ってもゆとりがあり、1人で使うときは“ミニカウチ”のような感覚でゴロっと横になることもできます。大きすぎる3人掛けソファに比べると圧迫感が少なく、視線が抜けるレイアウトを組みやすいため、「ソファは欲しいけど、部屋が狭く見えるのはイヤ」という悩みにしっかり応えてくれます。</p>
+          <p>また、コスパの良さも見逃せないポイントです。2万円台前半でこのサイズ感とデザイン性、しっかりとした座り心地を兼ね備えたソファは、家具好きの目線で見てもかなりお買い得な印象です。高級ブランドソファのような「一生モノ」ではないものの、数年しっかり使える実用的なクオリティがあり、「まずは手が届きやすい価格から、きちんとしたソファを迎えたい」というニーズと相性抜群です。</p>
+          <p>生地の質感は、やわらかなファブリック系で、季節を問わず使いやすい手触りです。カラーによってはホコリやペットの毛が目立ちにくく、日常使いを想定した“ちょうどいいカジュアル感”があります。お気に入りのブランケットやクッションを合わせれば、インスタやPinterestで見かけるような、こなれたソファ周りを簡単に再現できます。来客時にも「かわいいソファだね」と褒められやすい、見た目の愛らしさも魅力です。</p>
+          <p>設置面では、160cmクラスの横幅がありながら、奥行き・高さともにコンパクトにまとまっているので、壁付けはもちろん、窓際やテレビボードとの間にもレイアウトしやすくなっています。掃除のしやすさを考えて、ソファ下にロボット掃除機が入る高さの脚を選ぶ人も多く、日々の家事ストレスを減らしたい30代女性にとってはうれしいポイントです。模様替えの際も、大きすぎるソファに比べて移動の負担が少なく、レイアウト変更を楽しみやすいのもメリットです。</p>
+          <p>一方で、「かわいさ」と「しっかり感」を両立しているがゆえに、座面はふわふわ系の柔らかさではありません。ホテルライクな沈み込むソファを好む方よりは、「ほどよい硬さで、きちんと座れるタイプが好き」という人向きです。また、ハイバックタイプのように肩より上までしっかり支える背もたれではないため、首まであずけてリクライニングのようにだらっとした姿勢を取りたい方には物足りなさを感じる可能性もあります。</p>
+          <p>それでも、「コンパクトでかわいい見た目」「多色展開で部屋に合わせやすい」「座り心地はしっかりめ」「価格は2万円台前半」というバランスを考えると、総合的な満足度はかなり高いソファと言えます。初めて“ちゃんとしたソファ”を買う方や、今の安物ソファからランクアップしたい方にとって、無理のない価格帯で部屋の雰囲気をがらっと変えられる、頼れる一台になるでしょう。</p>
+        </div>
+      </section>
+
+
+
+      <!-- 4. 良い点・悪い点 -->
+      <section class="mb-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-green-50 p-6 rounded-2xl border border-green-100">
+          <h4 class="text-xl font-bold text-green-700 mb-4 flex items-center"><span class="bg-green-200 p-1 rounded mr-2">👍</span> 良かったところ</h4>
+          <ul class="pros-list space-y-2 font-bold text-gray-700">
+            <!-- AI-EDIT: PROS_LIST -->
+            <li>2.5人掛けながら横幅を抑えたコンパクト設計で、ワンルームや1LDKにも置きやすい。</li>
+            <li>多種多様なカラー展開で、北欧・韓国インテリアなど好みのテイストに合わせて選びやすい。</li>
+            <li>かわいい見た目なのに座面はしっかりめで、くつろぎから作業まで幅広いシーンで使いやすい。</li>
+            <li>2万円台前半でデザイン性と実用性を両立しており、コスパ重視の人にも手が届きやすい。</li>
+          </ul>
+        </div>
+        <div class="bg-red-50 p-6 rounded-2xl border border-red-100">
+          <h4 class="text-xl font-bold text-red-700 mb-4 flex items-center"><span class="bg-red-200 p-1 rounded mr-2">👎</span> 気になったところ</h4>
+          <ul class="cons-list space-y-2 font-bold text-gray-700">
+            <!-- AI-EDIT: CONS_LIST -->
+            <li>座面はしっかりめの硬さなので、ふわふわに沈み込むソファが好きな人には物足りない可能性がある。</li>
+            <li>ハイバックではないため、首まであずけてリクライニングのようにくつろぎたい人には合わない場合がある。</li>
+          </ul>
+        </div>
+      </section>
+
+
+
+      <!-- 5. まとめ -->
+      <section class="mb-16 bg-white p-8 rounded-2xl shadow-lg border-2 border-mono-main/30 relative overflow-hidden">
+        <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-orange-100 rounded-full opacity-50 pointer-events-none"></div>
+        <h3 class="text-2xl font-bold mb-4 text-mono-text text-center font-hand">Conclusion</h3>
+        <h4 class="text-xl font-bold text-center mb-8">この商品のまとめ</h4>
+        <div class="space-y-4 text-gray-700 leading-relaxed">
+          <!-- AI-EDIT: SUMMARY -->
+          <p>「BONIR ソファ」は、かわいさとしっかりした座り心地、コンパクトさをバランスよく備えた2.5人掛けソファです。多色展開でインテリアになじませやすく、部屋の主役になるデザイン性も魅力です。</p>
+          <p>価格は2万円台前半と手に取りやすく、「なるべくコスパ良く、でも安っぽくないソファがほしい」という30代女性のニーズにぴったり。初めてちゃんとしたソファを迎えたい方や、今のソファからさりげなくグレードアップしたい方にも向いています。</p>
+          <p>ふわふわ系の柔らかいソファが好きな方や、首まで支えるハイバックを求める方には合わない場合もありますが、それを踏まえても総合的な満足度は高め。かわいく、しっかりしたソファを探しているなら、一度チェックしておきたい一台です。</p>
+        </div>
+        
+        <!-- 購入ボタン (下部) -->
+        <div class="mt-8 text-center flex flex-col gap-3 justify-center max-w-sm mx-auto">
+          <!-- AI-EDIT: AMAZON_URL_BOTTOM -->
+          <a href="#" class="js-amazon-link js-amazon-link-bottom inline-block bg-mono-main hover:bg-orange-600 text-white font-bold py-4 px-12 rounded-full shadow-lg transition-transform transform hover:scale-105">
+            Amazonで在庫をチェックする
+          </a>
+          <!-- AI-EDIT: YAHOO_URL_BOTTOM -->
+          <a href="https://yahoo.jp/sByA2u" class="js-yahoo-link js-yahoo-link-bottom inline-block bg-[#FF0033] hover:bg-[#ff1a47] text-white font-bold py-4 px-12 rounded-full shadow-lg transition-transform transform hover:scale-105">
+            Yahoo!ショッピングで見る
+          </a>
+        </div>
+      </section>
+
+
+
+    </main>
+
+
+
+    <footer id="contact" class="bg-[#4a4a4a] text-white pt-16 pb-8 mt-auto">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col mb-12">
+           <div class="flex items-center gap-2 mb-4"><div class="w-8 h-8 rounded-full overflow-hidden bg-orange-100"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="MonoSenseロゴ"><circle cx="50" cy="50" r="50" fill="#ff8c42"/><path d="M15 25 L20 40 H30" fill="none" stroke="white" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><path d="M25 40 H85 L78 75 H35 L25 40 Z" fill="white" stroke="white" stroke-width="2" stroke-linejoin="round"/><circle cx="42" cy="85" r="6" fill="none" stroke="white" stroke-width="4"/><circle cx="70" cy="85" r="6" fill="none" stroke="white" stroke-width="4"/><g transform="translate(0, -2)"><circle cx="45" cy="40" r="11" fill="white" stroke="black" stroke-width="2"/><circle cx="47" cy="40" r="4" fill="black"/><circle cx="67" cy="40" r="11" fill="white" stroke="black" stroke-width="2"/><circle cx="65" cy="40" r="4" fill="black"/></g></svg></div><div class="text-2xl font-bold">MonoSense</div></div>
+           <p class="text-gray-400 text-sm leading-relaxed mb-6">MonoSense（モノセンス）は、あなたの生活を豊かにするアイテムを厳選して紹介するレビューサイトです。</p>
+        </div>
+        <div class="border-t border-gray-600 pt-8 text-center text-xs text-gray-400"><p>&copy; 2024 MonoSense. All Rights Reserved.</p></div>
+      </div>
+    </footer>
+
+
+
+    <!-- データ連動スクリプト -->
+    <script>
+      // AI-EDIT: PAGE_PRODUCT_ID を D2 に変更
+      const PAGE_PRODUCT_ID = 'D2'; 
+
+
+
+      document.addEventListener('DOMContentLoaded', () => {
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (menuBtn && mobileMenu) menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+
+
+        if (typeof window.productData !== 'undefined') {
+          const item = window.productData.find(p => p.id === PAGE_PRODUCT_ID);
+          if (item) {
+            document.querySelectorAll('.js-title').forEach(el => el.textContent = item.title);
+            document.querySelectorAll('.js-price').forEach(el => el.textContent = item.price.toLocaleString());
+            document.querySelectorAll('.js-score').forEach(el => el.textContent = item.recommendScore.toFixed(1));
+            document.querySelectorAll('.js-desc').forEach(el => el.textContent = item.description);
+            document.querySelectorAll('.js-image').forEach(el => { el.src = item.image; el.alt = item.title; });
+            
+            // Amazon Link
+            document.querySelectorAll('.js-amazon-link').forEach(el => {
+                if (item.affiliateLink) {
+                    el.setAttribute('href', item.affiliateLink);
+                } else {
+                    el.removeAttribute('href');
+                    el.textContent = "Amazon在庫なし";
+                    el.classList.add('bg-gray-300', 'text-gray-500', 'cursor-not-allowed', 'pointer-events-none', 'shadow-none');
+                    el.classList.remove('bg-mono-main', 'hover:bg-orange-600', 'bg-[#FF9900]', 'hover:bg-[#ffad33]', 'text-white', 'shadow-lg', 'transform', 'hover:scale-105', 'hover:-translate-y-1');
+                }
+            });
+
+
+
+            // Yahoo Link
+            document.querySelectorAll('.js-yahoo-link').forEach(el => {
+                if (item.yahooLink) {
+                    el.setAttribute('href', item.yahooLink);
+                } else {
+                    el.removeAttribute('href');
+                    el.textContent = "Yahoo!在庫なし";
+                    el.classList.add('bg-gray-300', 'text-gray-500', 'cursor-not-allowed', 'pointer-events-none', 'shadow-none');
+                    el.classList.remove('bg-[#FF0033]', 'hover:bg-[#ff1a47]', 'text-white', 'shadow-lg', 'transform', 'hover:scale-105', 'hover:-translate-y-1');
+                }
+            });
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

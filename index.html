@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <meta name="description" content="MonoSense（モノセンス）は、フィットネス、ガジェット、家具など、毎日の生活を豊かにするアイテムを厳選して比較・紹介するレビューサイトです。" />
+    <title>MonoSense | 納得のいくモノ選びを</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Noto+Sans+JP:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              mono: {
+                bg: '#f8f4e9',
+                main: '#ff8c42',
+                accent: '#d4a574',
+                text: '#4a4a4a',
+              },
+            },
+            fontFamily: {
+              sans: ['"Noto Sans JP"', 'sans-serif'],
+              hand: ['"Indie Flower"', 'cursive'],
+            },
+            animation: {
+              'bounce-slow': 'bounceSlow 3s infinite ease-in-out',
+              'fade-in': 'fadeIn 0.3s ease-in-out',
+              'fade-in-up': 'fadeInUp 0.4s ease-out forwards',
+            },
+            keyframes: {
+              bounceSlow: {
+                '0%, 100%': { transform: 'translateY(-5%)' },
+                '50%': { transform: 'translateY(5%)' },
+              },
+              fadeIn: {
+                'from': { opacity: '0' },
+                'to': { opacity: '1' },
+              },
+              fadeInUp: {
+                'from': { opacity: '0', transform: 'translateY(20px)' },
+                'to': { opacity: '1', transform: 'translateY(0)' },
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 80px; 
+      }
+      body {
+        background-color: #f8f4e9;
+        color: #4a4a4a;
+      }
+    </style>
+    
+    <!-- Icons (Lucide) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Data -->
+    <script src="products.js"></script>
+  <link rel="stylesheet" href="/index.css">
+
+  <!-- 
+    ★広告設定エリア (Google AdSense審査コードなど)★
+    ここにGoogle AdSenseから取得した <script>...</script> タグを貼り付けます。
+  -->
+
+</head>
+  <body class="font-sans text-mono-text bg-mono-bg min-h-screen flex flex-col">
+    
+    <!-- 1. Header -->
+    <header class="sticky top-0 z-50 bg-[#f8f4e9]/95 backdrop-blur-sm shadow-sm border-b border-mono-accent/20">
+      <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center gap-2 group">
+          <div class="w-10 h-10 group-hover:scale-110 transition-transform shadow-sm rounded-full">
+            <!-- SVG Logo -->
+            <svg viewBox="0 0 100 100" class="w-full h-full" xmlns="http://www.w3.org/2000/2000/svg" role="img" aria-label="MonoSenseロゴ">
+              <circle cx="50" cy="50" r="50" fill="#ff8c42" />
+              <path d="M15 25 L20 40 H30" fill="none" stroke="white" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M25 40 H85 L78 75 H35 L25 40 Z" fill="white" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+              <circle cx="42" cy="85" r="6" fill="none" stroke="white" stroke-width="4" />
+              <circle cx="70" cy="85" r="6" fill="none" stroke="white" stroke-width="4" />
+              <g transform="translate(0, -2)">
+                <circle cx="45" cy="40" r="11" fill="white" stroke="black" stroke-width="2" />
+                <circle cx="47" cy="40" r="4" fill="black" />
+                <circle cx="67" cy="40" r="11" fill="white" stroke="black" stroke-width="2" />
+                <circle cx="65" cy="40" r="4" fill="black" />
+              </g>
+            </svg>
+          </div>
+          <h1 class="text-2xl font-bold tracking-tight text-mono-text">
+            Mono<span class="text-mono-main">Sense</span>
+          </h1>
+        </a>
+
+        <!-- PC Nav -->
+        <nav class="hidden md:flex gap-2 text-sm font-bold text-gray-600 items-center">
+          <a href="index.html" class="px-4 py-2 rounded-full hover:bg-orange-100 hover:text-mono-main transition-colors">ホーム</a>
+          <a href="#comparison" class="px-4 py-2 rounded-full hover:bg-orange-100 hover:text-mono-main transition-colors">注目アイテム</a>
+          <a href="category-list.html" class="px-4 py-2 rounded-full hover:bg-orange-100 hover:text-mono-main transition-colors">カテゴリ</a>
+          <a href="#contact" class="px-4 py-2 bg-mono-main text-white rounded-full hover:bg-orange-500 transition-colors shadow-md ml-2">お問い合わせ</a>
+        </nav>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" class="md:hidden p-2 text-gray-600" aria-label="メニューを開く">
+          <i data-lucide="menu" id="mobile-menu-icon"></i>
+        </button>
+      </div>
+
+      <!-- Mobile Dropdown -->
+      <nav id="mobile-menu-nav" class="hidden md:hidden bg-white border-b border-gray-100 p-4 absolute w-full shadow-lg animate-fade-in z-50">
+        <div class="flex flex-col gap-4 text-center">
+          <a href="index.html" class="py-2 hover:bg-orange-50 rounded-lg mobile-menu-link">ホーム</a>
+          <a href="#comparison" class="py-2 hover:bg-orange-50 rounded-lg mobile-menu-link">注目アイテム</a>
+          <a href="category-list.html" class="py-2 hover:bg-orange-50 rounded-lg mobile-menu-link">カテゴリ</a>
+          <a href="#contact" class="py-2 bg-mono-main text-white rounded-lg mobile-menu-link">お問い合わせ</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- 2. Hero Section -->
+      <section class="relative py-20 md:py-32 px-4 overflow-hidden">
+        <div class="absolute top-0 right-0 w-2/3 h-full bg-orange-100/30 rounded-l-[100px] -z-10 transform translate-x-1/4"></div>
+        
+        <!-- Background Icons -->
+        <div class="absolute inset-0 pointer-events-none -z-10 overflow-hidden" aria-hidden="true">
+          <div class="absolute top-10 -left-4 md:left-10 text-mono-main/10 transform -rotate-12">
+            <i data-lucide="activity" width="120" height="120" stroke-width="1.5"></i>
+          </div>
+          <div class="absolute top-20 -right-8 md:right-16 text-mono-accent/10 transform rotate-45">
+            <i data-lucide="armchair" width="160" height="160" stroke-width="1.5"></i>
+          </div>
+          <div class="absolute bottom-10 left-4 md:left-32 text-mono-accent/10 transform rotate-12">
+            <i data-lucide="coffee" width="140" height="140" stroke-width="1.5"></i>
+          </div>
+          <div class="absolute bottom-20 right-8 md:right-40 text-mono-main/10 transform -rotate-6">
+            <i data-lucide="shopping-bag" width="100" height="100" stroke-width="1.5"></i>
+          </div>
+        </div>
+
+        <div class="container mx-auto text-center max-w-4xl relative z-10">
+          <div class="relative inline-block">
+            <!-- Floating Icons PC -->
+            <div class="absolute top-0 -left-16 md:-left-32 text-mono-accent/60 hidden md:block transform -rotate-12 hover:scale-110 transition-transform duration-500">
+              <i data-lucide="tag" width="48" height="48" stroke-width="1.5"></i>
+            </div>
+            <div class="absolute bottom-10 -left-10 md:-left-24 text-mono-main/50 hidden md:block transform rotate-6 hover:scale-110 transition-transform duration-500">
+              <i data-lucide="shopping-bag" width="36" height="36" stroke-width="1.5"></i>
+            </div>
+            <div class="absolute top-0 -right-16 md:-right-32 text-mono-main/60 hidden md:block transform rotate-12 hover:scale-110 transition-transform duration-500">
+              <i data-lucide="gift" width="48" height="48" stroke-width="1.5"></i>
+            </div>
+            <div class="absolute bottom-10 -right-10 md:-right-24 text-mono-accent/50 hidden md:block transform -rotate-6 hover:scale-110 transition-transform duration-500">
+              <i data-lucide="sparkles" width="36" height="36" stroke-width="1.5"></i>
+            </div>
+
+            <span class="font-hand text-mono-main text-xl md:text-2xl mb-4 block animate-bounce-slow flex items-center justify-center gap-2">
+              <i data-lucide="sparkles" class="text-yellow-400 md:hidden" width="18" height="18"></i>
+              納得のいくモノ選びを
+              <i data-lucide="sparkles" class="text-yellow-400 md:hidden" width="18" height="18"></i>
+            </span>
+            <h2 class="text-3xl md:text-5xl font-bold mb-6 leading-tight relative">
+              毎日の生活を豊かにする、<br class="hidden md:block" />
+              <span class="relative inline-block mt-2 md:mt-0">
+                厳選商品比較
+                <span class="absolute bottom-0 left-0 w-full h-3 bg-mono-main/30 -z-10 rounded-sm"></span>
+              </span>
+            </h2>
+          </div>
+          
+          <p class="text-gray-600 mb-8 text-lg md:text-xl max-w-2xl mx-auto">
+            あなたにぴったりの一台を、ブログ感覚で発見。<br/>
+            機能だけでなく、使い心地や暮らしへの馴染みやすさを大切にレビューします。
+          </p>
+          <a href="#comparison" class="inline-flex items-center gap-2 bg-mono-main hover:bg-orange-500 text-white font-bold py-4 px-8 rounded-full shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1">
+            今すぐチェック <i data-lucide="chevron-right" width="20" height="20"></i>
+          </a>
+        </div>
+      </section>
+
+      <!-- 3. Comparison Section -->
+      <section id="comparison" class="py-20 bg-gradient-to-b from-orange-50/50 to-white relative">
+        <div class="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-white to-transparent"></div>
+        <div class="container mx-auto px-4">
+          <div class="text-center mb-16 relative">
+            <div class="inline-block bg-white px-6 py-2 rounded-full shadow-sm mb-4 border border-orange-100">
+              <span class="font-hand text-mono-main text-xl font-bold flex items-center gap-2 justify-center">
+                <i data-lucide="crown" class="text-yellow-500" width="20" height="20"></i>
+                Monthly Ranking
+                <i data-lucide="crown" class="text-yellow-500" width="20" height="20"></i>
+              </span>
+            </div>
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-800">今月の人気・注目アイテム</h2>
+            <p class="text-gray-500">アクセス急上昇中の話題のアイテムをピックアップ</p>
+          </div>
+
+          <!-- JS Generated Grid -->
+          <div id="featured-products-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 px-2 md:px-8">
+            <!-- Loading or JS content -->
+          </div>
+
+          <div class="text-center mt-12 text-sm text-gray-400 font-hand">
+            Updated daily based on popularity
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. Categories -->
+      <section id="categories" class="py-16">
+        <div class="container mx-auto px-4">
+          <div class="text-center mb-12">
+            <span class="font-hand text-mono-accent text-lg">Category</span>
+            <h2 class="text-2xl md:text-3xl font-bold mt-2">カテゴリから探す</h2>
+          </div>
+          
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <a href="category-list.html#fitness" class="block group no-underline">
+              <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition-all text-center border border-gray-100 h-full flex flex-col items-center">
+                <div class="w-16 h-16 mx-auto bg-orange-100 rounded-full flex items-center justify-center text-mono-main mb-4 group-hover:scale-110 transition-transform">
+                  <i data-lucide="activity" width="32" height="32"></i>
+                </div>
+                <h3 class="font-bold mb-2 text-mono-text">フィットネス</h3>
+                <p class="text-xs text-gray-500">健康的な体作り</p>
+              </div>
+            </a>
+            <a href="category-list.html#gadget" class="block group no-underline">
+              <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition-all text-center border border-gray-100 h-full flex flex-col items-center">
+                <div class="w-16 h-16 mx-auto bg-orange-100 rounded-full flex items-center justify-center text-mono-main mb-4 group-hover:scale-110 transition-transform">
+                  <i data-lucide="shopping-bag" width="32" height="32"></i>
+                </div>
+                <h3 class="font-bold mb-2 text-mono-text">ガジェット</h3>
+                <p class="text-xs text-gray-500">生活を便利に</p>
+              </div>
+            </a>
+            <a href="category-list.html#health" class="block group no-underline">
+              <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition-all text-center border border-gray-100 h-full flex flex-col items-center">
+                <div class="w-16 h-16 mx-auto bg-orange-100 rounded-full flex items-center justify-center text-mono-main mb-4 group-hover:scale-110 transition-transform">
+                  <i data-lucide="coffee" width="32" height="32"></i>
+                </div>
+                <h3 class="font-bold mb-2 text-mono-text">健康食品</h3>
+                <p class="text-xs text-gray-500">内側からキレイに</p>
+              </div>
+            </a>
+            <a href="category-list.html#furniture" class="block group no-underline">
+              <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition-all text-center border border-gray-100 h-full flex flex-col items-center">
+                <div class="w-16 h-16 mx-auto bg-orange-100 rounded-full flex items-center justify-center text-mono-main mb-4 group-hover:scale-110 transition-transform">
+                  <i data-lucide="armchair" width="32" height="32"></i>
+                </div>
+                <h3 class="font-bold mb-2 text-mono-text">家具・インテリア</h3>
+                <p class="text-xs text-gray-500">居心地の良い部屋</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. Ad Space (広告エリア) -->
+      <section class="py-10 bg-gray-50">
+        <div class="container mx-auto px-4 text-center">
+          <p class="text-xs text-gray-400 mb-2">スポンサーリンク</p>
+          <div class="bg-white border-2 border-dashed border-gray-300 w-full max-w-2xl mx-auto h-32 flex items-center justify-center rounded-lg text-gray-400">
+            <!-- 
+              ★ここにバナー広告コード（A8.netなど）を貼り付けます★
+              例: <a href="..."><img src="..." /></a>
+            -->
+            <span>広告表示エリア（バナーなどをここに配置）</span>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- 6. Footer -->
+    <footer id="contact" class="bg-[#4a4a4a] text-white pt-16 pb-8 mt-auto">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+          
+          <div class="flex flex-col">
+            <div class="flex items-center gap-2 mb-4">
+              <div class="w-8 h-8 rounded-full overflow-hidden">
+                <svg viewBox="0 0 100 100" class="w-full h-full" xmlns="http://www.w3.org/2000/2000/svg">
+                  <circle cx="50" cy="50" r="50" fill="#ff8c42" />
+                  <path d="M15 25 L20 40 H30" fill="none" stroke="white" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M25 40 H85 L78 75 H35 L25 40 Z" fill="white" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+                  <circle cx="42" cy="85" r="6" fill="none" stroke="white" stroke-width="4" />
+                  <circle cx="70" cy="85" r="6" fill="none" stroke="white" stroke-width="4" />
+                  <g transform="translate(0, -2)">
+                    <circle cx="45" cy="40" r="11" fill="white" stroke="black" stroke-width="2" />
+                    <circle cx="47" cy="40" r="4" fill="black" />
+                    <circle cx="67" cy="40" r="11" fill="white" stroke="black" stroke-width="2" />
+                    <circle cx="65" cy="40" r="4" fill="black" />
+                  </g>
+                </svg>
+              </div>
+              <div class="text-2xl font-bold">MonoSense</div>
+            </div>
+            <p class="text-gray-400 text-sm leading-relaxed mb-6">
+              MonoSense（モノセンス）は、あなたの生活を豊かにするアイテムを厳選して紹介するレビューサイトです。
+            </p>
+            
+            <div class="mt-4 pt-6 border-t border-gray-600">
+              <h5 class="font-bold text-sm mb-4 text-gray-300">公式SNSをフォロー</h5>
+              <div class="flex gap-4">
+                <a href="https://x.com/BlogKoppep61809" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-black transition-colors group">
+                  <i data-lucide="twitter" class="text-gray-300 group-hover:text-white" width="20" height="20"></i>
+                </a>
+                <a href="https://www.instagram.com/koppepan025/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-[#E1306C] transition-colors group">
+                  <i data-lucide="instagram" class="text-gray-300 group-hover:text-white" width="20" height="20"></i>
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=61586911082307&locale=ja_JP" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-[#1877F2] transition-colors group">
+                  <i data-lucide="facebook" class="text-gray-300 group-hover:text-white" width="20" height="20"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="font-bold text-lg mb-6 border-b border-gray-600 pb-2 inline-block">メニュー</h4>
+            <ul class="space-y-3 text-gray-300 text-sm">
+              <li><a href="index.html" class="hover:text-mono-main transition-colors">ホーム</a></li>
+              <li><a href="#comparison" class="hover:text-mono-main transition-colors">商品比較</a></li>
+              <li><a href="category-list.html" class="hover:text-mono-main transition-colors">カテゴリ一覧</a></li>
+              <li><a href="privacy-policy.html" class="hover:text-mono-main transition-colors">プライバシーポリシー</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-bold text-lg mb-6 border-b border-gray-600 pb-2 inline-block">お問い合わせ</h4>
+            <form class="space-y-3" action="mailto:Monosense25@gmail.com" method="POST" encType="text/plain">
+              <input type="email" name="email" placeholder="メールアドレス" class="w-full px-4 py-2 rounded bg-gray-600 text-white placeholder-gray-400 border border-transparent focus:border-mono-main focus:outline-none text-sm" required />
+              <textarea name="message" placeholder="メッセージ" rows="3" class="w-full px-4 py-2 rounded bg-gray-600 text-white placeholder-gray-400 border border-transparent focus:border-mono-main focus:outline-none text-sm" required></textarea>
+              <button type="submit" class="w-full bg-mono-main hover:bg-orange-500 text-white font-bold py-2 rounded transition-colors text-sm">送信する</button>
+            </form>
+          </div>
+        </div>
+        
+        <div class="border-t border-gray-600 pt-8 text-center text-xs text-gray-400">
+          <p>&copy; <span id="year">2024</span> MonoSense. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Modal -->
+    <div id="product-modal" class="hidden fixed inset-0 z-[100] flex items-center justify-center p-4" role="dialog" aria-modal="true">
+      <div id="modal-overlay" class="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
+      <div class="bg-white rounded-2xl shadow-2xl w-full max-w-2xl overflow-hidden relative z-10 animate-fade-in-up flex flex-col md:flex-row max-h-[90vh] md:max-h-none overflow-y-auto">
+        <button id="modal-close-btn" class="absolute top-4 right-4 bg-white/80 p-1 rounded-full text-gray-500 hover:text-black hover:bg-white transition-colors z-20">
+          <i data-lucide="x" width="24" height="24"></i>
+        </button>
+        
+        <div class="md:w-1/2 h-64 md:h-auto bg-gray-100 flex-shrink-0">
+          <img id="modal-img" src="" alt="" class="w-full h-full object-cover" />
+        </div>
+        
+        <div class="md:w-1/2 p-8 flex flex-col justify-center">
+          <div class="text-mono-main font-bold text-sm mb-2 flex items-center gap-1">
+            <i data-lucide="star" width="16" height="16" fill="currentColor"></i> <span id="modal-score"></span> / 5.0
+          </div>
+          <h3 id="modal-title" class="text-2xl font-bold mb-4 text-mono-text leading-tight"></h3>
+          <p class="text-gray-600 mb-6 text-sm leading-relaxed">
+            <span id="modal-desc"></span>
+            <br/><br/>
+            <span class="font-bold text-mono-main">ブログ風コメント：</span><br/>
+            「実際に使ってみて、手触りの良さに驚きました。毎日の習慣にするなら、このくらいの品質がちょうど良いですね。」
+          </p>
+          
+          <div class="bg-orange-50 p-4 rounded-lg mb-6 text-sm">
+            <p><span class="font-bold text-gray-500">サイズ:</span> <span id="modal-size"></span></p>
+            <p><span class="font-bold text-gray-500">重量:</span> <span id="modal-weight"></span></p>
+            <p><span class="font-bold text-gray-500">素材:</span> <span id="modal-material"></span></p>
+            <p id="modal-views-container" class="mt-2 hidden"><span class="font-bold text-gray-500">閲覧数:</span> <span id="modal-views"></span>回</p>
+          </div>
+
+          <div class="mt-auto">
+            <div class="text-2xl font-bold mb-4">¥<span id="modal-price"></span></div>
+            <div class="flex flex-col gap-2">
+                <a id="modal-link-detail" href="#" class="block w-full text-center border-2 border-mono-main text-mono-main hover:bg-mono-main hover:text-white font-bold py-3 rounded-xl transition-all">
+                  詳細記事を読む
+                </a>
+                
+                <!-- Amazon Link -->
+                <a id="modal-link-amazon" href="#" target="_blank" rel="noopener noreferrer" class="block w-full text-center bg-[#FF9900] hover:bg-[#ffad33] text-white font-bold py-3 rounded-xl shadow-lg hover:shadow-xl transition-all">
+                  Amazonで在庫を見る
+                </a>
+                <span id="modal-no-amazon" class="hidden block w-full text-center bg-gray-300 text-gray-500 font-bold py-3 rounded-xl cursor-not-allowed pointer-events-none">
+                   Amazon在庫なし
+                </span>
+
+                <!-- Yahoo Link -->
+                <a id="modal-link-yahoo" href="#" target="_blank" rel="noopener noreferrer" class="block w-full text-center bg-[#FF0033] hover:bg-[#ff1a47] text-white font-bold py-3 rounded-xl shadow-lg hover:shadow-xl transition-all">
+                  Yahoo!ショッピングで見る
+                </a>
+                <span id="modal-no-yahoo" class="hidden block w-full text-center bg-gray-300 text-gray-500 font-bold py-3 rounded-xl cursor-not-allowed pointer-events-none">
+                  Yahoo!在庫なし
+                </span>
+            </div>
+            <p class="text-xs text-gray-400 text-center mt-3">
+              ※アフィリエイトリンクを含みます
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MAIN SCRIPT -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        // Copyright Year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // --- 1. Load & Render Featured Products ---
+        const container = document.getElementById('featured-products-grid');
+        
+        // Ensure productData exists (from products.js)
+        if (typeof window.productData !== 'undefined') {
+          const featured = window.productData
+            .filter(p => p.featured === true)
+            .sort((a, b) => (b.views || 0) - (a.views || 0));
+
+          featured.forEach((product, index) => {
+            // Rank Styles
+            let rankStyle = "bg-white/90 text-gray-600";
+            let rankIconHtml = '<i data-lucide="trending-up" width="16" height="16"></i>';
+            let rankLabel = `Rank ${index + 1}`;
+            let cardBorder = "border-gray-100";
+            let shadowClass = "shadow-lg";
+
+            if (index === 0) {
+              rankStyle = "bg-gradient-to-br from-yellow-100 to-yellow-50 text-yellow-800 border-yellow-200";
+              rankIconHtml = '<i data-lucide="crown" class="fill-yellow-500 text-yellow-600" width="20" height="20"></i>';
+              rankLabel = "No.1";
+              cardBorder = "border-yellow-400 ring-4 ring-yellow-400/20"; 
+              shadowClass = "shadow-2xl shadow-yellow-100";
+            } else if (index === 1) {
+              rankStyle = "bg-gray-200 text-gray-700 border-gray-300";
+              rankIconHtml = '<i data-lucide="award" class="text-gray-600" width="18" height="18"></i>';
+              rankLabel = "No.2";
+              cardBorder = "border-gray-300";
+              shadowClass = "shadow-xl";
+            } else if (index === 2) {
+              rankStyle = "bg-orange-100 text-orange-800 border-orange-200";
+              rankIconHtml = '<i data-lucide="award" class="text-orange-700" width="18" height="18"></i>';
+              rankLabel = "No.3";
+              cardBorder = "border-orange-200";
+              shadowClass = "shadow-xl";
+            }
+
+            // Create Article Element
+            const article = document.createElement('article');
+            article.className = `bg-white rounded-3xl overflow-hidden group cursor-pointer border-2 flex flex-col h-full relative transform transition-all duration-300 hover:-translate-y-2 ${cardBorder} ${shadowClass}`;
+            article.setAttribute('role', 'button');
+            article.setAttribute('tabindex', '0');
+            article.onclick = () => openModal(product);
+            article.onkeydown = (e) => { if(e.key === 'Enter') openModal(product); };
+
+            // Winner Badge for #1
+            const winnerBadge = index === 0 ? `
+              <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 z-20 bg-yellow-500 text-white px-6 py-1 rounded-b-lg font-bold shadow-md text-sm flex items-center gap-1">
+                 <i data-lucide="crown" width="16" height="16" fill="white"></i> WINNER
+              </div>` : '';
+
+            // Views HTML
+            const viewsHtml = product.views ? `
+              <div class="text-xs text-gray-400 flex items-center justify-end gap-1 mb-1">
+                <i data-lucide="activity" width="12" height="12"></i> ${product.views.toLocaleString()} views
+              </div>` : '';
+
+            // Button Style
+            const btnClass = index === 0 
+              ? 'bg-gradient-to-r from-orange-400 to-mono-main text-white shadow-lg hover:shadow-orange-200 hover:scale-[1.02]' 
+              : 'bg-white border-2 border-mono-main text-mono-main hover:bg-mono-main hover:text-white';
+
+            article.innerHTML = `
+              ${winnerBadge}
+              <div class="absolute top-4 left-4 z-10 px-3 py-1.5 rounded-full font-bold shadow-sm flex items-center gap-1.5 border text-sm ${rankStyle}">
+                ${rankIconHtml} ${rankLabel}
+              </div>
+
+              <div class="relative overflow-hidden h-56 bg-gray-100 flex-shrink-0">
+                <img src="${product.image}" alt="${product.title}" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700" loading="lazy" />
+                <div class="absolute bottom-3 right-3 bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-full text-sm font-bold text-mono-main shadow-md flex items-center gap-1 border border-orange-100">
+                  <i data-lucide="star" width="14" height="14" fill="currentColor"></i> ${product.recommendScore}
+                </div>
+              </div>
+              
+              <div class="p-6 md:p-8 flex flex-col flex-grow relative">
+                <div class="absolute top-4 right-4 text-8xl font-black text-gray-50 opacity-50 pointer-events-none select-none font-sans italic">
+                  ${index + 1}
+                </div>
+
+                <div class="mb-2">
+                  <span class="text-xs font-bold text-gray-400 bg-gray-100 px-2 py-1 rounded uppercase">${product.categoryId}</span>
+                </div>
+                
+                <h3 class="font-bold mb-3 text-mono-text leading-snug group-hover:text-mono-main transition-colors ${index === 0 ? 'text-2xl' : 'text-xl'}">
+                  ${product.title}
+                </h3>
+                
+                <p class="text-sm text-gray-500 mb-6 line-clamp-2 leading-relaxed flex-grow">
+                  ${product.description}
+                </p>
+                
+                <div class="mt-auto pt-6 border-t border-gray-100 flex flex-col gap-3">
+                   <div class="flex justify-between items-end">
+                      <div class="flex flex-col">
+                        <span class="text-xs text-gray-400 mb-0.5">参考価格</span>
+                        <span class="text-2xl font-bold text-mono-text font-sans tracking-tight">¥${product.price.toLocaleString()}</span>
+                      </div>
+                      <div class="text-right">${viewsHtml}</div>
+                   </div>
+                   
+                   <a href="${product.link}" onclick="event.stopPropagation()" class="block text-center w-full font-bold py-3 rounded-xl transition-all ${btnClass}">
+                     詳細を見る <i data-lucide="chevron-right" width="16" height="16" class="inline mb-0.5"></i>
+                   </a>
+                </div>
+              </div>
+            `;
+            container.appendChild(article);
+          });
+        }
+
+        // --- 2. Mobile Menu ---
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const menuNav = document.getElementById('mobile-menu-nav');
+        const menuIcon = document.getElementById('mobile-menu-icon');
+        const menuLinks = document.querySelectorAll('.mobile-menu-link');
+
+        menuBtn.addEventListener('click', () => {
+          const isHidden = menuNav.classList.contains('hidden');
+          if (isHidden) {
+            menuNav.classList.remove('hidden');
+            menuIcon.setAttribute('data-lucide', 'x');
+          } else {
+            menuNav.classList.add('hidden');
+            menuIcon.setAttribute('data-lucide', 'menu');
+          }
+          lucide.createIcons();
+        });
+
+        menuLinks.forEach(link => {
+          link.addEventListener('click', () => {
+             menuNav.classList.add('hidden');
+             menuIcon.setAttribute('data-lucide', 'menu');
+             lucide.createIcons();
+          });
+        });
+
+        // --- 3. Modal Logic ---
+        const modal = document.getElementById('product-modal');
+        const modalOverlay = document.getElementById('modal-overlay');
+        const closeBtn = document.getElementById('modal-close-btn');
+
+        function openModal(product) {
+          document.getElementById('modal-title').textContent = product.title;
+          document.getElementById('modal-img').src = product.image;
+          document.getElementById('modal-img').alt = product.title;
+          document.getElementById('modal-score').textContent = product.recommendScore;
+          document.getElementById('modal-desc').textContent = product.description;
+          document.getElementById('modal-price').textContent = product.price.toLocaleString();
+          
+          // Specs
+          document.getElementById('modal-size').textContent = product.specs?.size || '-';
+          document.getElementById('modal-weight').textContent = product.specs?.weight || '-';
+          document.getElementById('modal-material').textContent = product.specs?.material || '-';
+          
+          // Views
+          const viewsContainer = document.getElementById('modal-views-container');
+          if (product.views) {
+             document.getElementById('modal-views').textContent = product.views.toLocaleString();
+             viewsContainer.classList.remove('hidden');
+          } else {
+             viewsContainer.classList.add('hidden');
+          }
+
+          // Links
+          document.getElementById('modal-link-detail').href = product.link;
+
+          const amzLink = document.getElementById('modal-link-amazon');
+          const noAmz = document.getElementById('modal-no-amazon');
+          if (product.affiliateLink) {
+             amzLink.href = product.affiliateLink;
+             amzLink.classList.remove('hidden');
+             noAmz.classList.add('hidden');
+          } else {
+             amzLink.classList.add('hidden');
+             noAmz.classList.remove('hidden');
+          }
+
+          const yahooLink = document.getElementById('modal-link-yahoo');
+          const noYahoo = document.getElementById('modal-no-yahoo');
+          if (product.yahooLink) {
+             yahooLink.href = product.yahooLink;
+             yahooLink.classList.remove('hidden');
+             noYahoo.classList.add('hidden');
+          } else {
+             yahooLink.classList.add('hidden');
+             noYahoo.classList.remove('hidden');
+          }
+
+          // Show Modal
+          modal.classList.remove('hidden');
+          document.body.style.overflow = 'hidden';
+          lucide.createIcons();
+        }
+
+        function closeModal() {
+          modal.classList.add('hidden');
+          document.body.style.overflow = 'auto';
+        }
+
+        modalOverlay.addEventListener('click', closeModal);
+        closeBtn.addEventListener('click', closeModal);
+
+        // --- 4. Initialize Icons ---
+        lucide.createIcons();
+      });
+    </script>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>

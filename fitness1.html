@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- SEO対策: 記事の概要 -->
+    <!-- AI-EDIT: META_DESCRIPTION -->
+    <meta name="description" content="場所を取らず家で本格腹筋トレ。筋トレ好き男性向けに、adidas腹筋ローラーの特徴・使い方・メリットデメリットを徹底レビューします。" />
+    
+    <title>レビュー記事 | MonoSense</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Noto+Sans+JP:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              mono: {
+                bg: '#f8f4e9', main: '#ff8c42', accent: '#d4a574', text: '#4a4a4a', amazon: '#FF9900', yahoo: '#FF0033',
+              },
+            },
+            fontFamily: {
+              sans: ['"Noto Sans JP"', 'sans-serif'], hand: ['"Indie Flower"', 'cursive'],
+            },
+          },
+        },
+      };
+    </script>
+    
+    <style>
+      html { scroll-behavior: smooth; }
+      .pros-list li::before { content: "✔"; color: green; font-weight: bold; margin-right: 8px; }
+      .cons-list li::before { content: "✖"; color: red; font-weight: bold; margin-right: 8px; }
+      .animate-fade-in { animation: fadeIn 0.3s ease-in-out; }
+      @keyframes fadeIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+
+    <!-- ★重要: 商品データを読み込む -->
+    <script src="products.js"></script>
+  </head>
+  <body class="bg-mono-bg text-mono-text font-sans flex flex-col min-h-screen">
+
+    <!-- ヘッダーエリア -->
+    <header class="sticky top-0 z-50 bg-[#f8f4e9]/95 backdrop-blur-sm shadow-sm border-b border-mono-accent/20">
+      <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+        <a href="index.html" class="flex items-center gap-2 group">
+          <div class="w-10 h-10 group-hover:scale-110 transition-transform shadow-sm rounded-full bg-orange-100 overflow-hidden">
+             <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="MonoSenseロゴ">
+              <circle cx="50" cy="50" r="50" fill="#ff8c42" />
+              <path d="M15 25 L20 40 H30" fill="none" stroke="white" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M25 40 H85 L78 75 H35 L25 40 Z" fill="white" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+              <circle cx="42" cy="85" r="6" fill="none" stroke="white" stroke-width="4" />
+              <circle cx="70" cy="85" r="6" fill="none" stroke="white" stroke-width="4" />
+              <g transform="translate(0, -2)">
+                <circle cx="45" cy="40" r="11" fill="white" stroke="black" stroke-width="2" />
+                <circle cx="47" cy="40" r="4" fill="black" />
+                <circle cx="67" cy="40" r="11" fill="white" stroke="black" stroke-width="2" />
+                <circle cx="65" cy="40" r="4" fill="black" />
+              </g>
+            </svg>
+          </div>
+          <h1 class="text-2xl font-bold tracking-tight text-mono-text">
+            Mono<span class="text-mono-main">Sense</span>
+          </h1>
+        </a>
+        <nav class="hidden md:flex gap-2 text-sm font-bold text-gray-600 items-center">
+          <a href="index.html" class="px-4 py-2 rounded-full hover:bg-orange-100 hover:text-mono-main transition-colors">ホーム</a>
+          <a href="index.html#comparison" class="px-4 py-2 rounded-full hover:bg-orange-100 hover:text-mono-main transition-colors">注目アイテム</a>
+          <a href="category-list.html" class="px-4 py-2 rounded-full hover:bg-orange-100 hover:text-mono-main transition-colors">カテゴリ</a>
+          <a href="#contact" class="px-4 py-2 bg-mono-main text-white rounded-full hover:bg-orange-500 transition-colors shadow-md ml-2">お問い合わせ</a>
+        </nav>
+        <button id="menu-btn" class="md:hidden p-2 text-gray-600" aria-label="メニューを開く">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+        </button>
+      </div>
+      <nav id="mobile-menu" class="hidden md:hidden bg-white border-b border-gray-100 p-4 absolute w-full shadow-lg z-50 animate-fade-in">
+        <div class="flex flex-col gap-4 text-center font-bold text-gray-600">
+          <a href="index.html" class="py-2 hover:bg-orange-50 rounded-lg">ホーム</a>
+          <a href="category-list.html" class="py-2 hover:bg-orange-50 rounded-lg">カテゴリ</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="flex-grow container mx-auto px-4 py-8 max-w-4xl">
+      <!-- 1. パンくずリスト (カテゴリ専用) -->
+      <nav class="text-sm text-gray-500 mb-6 overflow-x-auto whitespace-nowrap">
+        <a href="index.html" class="hover:underline hover:text-mono-main">ホーム</a>
+        <span class="mx-2">></span>
+        <a href="category-list.html" class="hover:underline hover:text-mono-main">カテゴリ一覧</a>
+        <span class="mx-2">></span>
+        <a href="category-list.html#fitness" class="hover:underline hover:text-mono-main">フィットネス</a>
+        <span class="mx-2">></span>
+        <!-- 自動更新対象: js-title -->
+        <span class="font-bold text-mono-text js-title"><!-- AI-EDIT: PRODUCT_TITLE -->adidas腹筋ローラー</span>
+      </nav>
+
+      <!-- 2. 商品タイトルエリア -->
+      <section class="mb-12">
+        <span class="inline-block bg-orange-100 text-mono-main px-3 py-1 rounded-full text-xs font-bold mb-2">レビュー</span>
+        
+        <!-- 記事タイトル -->
+        <h1 class="text-3xl md:text-4xl font-bold mb-6 leading-tight border-b-4 border-mono-main/20 pb-4">
+          <!-- 自動更新対象: js-title -->
+          <span class="js-title"><!-- AI-EDIT: PRODUCT_TITLE -->adidas腹筋ローラー</span>を徹底レビュー
+        </h1>
+
+        <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100">
+          <div class="flex flex-col md:flex-row">
+            <!-- 商品画像 -->
+            <div class="md:w-1/2 bg-gray-200 min-h-[300px] relative group">
+              <!-- 自動更新対象: js-image -->
+              <img src="https://m.media-amazon.com/images/I/51Z-6Tl3vTL._AC_SL1000_.jpg" alt="adidas腹筋ローラー" class="js-image w-full h-full object-cover absolute inset-0 transition-transform duration-500 group-hover:scale-105" />
+            </div>
+
+            <div class="md:w-1/2 p-6 md:p-8 flex flex-col justify-center bg-white">
+              <!-- 自動更新対象: js-title -->
+              <h2 class="text-xl font-bold text-gray-800 mb-2 js-title"><!-- AI-EDIT: PRODUCT_TITLE -->adidas腹筋ローラー</h2>
+              <!-- 自動更新対象: js-desc -->
+              <p class="text-sm text-gray-500 mb-4 js-desc"><!-- AI-EDIT: PRODUCT_SHORT_DESCRIPTION -->場所を取らずに自宅でお腹のたるみを引き締め、バキバキの腹筋を目指せる本格派腹筋ローラー。</p>
+              
+              <!-- 評価 -->
+              <div class="flex items-center mb-4 bg-orange-50 p-3 rounded-lg w-fit">
+                <div class="flex text-yellow-400 text-xl mr-2">★★★★☆</div>
+                <!-- 自動更新対象: js-score -->
+                <span class="font-bold text-lg text-gray-700 js-score"><!-- AI-EDIT: SCORE -->4.6</span>
+                <span class="text-gray-400 text-sm ml-1">/ 5.0</span>
+              </div>
+
+              <!-- 価格目安 -->
+              <p class="text-gray-600 mb-6 font-bold">
+                参考価格：<span class="text-2xl text-red-500">¥<span class="js-price"><!-- AI-EDIT: PRICE -->2,291</span></span>
+                <span class="text-xs text-gray-400 ml-2"><span><!-- AI-EDIT: PRICE_DATE -->（今日 時点）</span></span>
+              </p>
+
+              <!-- 購入ボタン (上部) -->
+              <div class="grid grid-cols-1 gap-3">
+                <!-- AI-EDIT: AMAZON_URL_TOP -->
+                <a href="https://amzn.to/3LXlnmQ" target="_blank" class="js-amazon-link js-amazon-link-top flex items-center justify-center gap-2 bg-[#FF9900] hover:bg-[#ffad33] text-white font-bold py-3 px-4 rounded-xl shadow transition-transform transform hover:-translate-y-1">
+                  Amazonで見る
+                </a>
+                <!-- AI-EDIT: YAHOO_URL_TOP -->
+                <a href="#" target="_blank" class="js-yahoo-link js-yahoo-link-top flex items-center justify-center gap-2 bg-[#FF0033] hover:bg-[#ff1a47] text-white font-bold py-3 px-4 rounded-xl shadow transition-transform transform hover:-translate-y-1">
+                  Yahoo!ショッピングで見る
+                </a>
+              </div>
+              <p class="text-xs text-gray-400 mt-2 text-center">※アフィリエイトリンクを含みます</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. 商品説明 (詳細レビュー) -->
+      <section class="mb-12">
+        <h3 class="text-2xl font-bold mb-6 border-l-4 border-mono-main pl-4 flex items-center"><span class="text-3xl mr-2">📖</span> 商品の特徴・詳細</h3>
+        <div class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-gray-100 leading-relaxed text-gray-700 space-y-4">
+          <!-- AI-EDIT: PRODUCT_DETAIL_REVIEW -->
+          <p>「場所を取らないけど、しっかり効く腹筋トレーニング器具が欲しい」。そんな筋トレ好き男性にぴったりなのが、adidas腹筋ローラーです。コンパクトなローラー1台で、お腹まわりはもちろん、体幹や肩まわりまで一気に追い込めるので、ジムに行かなくても自宅で本格的なトレーニングができます。シンプルな構造ながら負荷はかなり高く、正しく使えば、だらんとしたお腹のシルエットをキュッと引き締め、バキバキに割れた腹筋を目指せるポテンシャルを持ったアイテムです。</p>
+          <p>まず魅力なのが、省スペース性です。ローラー本体は非常にコンパクトで、使わないときは部屋の隅やクローゼットにサッと収納できます。トレーニング器具は「出しっぱなしで邪魔」「置き場所がない」という理由で続かなくなることが多いですが、adidas腹筋ローラーなら、マット1枚分のスペースさえあればOK。ワンルームや家族と暮らしている人でも気兼ねなく使えるのは大きなメリットです。</p>
+          <p>また、ローラーのグリップは握りやすさを意識した設計で、手汗をかいても滑りにくく、しっかりと力を込めやすいのが特徴です。腹筋ローラーはフォームが崩れると腰や肩を痛めやすいのですが、グリップが安定していることで、体幹で支える感覚をつかみやすくなります。さらに、スムーズに転がるローラーのおかげで、動きがガタつきにくく、腹筋に集中して負荷をかけやすいのもポイントです。</p>
+          <p>トレーニングのバリエーションも豊富です。基本の膝コロ（膝をついた状態でのローリング）は、腹直筋を中心に、腹斜筋や広背筋まで一気に刺激できます。慣れてきたら立ちコロに挑戦することで、負荷は一気に跳ね上がり、まさに「最強クラス」の自重トレーニングになります。可動域をコントロールしやすいので、「今日は浅めに」「今日は限界まで」など、その日のコンディションに合わせて細かく負荷を調整できる点も使い勝手が良いところです。</p>
+          <p>お腹のたるみ解消という意味でも、腹筋ローラーは非常に相性の良いアイテムです。腹筋の表面だけでなく、体幹部をまとめて鍛えることで、姿勢の改善や代謝アップにもつながりやすくなります。とくにデスクワークが多い男性は、猫背や骨盤の後傾によって下腹がポッコリしがちですが、定期的に腹筋ローラーで体幹を鍛えることで、骨盤まわりが安定し、自然と「お腹が締まって見える」シルエットに近づいていきます。</p>
+          <p>一方で、腹筋ローラーは「効きすぎる」がゆえに、初心者にとってはハードルが高いのも事実です。いきなり回数をこなそうとすると、腹筋ではなく腕や腰で無理に支えてしまい、翌日動けないほどの筋肉痛になったり、腰を痛めてしまうこともあります。そのため、最初は回数よりもフォームを優先し、浅い可動域で数回から始めるのがおすすめです。壁ドン（壁ストッパー）を使ってローラーが転がり過ぎないようにするなど、工夫しながら安全にステップアップしていきましょう。</p>
+          <p>自宅でできるトレーニングの中でも、腹筋ローラーは「コスパの高さ」が際立つアイテムです。価格は比較的手に取りやすいのに、鍛えられる部位が多く、トレーニングの強度も高いので、ダンベルや大型マシンを買う前にまず導入したい一台と言えます。特に、見た目として腹筋を割りたい、Tシャツ1枚で自信を持ちたいという男性には、短時間でもしっかり追い込める心強い相棒になってくれるでしょう。</p>
+          <p>総合的に見ると、adidas腹筋ローラーは「場所を取らない」「自宅で完結する」「お腹のたるみ対策に強い」というポイントを高いレベルで満たしてくれるアイテムです。フォーム習得まで多少の慣れは必要ですが、そのハードルを越えた先には、バキバキの腹筋と引き締まったウエストラインが待っています。家トレ環境をワンランク上げたい筋トレ好き男性に、自信を持っておすすめできる腹筋トレーニング器具です。</p>
+        </div>
+      </section>
+
+      <!-- 4. 良い点・悪い点 -->
+      <section class="mb-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-green-50 p-6 rounded-2xl border border-green-100">
+          <h4 class="text-xl font-bold text-green-700 mb-4 flex items-center"><span class="bg-green-200 p-1 rounded mr-2">👍</span> 良かったところ</h4>
+          <ul class="pros-list space-y-2 font-bold text-gray-700">
+            <!-- AI-EDIT: PROS_LIST -->
+            <li>マット1枚分のスペースがあれば使える省スペース設計で、ワンルームや自宅トレーニングとの相性が良い。</li>
+            <li>腹筋だけでなく体幹・背中・肩まわりまで一度に鍛えられ、たるんだお腹の引き締めに高い効果が期待できる。</li>
+            <li>グリップが握りやすく滑りにくいため、フォームを安定させやすく、安全に高負荷トレーニングに取り組める。</li>
+            <li>価格が比較的手頃で、ジムに通うよりもコスパ良く本格的な腹筋トレーニング環境を整えられる。</li>
+          </ul>
+        </div>
+        <div class="bg-red-50 p-6 rounded-2xl border border-red-100">
+          <h4 class="text-xl font-bold text-red-700 mb-4 flex items-center"><span class="bg-red-200 p-1 rounded mr-2">👎</span> 気になったところ</h4>
+          <ul class="cons-list space-y-2 font-bold text-gray-700">
+            <!-- AI-EDIT: CONS_LIST -->
+            <li>負荷が高いため、トレーニング初心者や体幹が弱い人には難しく、正しいフォーム習得まで少し時間がかかる。</li>
+            <li>床が硬い環境では膝をつくと痛みやすく、別途マットを用意したほうが快適にトレーニングできる。</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 5. まとめ -->
+      <section class="mb-16 bg-white p-8 rounded-2xl shadow-lg border-2 border-mono-main/30 relative overflow-hidden">
+        <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-orange-100 rounded-full opacity-50 pointer-events-none"></div>
+        <h3 class="text-2xl font-bold mb-4 text-mono-text text-center font-hand">Conclusion</h3>
+        <h4 class="text-xl font-bold text-center mb-8">この商品のまとめ</h4>
+        <div class="space-y-4 text-gray-700 leading-relaxed">
+          <!-- AI-EDIT: SUMMARY -->
+          <p>adidas腹筋ローラーは、場所を取らずに自宅で本格的な腹筋トレーニングをしたい筋トレ好き男性に最適なアイテムです。コンパクトながら高い負荷をかけられ、お腹のたるみ解消から腹筋バキバキを目指すフェーズまでしっかり対応してくれます。フォーム習得には少し慣れが必要ですが、そのハードルを超えれば、短時間でも効率よくお腹まわりと体幹を追い込める心強い相棒になるでしょう。ジム通いに頼らず、家で自分のペースで腹筋を鍛えたい人は、ぜひ一度取り入れてみてください。</p>
+        </div>
+        
+        <!-- 購入ボタン (下部) -->
+        <div class="mt-8 text-center flex flex-col gap-3 justify-center max-w-sm mx-auto">
+          <!-- AI-EDIT: AMAZON_URL_BOTTOM -->
+          <a href="https://amzn.to/3LXlnmQ" class="js-amazon-link js-amazon-link-bottom inline-block bg-mono-main hover:bg-orange-600 text-white font-bold py-4 px-12 rounded-full shadow-lg transition-transform transform hover:scale-105">
+            Amazonで在庫をチェックする
+          </a>
+          <!-- AI-EDIT: YAHOO_URL_BOTTOM -->
+          <a href="#" class="js-yahoo-link js-yahoo-link-bottom inline-block bg-[#FF0033] hover:bg-[#ff1a47] text-white font-bold py-4 px-12 rounded-full shadow-lg transition-transform transform hover:scale-105">
+            Yahoo!ショッピングで見る
+          </a>
+        </div>
+      </section>
+
+    </main>
+
+    <footer id="contact" class="bg-[#4a4a4a] text-white pt-16 pb-8 mt-auto">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col mb-12">
+           <div class="flex items-center gap-2 mb-4"><div class="w-8 h-8 rounded-full overflow-hidden bg-orange-100"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="MonoSenseロゴ"><circle cx="50" cy="50" r="50" fill="#ff8c42"/><path d="M15 25 L20 40 H30" fill="none" stroke="white" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><path d="M25 40 H85 L78 75 H35 L25 40 Z" fill="white" stroke="white" stroke-width="2" stroke-linejoin="round"/><circle cx="42" cy="85" r="6" fill="none" stroke="white" stroke-width="4"/><circle cx="70" cy="85" r="6" fill="none" stroke="white" stroke-width="4"/><g transform="translate(0, -2)"><circle cx="45" cy="40" r="11" fill="white" stroke="black" stroke-width="2"/><circle cx="47" cy="40" r="4" fill="black"/><circle cx="67" cy="40" r="11" fill="white" stroke="black" stroke-width="2"/><circle cx="65" cy="40" r="4" fill="black"/></g></svg></div><div class="text-2xl font-bold">MonoSense</div></div>
+           <p class="text-gray-400 text-sm leading-relaxed mb-6">MonoSense（モノセンス）は、あなたの生活を豊かにするアイテムを厳選して紹介するレビューサイトです。</p>
+        </div>
+        <div class="border-t border-gray-600 pt-8 text-center text-xs text-gray-400"><p>&copy; 2024 MonoSense. All Rights Reserved.</p></div>
+      </div>
+    </footer>
+
+    <!-- ============================================ -->
+    <!-- データ連動スクリプト -->
+    <!-- ============================================ -->
+    <script>
+      // AI-EDIT: PAGE_PRODUCT_ID を A1 に変更
+      const PAGE_PRODUCT_ID = 'A1'; 
+
+      document.addEventListener('DOMContentLoaded', () => {
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (menuBtn && mobileMenu) menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+        if (typeof window.productData !== 'undefined') {
+          const item = window.productData.find(p => p.id === PAGE_PRODUCT_ID);
+          if (item) {
+            document.querySelectorAll('.js-title').forEach(el => el.textContent = item.title);
+            document.querySelectorAll('.js-price').forEach(el => el.textContent = item.price.toLocaleString());
+            document.querySelectorAll('.js-score').forEach(el => el.textContent = item.recommendScore.toFixed(1));
+            document.querySelectorAll('.js-desc').forEach(el => el.textContent = item.description);
+            document.querySelectorAll('.js-image').forEach(el => {
+              el.src = item.image;
+              el.alt = item.title;
+            });
+            
+            // Amazon Link Logic
+            document.querySelectorAll('.js-amazon-link').forEach(el => {
+                if (item.affiliateLink) {
+                  el.setAttribute('href', item.affiliateLink);
+                } else {
+                  el.removeAttribute('href');
+                  el.textContent = "Amazon在庫なし";
+                  el.classList.add('bg-gray-300', 'text-gray-500', 'cursor-not-allowed', 'pointer-events-none', 'shadow-none');
+                  el.classList.remove('bg-mono-main', 'hover:bg-orange-600', 'bg-[#FF9900]', 'hover:bg-[#ffad33]', 'text-white', 'shadow-lg', 'transform', 'hover:scale-105', 'hover:-translate-y-1');
+                }
+            });
+
+            // Yahoo Link Logic
+            document.querySelectorAll('.js-yahoo-link').forEach(el => {
+                if (item.yahooLink) {
+                  el.setAttribute('href', item.yahooLink);
+                } else {
+                  el.removeAttribute('href');
+                  el.textContent = "Yahoo!在庫なし";
+                  el.classList.add('bg-gray-300', 'text-gray-500', 'cursor-not-allowed', 'pointer-events-none', 'shadow-none');
+                  el.classList.remove('bg-[#FF0033]', 'hover:bg-[#ff1a47]', 'text-white', 'shadow-lg', 'transform', 'hover:scale-105', 'hover:-translate-y-1');
+                }
+            });
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
