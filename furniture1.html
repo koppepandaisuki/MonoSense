@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- AI-EDIT: META_DESCRIPTION -->
+    <meta name="description" content="おしゃれに収納 ウォールラックを探している女性向けに、つっぱりで設置できる棚 壁面収納 ウォールラックの魅力と使い勝手を徹底レビューします。" />
+    <title>レビュー記事 | MonoSense</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              mono: { bg: '#f8f4e9', main: '#ff8c42', accent: '#d4a574', text: '#4a4a4a', amazon: '#FF9900', yahoo: '#FF0033' },
+            },
+            fontFamily: { sans: ['"Noto Sans JP"', 'sans-serif'], hand: ['"Indie Flower"', 'cursive'] },
+          },
+        },
+      };
+    </script>
+    <style>
+      html { scroll-behavior: smooth; }
+      .pros-list li::before { content: "✔"; color: green; font-weight: bold; margin-right: 8px; }
+      .cons-list li::before { content: "✖"; color: red; font-weight: bold; margin-right: 8px; }
+      .animate-fade-in { animation: fadeIn 0.3s ease-in-out; }
+      @keyframes fadeIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+    <script src="products.js"></script>
+  </head>
+  <body class="bg-mono-bg text-mono-text font-sans flex flex-col min-h-screen">
+    <header class="sticky top-0 z-50 bg-[#f8f4e9]/95 backdrop-blur-sm shadow-sm border-b border-mono-accent/20">
+      <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+        <a href="index.html" class="flex items-center gap-2 group">
+          <div class="w-10 h-10 group-hover:scale-110 transition-transform shadow-sm rounded-full bg-orange-100 overflow-hidden">
+             <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="MonoSenseロゴ">
+              <circle cx="50" cy="50" r="50" fill="#ff8c42" />
+              <path d="M15 25 L20 40 H30" fill="none" stroke="white" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M25 40 H85 L78 75 H35 L25 40 Z" fill="white" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+              <circle cx="42" cy="85" r="6" fill="none" stroke="white" stroke-width="4" />
+              <circle cx="70" cy="85" r="6" fill="none" stroke="white" stroke-width="4" />
+              <g transform="translate(0, -2)">
+                <circle cx="45" cy="40" r="11" fill="white" stroke="black" stroke-width="2" />
+                <circle cx="47" cy="40" r="4" fill="black" />
+                <circle cx="67" cy="40" r="11" fill="white" stroke="black" stroke-width="2" />
+                <circle cx="65" cy="40" r="4" fill="black" />
+              </g>
+            </svg>
+          </div>
+          <h1 class="text-2xl font-bold tracking-tight text-mono-text">Mono<span class="text-mono-main">Sense</span></h1>
+        </a>
+        <nav class="hidden md:flex gap-2 text-sm font-bold text-gray-600 items-center">
+          <a href="index.html" class="px-4 py-2 rounded-full hover:bg-orange-100 hover:text-mono-main transition-colors">ホーム</a>
+          <a href="index.html#comparison" class="px-4 py-2 rounded-full hover:bg-orange-100 hover:text-mono-main transition-colors">注目アイテム</a>
+          <a href="category-list.html" class="px-4 py-2 rounded-full hover:bg-orange-100 hover:text-mono-main transition-colors">カテゴリ</a>
+          <a href="#contact" class="px-4 py-2 bg-mono-main text-white rounded-full hover:bg-orange-500 transition-colors shadow-md ml-2">お問い合わせ</a>
+        </nav>
+        <button id="menu-btn" class="md:hidden p-2 text-gray-600" aria-label="メニューを開く">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+        </button>
+      </div>
+      <nav id="mobile-menu" class="hidden md:hidden bg-white border-b border-gray-100 p-4 absolute w-full shadow-lg z-50 animate-fade-in">
+        <div class="flex flex-col gap-4 text-center font-bold text-gray-600">
+          <a href="index.html" class="py-2 hover:bg-orange-50 rounded-lg">ホーム</a>
+          <a href="category-list.html" class="py-2 hover:bg-orange-50 rounded-lg">カテゴリ</a>
+        </div>
+      </nav>
+    </header>
+
+
+    <main class="flex-grow container mx-auto px-4 py-8 max-w-4xl">
+      <!-- 1. パンくずリスト (カテゴリ専用) -->
+      <nav class="text-sm text-gray-500 mb-6 overflow-x-auto whitespace-nowrap">
+        <a href="index.html" class="hover:underline hover:text-mono-main">ホーム</a>
+        <span class="mx-2">></span>
+        <a href="category-list.html" class="hover:underline hover:text-mono-main">カテゴリ一覧</a>
+        <span class="mx-2">></span>
+        <a href="category-list.html#furniture" class="hover:underline hover:text-mono-main">家具・インテリア</a>
+        <span class="mx-2">></span>
+        <!-- 自動更新対象: js-title -->

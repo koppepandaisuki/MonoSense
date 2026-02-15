@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- AI-EDIT: META_DESCRIPTION -->
+    <meta name="description" content="WOBKEY Rainyは、雨音のような心地よい打鍵音とホットスワップ対応・大容量バッテリーを備えた75%キーボード。ゲーマーやデスクワーカーに最適な高コスパガジェット。" />
+    <title>レビュー記事 | MonoSense</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              mono: { bg: '#f8f4e9', main: '#ff8c42', accent: '#d4a574', text: '#4a4a4a', amazon: '#FF9900', yahoo: '#FF0033' },
+            },
+            fontFamily: { sans: ['"Noto Sans JP"', 'sans-serif'], hand: ['"Indie Flower"', 'cursive'] },
+          },
+        },
+      };
+    </script>
+    <style>
+      html { scroll-behavior: smooth; }
+      .pros-list li::before { content: "✔"; color: green; font-weight: bold; margin-right: 8px; }
+      .cons-list li::before { content: "✖"; color: red; font-weight: bold; margin-right: 8px; }
+      .animate-fade-in { animation: fadeIn 0.3s ease-in-out; }
+      @keyframes fadeIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+    <script src="products.js"></script>
+  </head>
+  <body class="bg-mono-bg text-mono-text font-sans flex flex-col min-h-screen">
+    <header class="sticky top-0 z-50 bg-[#f8f4e9]/95 backdrop-blur-sm shadow-sm border-b border-mono-accent/20">
+      <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+        <a href="index.html" class="flex items-center gap-2 group">
+          <div class="w-10 h-10 group-hover:scale-110 transition-transform shadow-sm rounded-full bg-orange-100 overflow-hidden">
+             <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="MonoSenseロゴ">
+              <circle cx="50" cy="50" r="50" fill="#ff8c42" />
+              <path d="M15 25 L20 40 H30" fill="none" stroke="white" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M25 40 H85 L78 75 H35 L25 40 Z" fill="white" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+              <circle cx="42" cy="85" r="6" fill="none" stroke="white" stroke-width="4" />
+              <circle cx="70" cy="85" r="6" fill="none" stroke="white" stroke-width="4" />
+              <g transform="translate(0, -2)">
+                <circle cx="45" cy="40" r="11" fill="white" stroke="black" stroke-width="2" />
+                <circle cx="47" cy="40" r="4" fill="black" />
+                <circle cx="67" cy="40" r="11" fill="white" stroke="black" stroke-width="2" />
+                <circle cx="65" cy="40" r="4" fill="black" />
+              </g>
+            </svg>
+          </div>
+          <h1 class="text-2xl font-bold tracking-tight text-mono-text">Mono<span class="text-mono-main">Sense</span></h1>
+        </a>
+        <nav class="hidden md:flex gap-2 text-sm font-bold text-gray-600 items-center">
+          <a href="index.html" class="px-4 py-2 rounded-full hover:bg-orange-100 hover:text-mono-main transition-colors">ホーム</a>
+          <a href="category-list.html" class="px-4 py-2 hover:bg-orange-100 rounded-full">カテゴリ</a>
+        </nav>
+      </div>
+    </header>
+
+
+
+    <main class="flex-grow container mx-auto px-4 py-8 max-w-4xl">
+      <!-- 1. パンくずリスト (カテゴリ専用) -->
+      <nav class="text-sm text-gray-500 mb-6 overflow-x-auto whitespace-nowrap">
+        <a href="index.html" class="hover:underline hover:text-mono-main">ホーム</a>
+        <span class="mx-2">></span>
+        <a href="category-list.html" class="hover:underline hover:text-mono-main">カテゴリ一覧</a>
+        <span class="mx-2">></span>
+        <a href="category-list.html#gadget" class="hover:underline hover:text-mono-main">ガジェット</a>
+        <span class="mx-2">></span>
+        <!-- 自動更新対象: js-title -->
+        <span class="font-bold text-mono-text js-title"><!-- AI-EDIT: PRODUCT_TITLE -->WOBKEY Rainy</span>
+      </nav>
+
+
+
+      <!-- 2. 商品タイトルエリア -->
+      <section class="mb-12">
+        <span class="inline-block bg-orange-100 text-mono-main px-3 py-1 rounded-full text-xs font-bold mb-2">レビュー</span>
+        <h1 class="text-3xl md:text-4xl font-bold mb-6 leading-tight border-b-4 border-mono-main/20 pb-4">
+          <!-- 自動更新対象: js-title -->
+          <span class="js-title"><!-- AI-EDIT: PRODUCT_TITLE -->WOBKEY Rainy</span>を徹底レビュー
+        </h1>
+
+
+
+        <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100">
+          <div class="flex flex-col md:flex-row">
+            <div class="md:w-1/2 bg-gray-200 min-h-[300px] relative group">
+              <!-- 自動更新対象: js-image -->
+              <img src="https://m.media-amazon.com/images/I/71G3KxclOGL._AC_SL1500_.jpg" alt="商品画像" class="js-image w-full h-full object-cover absolute inset-0 transition-transform duration-500 group-hover:scale-105" />
+            </div>
+            <div class="md:w-1/2 p-6 md:p-8 flex flex-col justify-center bg-white">
+              <h2 class="text-xl font-bold text-gray-800 mb-2 js-title"><!-- AI-EDIT: PRODUCT_TITLE -->WOBKEY Rainy</h2>
+              <p class="text-sm text-gray-500 mb-4 js-desc"><!-- AI-EDIT: PRODUCT_SHORT_DESCRIPTION -->雨音のようなコトコト打鍵音とホットスワップ対応で、自分好みの音と打鍵感に育てられる75％メカニカルキーボード</p>
+              
+              <div class="flex items-center mb-4 bg-orange-50 p-3 rounded-lg w-fit">
+                <div class="flex text-yellow-400 text-xl mr-2">★★★★☆</div>
+                <span class="font-bold text-lg text-gray-700 js-score"><!-- AI-EDIT: SCORE -->4.6</span><span class="text-gray-400 text-sm ml-1">/ 5.0</span>
+              </div>
+
+
+
+              <p class="text-gray-600 mb-6 font-bold">参考価格：<span class="text-2xl text-red-500">¥<span class="js-price"><!-- AI-EDIT: PRICE -->27,000</span></span><span class="text-xs text-gray-400">（2026/2/14 時点）</span></p>
+
+
+
+              <div class="grid grid-cols-1 gap-3">
+                <!-- AI-EDIT: AMAZON_URL_TOP -->
+                <a href="https://amzn.to/3OpoVik" target="_blank" class="js-amazon-link js-amazon-link-top flex items-center justify-center gap-2 bg-[#FF9900] hover:bg-[#ffad33] text-white font-bold py-3 px-4 rounded-xl shadow transition-transform transform hover:-translate-y-1">
+                  Amazonで見る
+                </a>
+                <!-- AI-EDIT: YAHOO_URL_TOP -->
+                <a href="https://yahoo.jp/Yma5bA" target="_blank" class="js-yahoo-link js-yahoo-link-top flex items-center justify-center gap-2 bg-[#FF0033] hover:bg-[#ff1a47] text-white font-bold py-3 px-4 rounded-xl shadow transition-transform transform hover:-translate-y-1">
+                  Yahoo!ショッピングで見る
+                </a>
+              </div>
+              <p class="text-xs text-gray-400 mt-2 text-center">※アフィリエイトリンクを含みます</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+      <!-- 3. 商品説明 (詳細レビュー) -->
+      <section class="mb-12">
+        <h3 class="text-2xl font-bold mb-6 border-l-4 border-mono-main pl-4 flex items-center"><span class="text-3xl mr-2">📖</span> 商品の特徴・詳細</h3>
+        <div class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-gray-100 leading-relaxed text-gray-700 space-y-4">
+          <!-- AI-EDIT: PRODUCT_DETAIL_REVIEW -->
+          <p>WOBKEY Rainyは、その名の通り「雨音のような打鍵音」をコンセプトに設計された75％サイズのメカニカルキーボードです。静かすぎず、うるさすぎないコトコトとした中高音のバランスが絶妙で、タイピングを始めるとつい不要な文章まで打ちたくなる中毒性があります。ゲーム中の連打でも耳に刺さらず、デスクワーク中のタイピングでも心地よい環境音のように感じられるため、「キーボードの音にこだわりたい」というニーズにしっかり応えてくれます。</p>
+          
+          <p>レイアウトは日本でも使いやすい75％配列で、矢印キーや一部ナビゲーションキーを残しつつ、フルサイズより省スペースに収まるのが魅力です。マウスとの距離が近くなるため、ゲーマーは腕の移動量を減らせてエイムが安定しやすく、デスクワーカーはコンパクトな作業環境を構築できます。テンキーレスよりさらに一歩コンパクトなサイズ感なので、狭めのデスクやL字デスクでもレイアウト自由度が高いのも嬉しいポイントです。</p>
+          
+          <p>さらに、ホットスワップ対応ソケットを採用しているため、はんだ付け不要でスイッチの交換が可能です。最初は標準搭載のスイッチで「雨音のようなコトコト感」を楽しみつつ、後からより静音寄りや重めのスイッチに変更して、自分だけの音と打鍵感を追求できます。ルブ済みスイッチや静音リングと組み合わせれば、深夜帯のゲームや集合住宅での使用でも配慮したサウンドチューニングができるのも大きな強みです。</p>
+          
+          <p>バッテリーは大容量で、ワイヤレス接続時でもこまめな充電を気にせず使える設計になっています。2.4GHzワイヤレスやBluetoothに対応したモデルでは、遅延を抑えつつケーブルレスなデスク環境を構築でき、ゲーミング用途でも問題なく使用できると評価されています。USB有線接続にも対応しているため、バッテリー残量を気にしたくないシーンや、大会・オフラインイベントのように有線必須な環境にも柔軟に対応できます。</p>
+          
+          <p>もう一つの魅力は、豊富なカラーバリエーションとデザイン性です。アクリルエディションやブラック、ホワイトなど、デスクのテーマカラーに合わせて選びやすいラインナップが用意されており、キーキャップとの組み合わせ次第で雰囲気を大きく変えられます。ゲーミング寄りのRGBライティングを活かしたビルドにするも良し、あえて落ち着いた配色で「タイピング楽器」のような佇まいに仕上げるのもおすすめです。デスクツアー映えを狙いたい方にも刺さるデザイン性の高さと言えるでしょう。</p>
+          
+          <p>打鍵感については、プレートやケース内部の構造がよくチューニングされており、底打ちの不快な金属音や高い反響音が抑えられています。打鍵した瞬間にスイッチのストローク音と筐体の鳴りがほどよく混ざり合い、「しとしと」と降る雨のような独特の残響が指先と耳に伝わります。特にロングタイピングやライティング作業では、この音の気持ちよさが集中力を切らさずに作業を続けられる大きなモチベーションになります。</p>
+          
+          <p>ゲーマー目線では、キー入力の安定性とリニアな打鍵感が、高速な連打やストレイフ、スキル回しとの相性が良いと感じられるはずです。75％レイアウトでもゲームに必要なキーはしっかり残っているため、FPS・MOBA・MMOなど幅広いジャンルに対応可能です。無線モデルでも遅延が少ないとレビューされており、自宅でのカジュアルプレイから本気のランク戦まで、幅広いシーンでメインキーボードとして活躍してくれます。</p>
+          
+          <p>一方で、細かく見ると配列やキー配置にはややクセがある部分もあります。75％配列に不慣れな方は、最初のうちはDeleteやHome、Page Up/Downなどの位置に戸惑うかもしれませんが、1〜2週間も使えばほとんどの方が問題なく慣れていきます。また、カスタマイズ前提のプロダクトという性格上、「届いたそのまま」よりも、フォーム材追加やルブ、キーキャップ交換などを楽しめる方ほど真価を引き出せるタイプのキーボードです。</p>
+          
+          <p>価格帯としてはエントリークラスより一段上ですが、ホットスワップ対応・大容量バッテリー・デザイン性・独特の打鍵音といった要素を総合すると、コストパフォーマンスは非常に高いと言えます。「とにかく安いキーボード」ではなく、「長く付き合って、自分好みに育てていける相棒」が欲しいゲーマーやデスクワーカーにこそおすすめしたい一台です。雨音のようなタイピングサウンドに魅了されたい方は、候補の筆頭としてチェックしておきたいモデルです。</p>
+        </div>
+      </section>
+
+
+
+      <!-- 4. 良い点・悪い点 -->
+      <section class="mb-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-green-50 p-6 rounded-2xl border border-green-100">
+          <h4 class="text-xl font-bold text-green-700 mb-4 flex items-center"><span class="bg-green-200 p-1 rounded mr-2">👍</span> 良かったところ</h4>
+          <ul class="pros-list space-y-2 font-bold text-gray-700">
+            <!-- AI-EDIT: PROS_LIST -->
+            <li>雨音のようなコトコトとした打鍵音が心地よく、タイピング自体が癒し時間になる</li>
+            <li>ホットスワップ対応でスイッチ交換が簡単にでき、音と打鍵感を自分好みにカスタマイズできる</li>
+            <li>大容量バッテリー搭載でワイヤレス運用でも充電頻度が少なく、デスク周りをスッキリ保てる</li>
+            <li>豊富なカラー展開とデザイン性の高い筐体で、ゲーミングデスクから仕事用環境まで幅広く馴染む</li>
+          </ul>
+        </div>
+        <div class="bg-red-50 p-6 rounded-2xl border border-red-100">
+          <h4 class="text-xl font-bold text-red-700 mb-4 flex items-center"><span class="bg-red-200 p-1 rounded mr-2">👎</span> 気になったところ</h4>
+          <ul class="cons-list space-y-2 font-bold text-gray-700">
+            <!-- AI-EDIT: CONS_LIST -->
+            <li>75％配列に慣れていない人は、ファンクションキーや一部キーの位置に最初は戸惑う可能性がある</li>
+            <li>カスタマイズ前提の製品のため、そのままでも十分使えるが、真価を引き出すには多少の知識や手間が必要</li>
+          </ul>
+        </div>
+      </section>
+
+
+
+      <!-- 5. まとめ -->
+      <section class="mb-16 bg-white p-8 rounded-2xl shadow-lg border-2 border-mono-main/30 relative overflow-hidden">
+        <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-orange-100 rounded-full opacity-50 pointer-events-none"></div>
+        <h3 class="text-2xl font-bold mb-4 text-mono-text text-center font-hand">Conclusion</h3>
+        <h4 class="text-xl font-bold text-center mb-8">この商品のまとめ</h4>
+        <div class="space-y-4 text-gray-700 leading-relaxed">
+          <!-- AI-EDIT: SUMMARY -->
+          <p>WOBKEY Rainyは、「キーボードは打てればいい」では満足できないこだわり派のための一本です。雨音のような心地よい打鍵音と、ホットスワップ対応・大容量バッテリー・豊富なカラーバリエーションという要素が組み合わさり、ゲーミングにも仕事にも使える実用性と趣味性のバランスが取れたキーボードに仕上がっています。価格だけを見れば決して最安ではありませんが、「音」「打鍵感」「見た目」「ワイヤレス環境」という複数の価値を同時に手に入れられると考えると、コストパフォーマンスは非常に高いと言えるでしょう。</p>
+          <p>キーボードの音にこだわりがあるゲーマーや、デスクワーク時間を少しでも心地よくしたいクリエイター・ビジネスパーソンにとって、WOBKEY Rainyは毎日の相棒になりうる存在です。自分好みのスイッチやキーキャップで育てながら、雨音のようなサウンドに耳を傾ける時間は、まさに「作業用BGMを指先で奏でる」かのような体験です。75％サイズキーボードを探していて、音と打鍵体験を最優先したいなら、一度はチェックして損のない選択肢です。</p>
+        </div>
+        
+        <!-- 購入ボタン (下部) -->
+        <div class="mt-8 text-center flex flex-col gap-3 justify-center max-w-sm mx-auto">
+          <!-- AI-EDIT: AMAZON_URL_BOTTOM -->
+          <a href="https://amzn.to/3OpoVik" class="js-amazon-link js-amazon-link-bottom inline-block bg-mono-main hover:bg-orange-600 text-white font-bold py-4 px-12 rounded-full shadow-lg transition-transform transform hover:scale-105">
+            Amazonで在庫をチェックする
+          </a>
+          <!-- AI-EDIT: YAHOO_URL_BOTTOM -->
+          <a href="https://yahoo.jp/Yma5bA" class="js-yahoo-link js-yahoo-link-bottom inline-block bg-[#FF0033] hover:bg-[#ff1a47] text-white font-bold py-4 px-12 rounded-full shadow-lg">
+            Yahoo!ショッピングで見る
+          </a>
+        </div>
+      </section>
+
+
+
+    </main>
+
+
+
+    <footer id="contact" class="bg-[#4a4a4a] text-white pt-16 pb-8 mt-auto">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col mb-12">
+           <div class="flex items-center gap-2 mb-4"><div class="w-8 h-8 rounded-full overflow-hidden bg-orange-100"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="MonoSenseロゴ"><circle cx="50" cy="50" r="50" fill="#ff8c42"/><path d="M15 25 L20 40 H30" fill="none" stroke="white" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><path d="M25 40 H85 L78 75 H35 L25 40 Z" fill="white" stroke="white" stroke-width="2" stroke-linejoin="round"/><circle cx="42" cy="85" r="6" fill="none" stroke="white" stroke-width="4"/><circle cx="70" cy="85" r="6" fill="none" stroke="white" stroke-width="4"/><g transform="translate(0, -2)"><circle cx="45" cy="40" r="11" fill="white" stroke="black" stroke-width="2"/><circle cx="47" cy="40" r="4" fill="black"/><circle cx="67" cy="40" r="11" fill="white" stroke="black" stroke-width="2"/><circle cx="65" cy="40" r="4" fill="black"/></g></svg></div><div class="text-2xl font-bold">MonoSense</div></div>
+           <p class="text-gray-400 text-sm leading-relaxed mb-6">MonoSense（モノセンス）は、あなたの生活を豊かにするアイテムを厳選して紹介するレビューサイトです。</p>
+        </div>
+        <div class="border-t border-gray-600 pt-8 text-center text-xs text-gray-400"><p>&copy; 2024 MonoSense. All Rights Reserved.</p></div>
+      </div>
+    </footer>
+
+
+
+    <!-- データ連動スクリプト -->
+    <script>
+      // AI-EDIT: PAGE_PRODUCT_ID を B5 に変更
+      const PAGE_PRODUCT_ID = 'B5'; 
+
+
+
+      document.addEventListener('DOMContentLoaded', () => {
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (menuBtn && mobileMenu) menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+
+
+        if (typeof window.productData !== 'undefined') {
+          const item = window.productData.find(p => p.id === PAGE_PRODUCT_ID);
+          if (item) {
+            document.querySelectorAll('.js-title').forEach(el => el.textContent = item.title);
+            document.querySelectorAll('.js-price').forEach(el => el.textContent = item.price.toLocaleString());
+            document.querySelectorAll('.js-score').forEach(el => el.textContent = item.recommendScore.toFixed(1));
+            document.querySelectorAll('.js-desc').forEach(el => el.textContent = item.description);
+            document.querySelectorAll('.js-image').forEach(el => { el.src = item.image; el.alt = item.title; });
+            
+            // Amazon Link
+            document.querySelectorAll('.js-amazon-link').forEach(el => {
+                if (item.affiliateLink) {
+                  el.setAttribute('href', item.affiliateLink);
+                } else {
+                  el.removeAttribute('href');
+                  el.textContent = "Amazon在庫なし";
+                  el.classList.add('bg-gray-300', 'text-gray-500', 'cursor-not-allowed', 'pointer-events-none', 'shadow-none');
+                  el.classList.remove('bg-mono-main', 'hover:bg-orange-600', 'bg-[#FF9900]', 'hover:bg-[#ffad33]', 'text-white', 'shadow-lg', 'transform', 'hover:scale-105', 'hover:-translate-y-1');
+                }
+            });
+
+
+
+            // Yahoo Link
+            document.querySelectorAll('.js-yahoo-link').forEach(el => {
+                if (item.yahooLink) {
+                  el.setAttribute('href', item.yahooLink);
+                } else {
+                  el.removeAttribute('href');
+                  el.textContent = "Yahoo!在庫なし";
+                  el.classList.add('bg-gray-300', 'text-gray-500', 'cursor-not-allowed', 'pointer-events-none', 'shadow-none');
+                  el.classList.remove('bg-[#FF0033]', 'hover:bg-[#ff1a47]', 'text-white', 'shadow-lg', 'transform', 'hover:scale-105', 'hover:-translate-y-1');
+                }
+            });
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

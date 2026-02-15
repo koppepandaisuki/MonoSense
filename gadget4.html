@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- AI-EDIT: META_DESCRIPTION -->
+    <meta name="description" content="ゲーマー必見のラピットトリガー搭載キーボードWooting 60HE+を徹底レビュー。最速の反応速度と高いカスタマイズ性で勝ちたい人向けのロングセラーモデル。" />
+    <title>レビュー記事 | MonoSense</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              mono: { bg: '#f8f4e9', main: '#ff8c42', accent: '#d4a574', text: '#4a4a4a', amazon: '#FF9900', yahoo: '#FF0033' },
+            },
+            fontFamily: { sans: ['"Noto Sans JP"', 'sans-serif'], hand: ['"Indie Flower"', 'cursive'] },
+          },
+        },
+      };
+    </script>
+    <style>
+      html { scroll-behavior: smooth; }
+      .pros-list li::before { content: "✔"; color: green; font-weight: bold; margin-right: 8px; }
+      .cons-list li::before { content: "✖"; color: red; font-weight: bold; margin-right: 8px; }
+      .animate-fade-in { animation: fadeIn 0.3s ease-in-out; }
+      @keyframes fadeIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+    <script src="products.js"></script>
+  </head>
+  <body class="bg-mono-bg text-mono-text font-sans flex flex-col min-h-screen">
+    <header class="sticky top-0 z-50 bg-[#f8f4e9]/95 backdrop-blur-sm shadow-sm border-b border-mono-accent/20">
+      <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+        <a href="index.html" class="flex items-center gap-2 group">
+          <div class="w-10 h-10 group-hover:scale-110 transition-transform shadow-sm rounded-full bg-orange-100 overflow-hidden">
+             <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="MonoSenseロゴ">
+              <circle cx="50" cy="50" r="50" fill="#ff8c42" />
+              <path d="M15 25 L20 40 H30" fill="none" stroke="white" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M25 40 H85 L78 75 H35 L25 40 Z" fill="white" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+              <circle cx="42" cy="85" r="6" fill="none" stroke="white" stroke-width="4" />
+              <circle cx="70" cy="85" r="6" fill="none" stroke="white" stroke-width="4" />
+              <g transform="translate(0, -2)">
+                <circle cx="45" cy="40" r="11" fill="white" stroke="black" stroke-width="2" />
+                <circle cx="47" cy="40" r="4" fill="black" />
+                <circle cx="67" cy="40" r="11" fill="white" stroke="black" stroke-width="2" />
+                <circle cx="65" cy="40" r="4" fill="black" />
+              </g>
+            </svg>
+          </div>
+          <h1 class="text-2xl font-bold tracking-tight text-mono-text">Mono<span class="text-mono-main">Sense</span></h1>
+        </a>
+        <nav class="hidden md:flex gap-2 text-sm font-bold text-gray-600 items-center">
+          <a href="index.html" class="px-4 py-2 rounded-full hover:bg-orange-100 hover:text-mono-main transition-colors">ホーム</a>
+          <a href="index.html#comparison" class="px-4 py-2 rounded-full hover:bg-orange-100 hover:text-mono-main transition-colors">注目アイテム</a>
+          <a href="category-list.html" class="px-4 py-2 rounded-full hover:bg-orange-100 hover:text-mono-main transition-colors">カテゴリ</a>
+          <a href="#contact" class="px-4 py-2 bg-mono-main text-white rounded-full hover:bg-orange-500 transition-colors shadow-md ml-2">お問い合わせ</a>
+        </nav>
+        <button id="menu-btn" class="md:hidden p-2 text-gray-600" aria-label="メニューを開く">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+        </button>
+      </div>
+      <nav id="mobile-menu" class="hidden md:hidden bg-white border-b border-gray-100 p-4 absolute w-full shadow-lg z-50 animate-fade-in">
+        <div class="flex flex-col gap-4 text-center font-bold text-gray-600">
+          <a href="index.html" class="py-2 hover:bg-orange-50 rounded-lg">ホーム</a>
+          <a href="category-list.html" class="py-2 hover:bg-orange-50 rounded-lg">カテゴリ</a>
+        </div>
+      </nav>
+    </header>
+
+
+
+    <main class="flex-grow container mx-auto px-4 py-8 max-w-4xl">
+      <!-- 1. パンくずリスト (カテゴリ専用) -->
+      <nav class="text-sm text-gray-500 mb-6 overflow-x-auto whitespace-nowrap">
+        <a href="index.html" class="hover:underline hover:text-mono-main">ホーム</a>
+        <span class="mx-2">></span>
+        <a href="category-list.html" class="hover:underline hover:text-mono-main">カテゴリ一覧</a>
+        <span class="mx-2">></span>
+        <a href="category-list.html#gadget" class="hover:underline hover:text-mono-main">ガジェット</a>
+        <span class="mx-2">></span>
+        <!-- 自動更新対象: js-title -->
+        <span class="font-bold text-mono-text js-title"><!-- AI-EDIT: PRODUCT_TITLE -->Wooting 60HE+</span>
+      </nav>
+
+
+
+      <!-- 2. 商品タイトルエリア -->
+      <section class="mb-12">
+        <span class="inline-block bg-orange-100 text-mono-main px-3 py-1 rounded-full text-xs font-bold mb-2">レビュー</span>
+        <h1 class="text-3xl md:text-4xl font-bold mb-6 leading-tight border-b-4 border-mono-main/20 pb-4">
+          <!-- 自動更新対象: js-title -->
+          <span class="js-title"><!-- AI-EDIT: PRODUCT_TITLE -->Wooting 60HE+</span>を徹底レビュー
+        </h1>
+
+
+
+        <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100">
+          <div class="flex flex-col md:flex-row">
+            <div class="md:w-1/2 bg-gray-200 min-h-[300px] relative group">
+              <!-- 自動更新対象: js-image -->
+              <img src="https://m.media-amazon.com/images/I/41yzKWnUA-L._AC_SL1080_.jpg" alt="商品画像" class="js-image w-full h-full object-cover absolute inset-0 transition-transform duration-500 group-hover:scale-105" />
+            </div>
+            <div class="md:w-1/2 p-6 md:p-8 flex flex-col justify-center bg-white">
+              <h2 class="text-xl font-bold text-gray-800 mb-2 js-title"><!-- AI-EDIT: PRODUCT_TITLE -->Wooting 60HE+</h2>
+              <p class="text-sm text-gray-500 mb-4 js-desc"><!-- AI-EDIT: PRODUCT_SHORT_DESCRIPTION -->ラピットトリガーで最速入力を実現。プロ志向ゲーマー御用達のロングセラー60％ゲーミングキーボード</p>
+              
+              <div class="flex items-center mb-4 bg-orange-50 p-3 rounded-lg w-fit">
+                <div class="flex text-yellow-400 text-xl mr-2">★★★★☆</div>
+                <span class="font-bold text-lg text-gray-700 js-score"><!-- AI-EDIT: SCORE -->4.8</span><span class="text-gray-400 text-sm ml-1">/ 5.0</span>
+              </div>
+
+
+
+              <p class="text-gray-600 mb-6 font-bold">参考価格：<span class="text-2xl text-red-500">¥<span class="js-price"><!-- AI-EDIT: PRICE -->35,000</span></span><span class="text-xs text-gray-400">（2026/2/14 時点）</span></p>
+
+
+
+              <div class="grid grid-cols-1 gap-3">
+                <!-- AI-EDIT: AMAZON_URL_TOP -->
+                <a href="https://amzn.to/3ZyvMZh" target="_blank" class="js-amazon-link js-amazon-link-top flex items-center justify-center gap-2 bg-[#FF9900] hover:bg-[#ffad33] text-white font-bold py-3 px-4 rounded-xl shadow transition-transform transform hover:-translate-y-1">
+                  Amazonで見る
+                </a>
+                <!-- AI-EDIT: YAHOO_URL_TOP -->
+                <a href="https://yahoo.jp/9K6RDT" target="_blank" class="js-yahoo-link js-yahoo-link-top flex items-center justify-center gap-2 bg-[#FF0033] hover:bg-[#ff1a47] text-white font-bold py-3 px-4 rounded-xl shadow transition-transform transform hover:-translate-y-1">
+                  Yahoo!ショッピングで見る
+                </a>
+              </div>
+              <p class="text-xs text-gray-400 mt-2 text-center">※アフィリエイトリンクを含みます</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+      <!-- 3. 商品説明 (詳細レビュー) -->
+      <section class="mb-12">
+        <h3 class="text-2xl font-bold mb-6 border-l-4 border-mono-main pl-4 flex items-center"><span class="text-3xl mr-2">📖</span> 商品の特徴・詳細</h3>
+        <div class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-gray-100 leading-relaxed text-gray-700 space-y-4">
+          <!-- AI-EDIT: PRODUCT_DETAIL_REVIEW -->
+          <p>Wooting 60HE+は、「とにかく一番性能がいいキーボードが欲しい」というゲーマーの欲求に真正面から応える、アナログスイッチ搭載の60％ゲーミングキーボードです。最大の特徴は、ラピットトリガー機能による圧倒的な反応速度と、アクチュエーションポイントを自由自在に調整できる高いカスタマイズ性にあります。キースイッチには磁気式のWooting Lekkerスイッチが採用されており、一般的なメカニカルスイッチでは実現できない繊細な入力制御が可能です。</p>
+          
+          <p>ラピットトリガーは、キーの押し込み・戻し量に応じて「入力ON/OFF」が即座に切り替わる仕組みで、従来の「一定のポイントを超えないと再入力できない」キーボードとは根本的に挙動が異なります。これにより、ストッピングや連打、ストレイフなどの操作が非常にキビキビと反応し、特にFPSやVALORANTのようなタクティカルシューターで大きなアドバンテージをもたらします。ほんのわずかな指の動きでも入力が通るため、慣れてくるとキャラクターの挙動を“パッドのスティックのように”細かくコントロールできる感覚です。</p>
+          
+          <p>また、専用ソフトのWootilityを使うことで、各キーのアクチュエーションポイントを0.1mm刻みで調整でき、キーごとに最適な押し心地と反応ポイントを追い込めます。移動キーは浅めの1.0mmで素早く、スキルキーは誤爆を防ぐために深めの設定にする、といった細かなチューニングがワンクリックで完結します。レイアウトはコンパクトな60％サイズですが、レイヤー機能やFnキーの活用でフルキーボードと遜色ない操作性を確保しており、デスクスペースを広く使いたいゲーマーやノートPCユーザーにも相性の良い設計です。</p>
+          
+          <p>打鍵感は、一般的なメカニカルキーボードのようなカチカチ感とは少し異なり、スムーズでリニアなストロークが特徴です。磁気式スイッチにより物理接点がないため、チャタリングが起きにくく、長期間安定した入力が維持できる点も安心材料と言えます。キーキャップは標準でPBT系の質感を備え、文字の印字もくっきりしているため、日常使いのタイピング用途でも違和感なく使用できます。RGBライティングは各キー単位でカスタマイズ可能で、ゲームごとにプロファイルを変えて、視認性と没入感を両立したライティング演出を組むこともできます。</p>
+          
+          <p>ゲーマー向け機能だけでなく、デスクワーカーにとってもメリットが大きい点も見逃せません。コンパクト筐体によりマウスとの距離が近くなるため、長時間の作業でも肩や腕への負担が軽減されます。アナログ入力を活かして、クリエイティブソフトのブラシ濃度やスクロール量を細かく調整するといった応用も可能で、趣味と仕事の両方で活躍する高機能デバイスになり得ます。価格帯はゲーミングキーボードの中でも上位クラスですが、それに見合う性能と拡張性、そして多くのプロ・ストリーマーから支持されてきた実績を考えると、長く使える1本として十分に投資価値のあるモデルです。</p>
+        </div>
+      </section>
+
+
+
+      <!-- 4. 良い点・悪い点 -->
+      <section class="mb-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-green-50 p-6 rounded-2xl border border-green-100">
+          <h4 class="text-xl font-bold text-green-700 mb-4 flex items-center"><span class="bg-green-200 p-1 rounded mr-2">👍</span> 良かったところ</h4>
+          <ul class="pros-list space-y-2 font-bold text-gray-700">
+            <!-- AI-EDIT: PROS_LIST -->
+            <li>ラピットトリガーとアナログスイッチにより、ストッピングや連打が驚くほど速く、FPSでの操作精度が大きく向上する</li>
+            <li>Wootilityから各キーのアクチュエーションポイントやキーマップを細かく調整でき、自分専用の最適な操作感を作り込める</li>
+            <li>60％レイアウトでデスクが広く使え、マウスの可動域が増えることでゲームだけでなくデスクワークの疲労も軽減できる</li>
+            <li>磁気式スイッチ採用でチャタリングが起きにくく、プロ志向の高性能を長期間維持しやすい安心感がある</li>
+          </ul>
+        </div>
+        <div class="bg-red-50 p-6 rounded-2xl border border-red-100">
+          <h4 class="text-xl font-bold text-red-700 mb-4 flex items-center"><span class="bg-red-200 p-1 rounded mr-2">👎</span> 気になったところ</h4>
+          <ul class="cons-list space-y-2 font-bold text-gray-700">
+            <!-- AI-EDIT: CONS_LIST -->
+            <li>一般的なゲーミングキーボードと比べて価格が高めで、初めての1台としてはハードルが高いと感じる人もいる</li>
+            <li>60％レイアウトに慣れていないと、ファンクションキーや矢印キー周りの操作に最初は戸惑いやすい</li>
+          </ul>
+        </div>
+      </section>
+
+
+
+      <!-- 5. まとめ -->
+      <section class="mb-16 bg-white p-8 rounded-2xl shadow-lg border-2 border-mono-main/30 relative overflow-hidden">
+        <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-orange-100 rounded-full opacity-50 pointer-events-none"></div>
+        <h3 class="text-2xl font-bold mb-4 text-mono-text text-center font-hand">Conclusion</h3>
+        <h4 class="text-xl font-bold text-center mb-8">この商品のまとめ</h4>
+        <div class="space-y-4 text-gray-700 leading-relaxed">
+          <!-- AI-EDIT: SUMMARY -->
+          <p>Wooting 60HE+は、「一番性能がいいキーボードが欲しい」というゲーマーの本音に応えるために生まれたハイエンドモデルです。ラピットトリガーとアナログスイッチがもたらす圧倒的なレスポンスは、特にFPSやVALORANTなどで顕著に体感でき、移動やストッピングがワンランク上の精度に引き上げられます。価格こそ安くはありませんが、長く使えるロングセラーとしての実績と、ソフトウェアアップデートによる継続的な進化を考えると、単なる「キーボード」という枠を超えた投資と言えるでしょう。20代のゲーマーはもちろん、日中はデスクワーク・夜はゲームというライフスタイルの人にとっても、作業効率とゲームパフォーマンスを同時に底上げしてくれる心強い相棒になります。勝ちにこだわるなら、環境からアップグレードする――その起点として、Wooting 60HE+は間違いなく有力候補の一つです。</p>
+        </div>
+        
+        <!-- 購入ボタン (下部) -->
+        <div class="mt-8 text-center flex flex-col gap-3 justify-center max-w-sm mx-auto">
+          <!-- AI-EDIT: AMAZON_URL_BOTTOM -->
+          <a href="https://amzn.to/3ZyvMZh" class="js-amazon-link js-amazon-link-bottom inline-block bg-mono-main hover:bg-orange-600 text-white font-bold py-4 px-12 rounded-full shadow-lg transition-transform transform hover:scale-105">
+            Amazonで在庫をチェックする
+          </a>
+          <!-- AI-EDIT: YAHOO_URL_BOTTOM -->
+          <a href="https://yahoo.jp/9K6RDT" class="js-yahoo-link js-yahoo-link-bottom inline-block bg-[#FF0033] hover:bg-[#ff1a47] text-white font-bold py-4 px-12 rounded-full shadow-lg">
+            Yahoo!ショッピングで見る
+          </a>
+        </div>
+      </section>
+
+
+
+    </main>
+
+
+
+    <footer id="contact" class="bg-[#4a4a4a] text-white pt-16 pb-8 mt-auto">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col mb-12">
+           <div class="flex items-center gap-2 mb-4"><div class="w-8 h-8 rounded-full overflow-hidden bg-orange-100"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="MonoSenseロゴ"><circle cx="50" cy="50" r="50" fill="#ff8c42"/><path d="M15 25 L20 40 H30" fill="none" stroke="white" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><path d="M25 40 H85 L78 75 H35 L25 40 Z" fill="white" stroke="white" stroke-width="2" stroke-linejoin="round"/><circle cx="42" cy="85" r="6" fill="none" stroke="white" stroke-width="4"/><circle cx="70" cy="85" r="6" fill="none" stroke="white" stroke-width="4"/><g transform="translate(0, -2)"><circle cx="45" cy="40" r="11" fill="white" stroke="black" stroke-width="2"/><circle cx="47" cy="40" r="4" fill="black"/><circle cx="67" cy="40" r="11" fill="white" stroke="black" stroke-width="2"/><circle cx="65" cy="40" r="4" fill="black"/></g></svg></div><div class="text-2xl font-bold">MonoSense</div></div>
+           <p class="text-gray-400 text-sm leading-relaxed mb-6">MonoSense（モノセンス）は、あなたの生活を豊かにするアイテムを厳選して紹介するレビューサイトです。</p>
+        </div>
+        <div class="border-t border-gray-600 pt-8 text-center text-xs text-gray-400"><p>&copy; 2024 MonoSense. All Rights Reserved.</p></div>
+      </div>
+    </footer>
+
+
+
+    <!-- データ連動スクリプト -->
+    <script>
+      // AI-EDIT: PAGE_PRODUCT_ID を B4 に変更
+      const PAGE_PRODUCT_ID = 'B4'; 
+
+
+
+      document.addEventListener('DOMContentLoaded', () => {
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (menuBtn && mobileMenu) menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+
+
+        if (typeof window.productData !== 'undefined') {
+          const item = window.productData.find(p => p.id === PAGE_PRODUCT_ID);
+          if (item) {
+            document.querySelectorAll('.js-title').forEach(el => el.textContent = item.title);
+            document.querySelectorAll('.js-price').forEach(el => el.textContent = item.price.toLocaleString());
+            document.querySelectorAll('.js-score').forEach(el => el.textContent = item.recommendScore.toFixed(1));
+            document.querySelectorAll('.js-desc').forEach(el => el.textContent = item.description);
+            document.querySelectorAll('.js-image').forEach(el => { el.src = item.image; el.alt = item.title; });
+            
+            // Amazon Link
+            document.querySelectorAll('.js-amazon-link').forEach(el => {
+                if (item.affiliateLink) {
+                  el.setAttribute('href', item.affiliateLink);
+                } else {
+                  el.removeAttribute('href');
+                  el.textContent = "Amazon在庫なし";
+                  el.classList.add('bg-gray-300', 'text-gray-500', 'cursor-not-allowed', 'pointer-events-none', 'shadow-none');
+                  el.classList.remove('bg-mono-main', 'hover:bg-orange-600', 'bg-[#FF9900]', 'hover:bg-[#ffad33]', 'text-white', 'shadow-lg', 'transform', 'hover:scale-105', 'hover:-translate-y-1');
+                }
+            });
+
+
+
+            // Yahoo Link
+            document.querySelectorAll('.js-yahoo-link').forEach(el => {
+                if (item.yahooLink) {
+                  el.setAttribute('href', item.yahooLink);
+                } else {
+                  el.removeAttribute('href');
+                  el.textContent = "Yahoo!在庫なし";
+                  el.classList.add('bg-gray-300', 'text-gray-500', 'cursor-not-allowed', 'pointer-events-none', 'shadow-none');
+                  el.classList.remove('bg-[#FF0033]', 'hover:bg-[#ff1a47]', 'text-white', 'shadow-lg', 'transform', 'hover:scale-105', 'hover:-translate-y-1');
+                }
+            });
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- AI-EDIT: META_DESCRIPTION -->
+    <meta name="description" content="コスパ良し安定性抜群のMonitor Arm[AS-MABM03]。デスクワーカーやゲーマーがモニターを好きな位置・角度に固定できる、安定性と価格バランスに優れたモニターアームを徹底レビュー。" />
+    <title>レビュー記事 | MonoSense</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              mono: { bg: '#f8f4e9', main: '#ff8c42', accent: '#d4a574', text: '#4a4a4a', amazon: '#FF9900', yahoo: '#FF0033' },
+            },
+            fontFamily: { sans: ['"Noto Sans JP"', 'sans-serif'], hand: ['"Indie Flower"', 'cursive'] },
+          },
+        },
+      };
+    </script>
+    <style>
+      html { scroll-behavior: smooth; }
+      .pros-list li::before { content: "✔"; color: green; font-weight: bold; margin-right: 8px; }
+      .cons-list li::before { content: "✖"; color: red; font-weight: bold; margin-right: 8px; }
+      .animate-fade-in { animation: fadeIn 0.3s ease-in-out; }
+      @keyframes fadeIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+    <script src="products.js"></script>
+  </head>
+  <body class="bg-mono-bg text-mono-text font-sans flex flex-col min-h-screen">
+    <header class="sticky top-0 z-50 bg-[#f8f4e9]/95 backdrop-blur-sm shadow-sm border-b border-mono-accent/20">
+      <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+        <a href="index.html" class="flex items-center gap-2 group">
+          <div class="w-10 h-10 group-hover:scale-110 transition-transform shadow-sm rounded-full bg-orange-100 overflow-hidden">
+             <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="MonoSenseロゴ">
+              <circle cx="50" cy="50" r="50" fill="#ff8c42" />
+              <path d="M15 25 L20 40 H30" fill="none" stroke="white" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M25 40 H85 L78 75 H35 L25 40 Z" fill="white" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+              <circle cx="42" cy="85" r="6" fill="none" stroke="white" stroke-width="4" />
+              <circle cx="70" cy="85" r="6" fill="none" stroke="white" stroke-width="4" />
+              <g transform="translate(0, -2)">
+                <circle cx="45" cy="40" r="11" fill="white" stroke="black" stroke-width="2" />
+                <circle cx="47" cy="40" r="4" fill="black" />
+                <circle cx="67" cy="40" r="11" fill="white" stroke="black" stroke-width="2" />
+                <circle cx="65" cy="40" r="4" fill="black" />
+              </g>
+            </svg>
+          </div>
+          <h1 class="text-2xl font-bold tracking-tight text-mono-text">Mono<span class="text-mono-main">Sense</span></h1>
+        </a>
+        <nav class="hidden md:flex gap-2 text-sm font-bold text-gray-600 items-center">
+          <a href="index.html" class="px-4 py-2 rounded-full hover:bg-orange-100 hover:text-mono-main transition-colors">ホーム</a>
+          <a href="index.html#comparison" class="px-4 py-2 rounded-full hover:bg-orange-100 hover:text-mono-main transition-colors">注目アイテム</a>
+          <a href="category-list.html" class="px-4 py-2 rounded-full hover:bg-orange-100 hover:text-mono-main transition-colors">カテゴリ</a>
+          <a href="#contact" class="px-4 py-2 bg-mono-main text-white rounded-full hover:bg-orange-500 transition-colors shadow-md ml-2">お問い合わせ</a>
+        </nav>
+        <button id="menu-btn" class="md:hidden p-2 text-gray-600" aria-label="メニューを開く">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+        </button>
+      </div>
+      <nav id="mobile-menu" class="hidden md:hidden bg-white border-b border-gray-100 p-4 absolute w-full shadow-lg z-50 animate-fade-in">
+        <div class="flex flex-col gap-4 text-center font-bold text-gray-600">
+          <a href="index.html" class="py-2 hover:bg-orange-50 rounded-lg">ホーム</a>
+          <a href="category-list.html" class="py-2 hover:bg-orange-50 rounded-lg">カテゴリ</a>
+        </div>
+      </nav>
+    </header>
+
+
+    <main class="flex-grow container mx-auto px-4 py-8 max-w-4xl">
+      <!-- 1. パンくずリスト (カテゴリ専用) -->
+      <nav class="text-sm text-gray-500 mb-6 overflow-x-auto whitespace-nowrap">
+        <a href="index.html" class="hover:underline hover:text-mono-main">ホーム</a>
+        <span class="mx-2">></span>
+        <a href="category-list.html" class="hover:underline hover:text-mono-main">カテゴリ一覧</a>
+        <span class="mx-2">></span>
+        <a href="category-list.html#gadget" class="hover:underline hover:text-mono-main">ガジェット</a>
+        <span class="mx-2">></span>
+        <!-- 自動更新対象: js-title -->
+        <span class="font-bold text-mono-text js-title"><!-- AI-EDIT: PRODUCT_TITLE -->Monitor Arm[AS-MABM03]</span>
+      </nav>
+
+
+      <!-- 2. 商品タイトルエリア -->
+      <section class="mb-12">
+        <span class="inline-block bg-orange-100 text-mono-main px-3 py-1 rounded-full text-xs font-bold mb-2">レビュー</span>
+        <h1 class="text-3xl md:text-4xl font-bold mb-6 leading-tight border-b-4 border-mono-main/20 pb-4">
+          <!-- 自動更新対象: js-title -->
+          <span class="js-title"><!-- AI-EDIT: PRODUCT_TITLE -->Monitor Arm[AS-MABM03]</span>を徹底レビュー
+        </h1>
+
+
+        <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100">
+          <div class="flex flex-col md:flex-row">
+            <div class="md:w-1/2 bg-gray-200 min-h-[300px] relative group">
+              <!-- 自動更新対象: js-image -->
+              <img src="https://m.media-amazon.com/images/I/61ktD5ERs5L._AC_SL1500_.jpg" alt="商品画像" class="js-image w-full h-full object-cover absolute inset-0 transition-transform duration-500 group-hover:scale-105" />
+            </div>
+            <div class="md:w-1/2 p-6 md:p-8 flex flex-col justify-center bg-white">
+              <h2 class="text-xl font-bold text-gray-800 mb-2 js-title"><!-- AI-EDIT: PRODUCT_TITLE -->Monitor Arm[AS-MABM03]</h2>
+              <p class="text-sm text-gray-500 mb-4 js-desc"><!-- AI-EDIT: PRODUCT_SHORT_DESCRIPTION -->モニターを好きな位置・角度にしっかり固定できる、安定性抜群でコスパ良しのメカニカルスプリング式モニターアーム</p>
+              
+              <div class="flex items-center mb-4 bg-orange-50 p-3 rounded-lg w-fit">
+                <div class="flex text-yellow-400 text-xl mr-2">★★★★☆</div>
+                <span class="font-bold text-lg text-gray-700 js-score"><!-- AI-EDIT: SCORE -->4.6</span><span class="text-gray-400 text-sm ml-1">/ 5.0</span>
+              </div>
+
+
+              <p class="text-gray-600 mb-6 font-bold">参考価格：<span class="text-2xl text-red-500">¥<span class="js-price"><!-- AI-EDIT: PRICE -->6,980</span></span><span class="text-xs text-gray-400">（2026/2/14 時点）</span></p>
+
+
+              <div class="grid grid-cols-1 gap-3">
+                <!-- AI-EDIT: AMAZON_URL_TOP -->
+                <a href="https://amzn.to/40gecJD" target="_blank" class="js-amazon-link js-amazon-link-top flex items-center justify-center gap-2 bg-[#FF9900] hover:bg-[#ffad33] text-white font-bold py-3 px-4 rounded-xl shadow transition-transform transform hover:-translate-y-1">
+                  Amazonで見る
+                </a>
+                <!-- AI-EDIT: YAHOO_URL_TOP -->
+                <a href="https://yahoo.jp/Tp8JBv" target="_blank" class="js-yahoo-link js-yahoo-link-top flex items-center justify-center gap-2 bg-[#FF0033] hover:bg-[#ff1a47] text-white font-bold py-3 px-4 rounded-xl shadow transition-transform transform hover:-translate-y-1">
+                  Yahoo!ショッピングで見る
+                </a>
+              </div>
+              <p class="text-xs text-gray-400 mt-2 text-center">※アフィリエイトリンクを含みます</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- 3. 商品説明 (詳細レビュー) -->
+      <section class="mb-12">
+        <h3 class="text-2xl font-bold mb-6 border-l-4 border-mono-main pl-4 flex items-center"><span class="text-3xl mr-2">📖</span> 商品の特徴・詳細</h3>
+        <div class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-gray-100 leading-relaxed text-gray-700 space-y-4">
+          <!-- AI-EDIT: PRODUCT_DETAIL_REVIEW -->
+          <p>Monitor Arm[AS-MABM03]は、「コスパ良し安定性抜群」というキーワードそのものを体現したモニターアームです。デスクワーカーやゲーマーにとって、モニター位置が固定されてしまうことは、姿勢の悪化や作業効率の低下、さらには肩こりや目の疲れにも直結します。このモニターアームは、メカニカルスプリング式を採用することで、重さのあるモニターでもしっかり支えつつ、スムーズな位置調整を可能にしているのが大きな特徴です。[web:16][web:18]</p>
+          
+          <p>対応可能なモニターサイズと耐荷重のバランスも優秀で、自宅の24〜27インチクラスのモニターはもちろん、ビジネス用途でよく使われるやや大きめのディスプレイでも安定して支えられる設計になっています。VESA規格に対応しているため、一般的なモニターなら問題なく取り付け可能で、買ってみたけど取り付けられなかったという心配もほとんどありません。机上スタンドを外すことで天板がすっきりし、キーボードやゲームパッドを広々と置けるのも嬉しいポイントです。[web:16][web:18]</p>
+          
+          <p>可動域についても、上下の高さ調整、前後の距離調整、左右の首振り、縦横の回転といった一通りの動きに対応しているため、「あと少しだけこっちに寄せたい」「ゲームのときだけモニターを手前に出したい」といった細かなニーズにも応えてくれます。特にデスクワークでは、タイピング時と資料確認時でモニターの最適な位置が微妙に変わりますが、AS-MABM03なら片手でさっと動かしてベストポジションに合わせられます。[web:16]</p>
+          
+          <p>ゲーマー目線で見ても、この柔軟な可動域は大きな武器になります。FPSやMOBAなど長時間のプレイでは、視線の高さがわずかにズレているだけでも首や肩への負担が蓄積しがちです。モニター中心が目線の高さに来るように微調整できることで、自然な姿勢を保ったまま没入感のあるプレイ環境を構築できます。また、配信者であれば、ゲーム用モニターと配信用モニターのレイアウト調整にも役立ち、画面の見やすさが一段階アップします。</p>
+          
+          <p>安定性に関しては、クランプ固定とポール構造により、タイピングの振動やマウス操作の揺れ程度ではびくともしない安心感があります。安価なモニターアームによくある「徐々に下がってくる」「少し揺らすとモニターがぷるぷる震える」といった不満が出にくい設計で、1日に何時間も画面に向き合うデスクワーカーにとっては大きなメリットです。しっかりと奥まで固定できるデスクであれば、がっちり固定されるため、キーを強く叩く人でも安心して使えます。[web:16][web:18]</p>
+          
+          <p>取り付け作業も、説明書と工具が揃っていれば難易度は高くありません。まずデスクの天板にクランプを固定し、ポールとアームを順に組み付けていきます。その後モニター背面のVESA規格ネジ穴にプレートを取り付け、アームに引っ掛けてネジで固定すれば設置完了です。初めてモニターアームを使う方でも、落ち着いて手順を追えば30分〜1時間ほどで設置できるイメージです。メカニカルスプリングのテンション調整も六角レンチで行えるため、モニターの重さに合わせて最適なバランスを取ることができます。[web:18]</p>
+          
+          <p>それでいて、価格帯は約7,000円クラスと非常に手頃です。激安ノーブランド品よりは少し高く感じるかもしれませんが、「安定性」「可動域」「作りの良さ」を考えると、むしろ割安に感じられるレベルです。一度設置してしまえば毎日使い続けるアイテムなので、多少価格を上げてでも信頼できる製品を選びたい、という20代のデスクワーカーやゲーマーにはぴったりのコスパ設計と言えるでしょう。</p>
+          
+          <p>総じて、Monitor Arm[AS-MABM03]は「モニターを好きな位置・角度に、しっかり固定したい」「でもあまり高いアームは買いたくない」というニーズにまっすぐ応えるアイテムです。自宅の作業環境やゲーム環境をワンランク引き上げたいと思っているなら、まずはモニターアームの導入から始めてみるのがおすすめです。その第一歩として、このAS-MABM03は非常にバランスの良い選択肢と言えるでしょう。[web:16][web:18]</p>
+        </div>
+      </section>
+
+
+      <!-- 4. 良い点・悪い点 -->
+      <section class="mb-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-green-50 p-6 rounded-2xl border border-green-100">
+          <h4 class="text-xl font-bold text-green-700 mb-4 flex items-center"><span class="bg-green-200 p-1 rounded mr-2">👍</span> 良かったところ</h4>
+          <ul class="pros-list space-y-2 font-bold text-gray-700">
+            <!-- AI-EDIT: PROS_LIST -->
+            <li>メカニカルスプリング式で、モニターの高さ・位置・角度調整がスムーズに行える</li>
+            <li>しっかりとしたクランプ構造で揺れが少なく、安定性が高いのに価格は抑えめ</li>
+            <li>VESA規格対応で多くのモニターに取り付け可能、デスク上のスペースを大きく確保できる</li>
+            <li>デスクワークとゲームの両方で使いやすい可動域で、姿勢改善と没入感アップに役立つ</li>
+          </ul>
+        </div>
+        <div class="bg-red-50 p-6 rounded-2xl border border-red-100">
+          <h4 class="text-xl font-bold text-red-700 mb-4 flex items-center"><span class="bg-red-200 p-1 rounded mr-2">👎</span> 気になったところ</h4>
+          <ul class="cons-list space-y-2 font-bold text-gray-700">
+            <!-- AI-EDIT: CONS_LIST -->
+            <li>初めてモニターアームを使う人にとっては、取り付け作業やテンション調整にやや時間がかかる</li>
+            <li>天板の厚みや形状によってはクランプ固定がしにくい場合があり、デスクとの相性を事前に確認する必要がある</li>
+          </ul>
+        </div>
+      </section>
+
+
+      <!-- 5. まとめ -->
+      <section class="mb-16 bg-white p-8 rounded-2xl shadow-lg border-2 border-mono-main/30 relative overflow-hidden">
+        <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-orange-100 rounded-full opacity-50 pointer-events-none"></div>
+        <h3 class="text-2xl font-bold mb-4 text-mono-text text-center font-hand">Conclusion</h3>
+        <h4 class="text-xl font-bold text-center mb-8">この商品のまとめ</h4>
+        <div class="space-y-4 text-gray-700 leading-relaxed">
+          <!-- AI-EDIT: SUMMARY -->
+          <p>Monitor Arm[AS-MABM03]は、「モニターを好きな位置・角度に、安定して固定したい」というデスクワーカーやゲーマーの願いを、手の届きやすい価格で叶えてくれる一本です。メカニカルスプリング式ならではのスムーズな可動と、高い安定性を両立しつつ、デスク上のスペースをしっかり確保できるため、作業効率もゲームの没入感も一気に向上します。約7,000円前後という価格帯ながら、安価なアームにありがちな「ぐらつき」や「勝手に下がる」といった不満が出にくい点も魅力です。20代のデスクワーカーやゲーマーが、初めてのモニターアームとして選ぶのにちょうど良いバランスの取れたモデルと言えるでしょう。コスパ良し安定性抜群のモニターアームを探しているなら、AS-MABM03は有力候補としてぜひチェックしておきたい一台です。</p>
+        </div>
+        
+        <!-- 購入ボタン (下部) -->
+        <div class="mt-8 text-center flex flex-col gap-3 justify-center max-w-sm mx-auto">
+          <!-- AI-EDIT: AMAZON_URL_BOTTOM -->
+          <a href="https://amzn.to/40gecJD" class="js-amazon-link js-amazon-link-bottom inline-block bg-mono-main hover:bg-orange-600 text-white font-bold py-4 px-12 rounded-full shadow-lg transition-transform transform hover:scale-105">
+            Amazonで在庫をチェックする
+          </a>
+          <!-- AI-EDIT: YAHOO_URL_BOTTOM -->
+          <a href="https://yahoo.jp/Tp8JBv" class="js-yahoo-link js-yahoo-link-bottom inline-block bg-[#FF0033] hover:bg-[#ff1a47] text-white font-bold py-4 px-12 rounded-full shadow-lg transition-transform transform hover:scale-105">
+            Yahoo!ショッピングで見る
+          </a>
+        </div>
+      </section>
+
+
+    </main>
+
+
+    <footer id="contact" class="bg-[#4a4a4a] text-white pt-16 pb-8 mt-auto">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col mb-12">
+           <div class="flex items-center gap-2 mb-4"><div class="w-8 h-8 rounded-full overflow-hidden bg-orange-100"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="MonoSenseロゴ"><circle cx="50" cy="50" r="50" fill="#ff8c42"/><path d="M15 25 L20 40 H30" fill="none" stroke="white" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><path d="M25 40 H85 L78 75 H35 L25 40 Z" fill="white" stroke="white" stroke-width="2" stroke-linejoin="round"/><circle cx="42" cy="85" r="6" fill="none" stroke="white" stroke-width="4"/><circle cx="70" cy="85" r="6" fill="none" stroke="white" stroke-width="4"/><g transform="translate(0, -2)"><circle cx="45" cy="40" r="11" fill="white" stroke="black" stroke-width="2"/><circle cx="47" cy="40" r="4" fill="black"/><circle cx="67" cy="40" r="11" fill="white" stroke="black" stroke-width="2"/><circle cx="65" cy="40" r="4" fill="black"/></g></svg></div><div class="text-2xl font-bold">MonoSense</div></div>
+           <p class="text-gray-400 text-sm leading-relaxed mb-6">MonoSense（モノセンス）は、あなたの生活を豊かにするアイテムを厳選して紹介するレビューサイトです。</p>
+        </div>
+        <div class="border-t border-gray-600 pt-8 text-center text-xs text-gray-400"><p>&copy; 2024 MonoSense. All Rights Reserved.</p></div>
+      </div>
+    </footer>
+
+
+    <!-- データ連動スクリプト -->
+    <script>
+      // AI-EDIT: PAGE_PRODUCT_ID を B3 に変更
+      const PAGE_PRODUCT_ID = 'B3'; 
+
+
+      document.addEventListener('DOMContentLoaded', () => {
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (menuBtn && mobileMenu) menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+
+        if (typeof window.productData !== 'undefined') {
+          const item = window.productData.find(p => p.id === PAGE_PRODUCT_ID);
+          if (item) {
+            document.querySelectorAll('.js-title').forEach(el => el.textContent = item.title);
+            document.querySelectorAll('.js-price').forEach(el => el.textContent = item.price.toLocaleString());
+            document.querySelectorAll('.js-score').forEach(el => el.textContent = item.recommendScore.toFixed(1));
+            document.querySelectorAll('.js-desc').forEach(el => el.textContent = item.description);
+            document.querySelectorAll('.js-image').forEach(el => { el.src = item.image; el.alt = item.title; });
+            
+            // Amazon Link
+            document.querySelectorAll('.js-amazon-link').forEach(el => {
+                if (item.affiliateLink) {
+                    el.setAttribute('href', item.affiliateLink);
+                } else {
+                    el.removeAttribute('href');
+                    el.textContent = "Amazon在庫なし";
+                    el.classList.add('bg-gray-300', 'text-gray-500', 'cursor-not-allowed', 'pointer-events-none', 'shadow-none');
+                    el.classList.remove('bg-mono-main', 'hover:bg-orange-600', 'bg-[#FF9900]', 'hover:bg-[#ffad33]', 'text-white', 'shadow-lg', 'transform', 'hover:scale-105', 'hover:-translate-y-1');
+                }
+            });
+
+
+            // Yahoo Link
+            document.querySelectorAll('.js-yahoo-link').forEach(el => {
+                if (item.yahooLink) {
+                    el.setAttribute('href', item.yahooLink);
+                } else {
+                    el.removeAttribute('href');
+                    el.textContent = "Yahoo!在庫なし";
+                    el.classList.add('bg-gray-300', 'text-gray-500', 'cursor-not-allowed', 'pointer-events-none', 'shadow-none');
+                    el.classList.remove('bg-[#FF0033]', 'hover:bg-[#ff1a47]', 'text-white', 'shadow-lg', 'transform', 'hover:scale-105', 'hover:-translate-y-1');
+                }
+            });
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

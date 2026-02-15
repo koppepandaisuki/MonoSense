@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- SEO対策 -->
+    <meta name="description" content="MonoSenseのカテゴリ別商品一覧ページです。フィットネス、ガジェット、健康食品、家具など、様々なジャンルから厳選アイテムを探せます。" />
+    
+    <title>カテゴリ一覧 | MonoSense</title>
+
+    <!-- フォントの読み込み -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Noto+Sans+JP:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              mono: {
+                bg: '#f8f4e9',    // 背景色
+                main: '#ff8c42',  // メイン色
+                accent: '#d4a574',// アクセント
+                text: '#4a4a4a',  // 文字色
+              },
+            },
+            fontFamily: {
+              sans: ['"Noto Sans JP"', 'sans-serif'],
+              hand: ['"Indie Flower"', 'cursive'],
+            },
+          },
+        },
+      };
+    </script>
+    
+    <style>
+      html { scroll-behavior: smooth; }
+      /* フェードインアニメーション */
+      .fade-in {
+        animation: fadeIn 0.5s ease-in-out;
+      }
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      /* アクティブなカテゴリボタンのスタイル */
+      .category-btn.active {
+        background-color: #ff8c42;
+        color: white;
+        border-color: #ff8c42;
+      }
+    </style>
+  </head>
+  <body class="bg-mono-bg text-mono-text font-sans flex flex-col min-h-screen">
+
+    <!-- ============================================ -->
+    <!-- ヘッダーエリア -->
+    <!-- ============================================ -->
+    <header class="sticky top-0 z-50 bg-[#f8f4e9]/95 backdrop-blur-sm shadow-sm border-b border-mono-accent/20">
+      <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+        <!-- ロゴ -->
+        <a href="index.html" class="flex items-center gap-2 group">
+          <!-- SVGロゴアイコン -->
+          <div class="w-10 h-10 group-hover:scale-110 transition-transform shadow-sm rounded-full bg-orange-100 overflow-hidden">
+             <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="MonoSenseロゴ">
+              <circle cx="50" cy="50" r="50" fill="#ff8c42" />
+              <path d="M15 25 L20 40 H30" fill="none" stroke="white" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M25 40 H85 L78 75 H35 L25 40 Z" fill="white" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+              <circle cx="42" cy="85" r="6" fill="none" stroke="white" stroke-width="4" />
+              <circle cx="70" cy="85" r="6" fill="none" stroke="white" stroke-width="4" />
+              <g transform="translate(0, -2)">
+                <circle cx="45" cy="40" r="11" fill="white" stroke="black" stroke-width="2" />
+                <circle cx="47" cy="40" r="4" fill="black" />
+                <circle cx="67" cy="40" r="11" fill="white" stroke="black" stroke-width="2" />
+                <circle cx="65" cy="40" r="4" fill="black" />
+              </g>
+            </svg>
+          </div>
+          <h1 class="text-2xl font-bold tracking-tight text-mono-text">
+            Mono<span class="text-mono-main">Sense</span>
+          </h1>
+        </a>
+
+        <!-- PC用ナビゲーション -->
+        <nav class="hidden md:flex gap-2 text-sm font-bold text-gray-600 items-center">
+          <a href="index.html" class="px-4 py-2 rounded-full hover:bg-orange-100 hover:text-mono-main transition-colors">ホーム</a>
+          <a href="index.html#comparison" class="px-4 py-2 rounded-full hover:bg-orange-100 hover:text-mono-main transition-colors">注目アイテム</a>
+          <!-- 現在のページなので色を変える -->
+          <a href="#" class="px-4 py-2 rounded-full bg-orange-100 text-mono-main transition-colors">カテゴリ</a>
+          <a href="index.html#contact" class="px-4 py-2 bg-mono-main text-white rounded-full hover:bg-orange-500 transition-colors shadow-md ml-2">
+            お問い合わせ
+          </a>
+        </nav>
+
+        <!-- スマホ用メニューボタン -->
+        <button id="menu-btn" class="md:hidden p-2 text-gray-600" aria-label="メニューを開く">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+        </button>
+      </div>
+
+      <!-- スマホ用ドロップダウンメニュー -->
+      <nav id="mobile-menu" class="hidden md:hidden bg-white border-b border-gray-100 p-4 absolute w-full shadow-lg z-50">
+        <div class="flex flex-col gap-4 text-center font-bold text-gray-600">
+          <a href="index.html" class="py-2 hover:bg-orange-50 rounded-lg">ホーム</a>
+          <a href="index.html#comparison" class="py-2 hover:bg-orange-50 rounded-lg">注目アイテム</a>
+          <a href="#" class="py-2 bg-orange-50 text-mono-main rounded-lg">カテゴリ</a>
+          <a href="index.html#contact" class="py-2 bg-mono-main text-white rounded-lg">お問い合わせ</a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- ============================================ -->
+    <!-- メインコンテンツ -->
+    <!-- ============================================ -->
+    <main class="flex-grow container mx-auto px-4 py-8">
+
+      <!-- 1. パンくずリスト -->
+      <nav class="text-sm text-gray-500 mb-6 overflow-x-auto whitespace-nowrap">
+        <a href="index.html" class="hover:underline hover:text-mono-main">ホーム</a>
+        <span class="mx-2">></span>
+        <span id="breadcrumb-current" class="font-bold text-mono-text">カテゴリ一覧</span>
+      </nav>
+
+      <!-- 2. ページタイトル & カテゴリ選択 -->
+      <section class="mb-12 text-center">
+        <span class="font-hand text-mono-accent text-lg">Category List</span>
+        <h1 class="text-3xl md:text-4xl font-bold mb-4">カテゴリから探す</h1>
+        <p class="text-gray-600 mb-8">気になるジャンルから商品や特集記事を探せます。</p>
+
+        <!-- カテゴリ切り替えボタンエリア -->
+        <div class="flex flex-wrap justify-center gap-3 md:gap-4" id="category-tabs-container">
+          <!-- JSでボタンを生成します -->
+        </div>
+      </section>
+
+      <!-- 3. コントロールバー（件数表示 & 並び替え） -->
+      <section class="flex flex-col md:flex-row justify-between items-center mb-6 bg-white p-4 rounded-xl shadow-sm border border-gray-100">
+        <div class="font-bold text-gray-600 mb-2 md:mb-0">
+          <span id="current-category-name" class="text-mono-main text-lg mr-2">全カテゴリ</span>
+          <span id="item-count" class="text-sm bg-gray-100 px-2 py-1 rounded">0件</span>
+        </div>
+        
+        <div class="flex items-center gap-2">
+          <label for="sort-select" class="text-sm font-bold text-gray-500">並び替え:</label>
+          <select id="sort-select" class="bg-gray-50 border border-gray-200 text-gray-700 text-sm rounded-lg focus:ring-mono-main focus:border-mono-main block p-2.5">
+            <option value="newest">新着順</option>
+            <option value="oldest">古い順</option>
+            <option value="recommend">おすすめ順</option>
+          </select>
+        </div>
+      </section>
+
+      <!-- 4. アイテム一覧（グリッド表示） -->
+      <div id="item-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12 min-h-[400px]">
+        <!-- JSでここにカードが挿入されます -->
+        <div class="col-span-full text-center py-20 text-gray-400">
+          読み込み中...
+        </div>
+      </div>
+
+      <!-- 5. ページネーション -->
+      <div id="pagination" class="flex justify-center items-center gap-2 mb-16">
+        <!-- JSで生成されます -->
+      </div>
+
+    </main>
+
+    <!-- ============================================ -->
+    <!-- フッター -->
+    <!-- ============================================ -->
+    <footer class="bg-[#4a4a4a] text-white pt-16 pb-8 mt-auto">
+        <div class="container mx-auto px-4">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+            
+            <!-- サイト情報 -->
+            <div class="flex flex-col">
+              <div class="flex items-center gap-2 mb-4">
+                <div class="w-8 h-8 rounded-full overflow-hidden bg-orange-100">
+                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="MonoSenseロゴ">
+                        <circle cx="50" cy="50" r="50" fill="#ff8c42" />
+                        <path d="M15 25 L20 40 H30" fill="none" stroke="white" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M25 40 H85 L78 75 H35 L25 40 Z" fill="white" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+                        <circle cx="42" cy="85" r="6" fill="none" stroke="white" stroke-width="4" />
+                        <circle cx="70" cy="85" r="6" fill="none" stroke="white" stroke-width="4" />
+                        <g transform="translate(0, -2)">
+                          <circle cx="45" cy="40" r="11" fill="white" stroke="black" stroke-width="2" />
+                          <circle cx="47" cy="40" r="4" fill="black" />
+                          <circle cx="67" cy="40" r="11" fill="white" stroke="black" stroke-width="2" />
+                          <circle cx="65" cy="40" r="4" fill="black" />
+                        </g>
+                    </svg>
+                </div>
+                <div class="text-2xl font-bold">MonoSense</div>
+              </div>
+              <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                MonoSense（モノセンス）は、あなたの生活を豊かにするアイテムを厳選して紹介するレビューサイトです。
+              </p>
+            </div>
+
+            <!-- メニュー -->
+            <div>
+              <h4 class="font-bold text-lg mb-6 border-b border-gray-600 pb-2 inline-block">メニュー</h4>
+              <ul class="space-y-3 text-gray-300 text-sm">
+                <li><a href="index.html" class="hover:text-mono-main transition-colors">ホーム</a></li>
+                <li><a href="index.html#comparison" class="hover:text-mono-main transition-colors">商品比較</a></li>
+                <li><a href="#" class="text-mono-main transition-colors">カテゴリ一覧</a></li>
+                <li><a href="privacy-policy.html" class="hover:text-mono-main transition-colors">プライバシーポリシー</a></li>
+              </ul>
+            </div>
+
+            <!-- お問い合わせフォーム -->
+            <div>
+              <h4 class="font-bold text-lg mb-6 border-b border-gray-600 pb-2 inline-block">お問い合わせ</h4>
+              <form class="space-y-3" action="mailto:Monosense25@gmail.com" method="POST" encType="text/plain">
+                <input type="email" placeholder="メールアドレス" class="w-full px-4 py-2 rounded bg-gray-600 text-white placeholder-gray-400 border border-transparent focus:border-mono-main focus:outline-none text-sm" required />
+                <textarea placeholder="メッセージ" rows="3" class="w-full px-4 py-2 rounded bg-gray-600 text-white placeholder-gray-400 border border-transparent focus:border-mono-main focus:outline-none text-sm" required></textarea>
+                <button type="submit" class="w-full bg-mono-main hover:bg-orange-500 text-white font-bold py-2 rounded transition-colors text-sm">
+                  送信する（メーラー起動）
+                </button>
+              </form>
+            </div>
+          </div>
+          
+          <div class="border-t border-gray-600 pt-8 text-center text-xs text-gray-400">
+            <p>&copy; 2024 MonoSense. All Rights Reserved.</p>
+          </div>
+        </div>
+      </footer>
+
+    <!-- ============================================ -->
+    <!-- 重要: 商品データを読み込む -->
+    <!-- ============================================ -->
+    <script src="products.js"></script>
+
+    <!-- ============================================ -->
+    <!-- JavaScript: 表示ロジック -->
+    <!-- ============================================ -->
+    <script>
+      // 1. カテゴリ定義
+      const CATEGORIES = [
+        { id: 'all', name: 'すべて' },
+        { id: 'fitness', name: 'フィットネス' },
+        { id: 'gadget', name: 'ガジェット' },
+        { id: 'health', name: '健康食品' },
+        { id: 'furniture', name: '家具・インテリア' }
+      ];
+
+      // 2. アイテムデータの取得
+      // products.js で定義された window.productData を使用します
+      // もし読み込みに失敗していた場合の空配列フォールバック
+      const ALL_ITEMS = window.productData || [];
+
+      // 3. 設定
+      const ITEMS_PER_PAGE = 6; 
+      let currentPage = 1;
+      let currentCategory = 'all';
+      let currentSort = 'newest';
+
+      // 4. 初期化処理
+      document.addEventListener('DOMContentLoaded', () => {
+        // データが正しく読み込めているか確認
+        if (ALL_ITEMS.length === 0) {
+          console.warn('products.js が読み込まれていないか、データが空です。');
+        }
+
+        // メニュー開閉
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn?.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+        // URLのハッシュ（#fitnessなど）をチェックしてカテゴリを設定
+        const hash = window.location.hash.replace('#', '');
+        if (hash && CATEGORIES.some(c => c.id === hash)) {
+          currentCategory = hash;
+        }
+
+        renderCategoryButtons();
+        updateDisplay();
+
+        // ソート変更イベント
+        document.getElementById('sort-select').addEventListener('change', (e) => {
+          currentSort = e.target.value;
+          currentPage = 1;
+          updateDisplay();
+        });
+      });
+
+      // カテゴリボタンを描画する関数
+      function renderCategoryButtons() {
+        const container = document.getElementById('category-tabs-container');
+        container.innerHTML = ''; 
+
+        CATEGORIES.forEach(cat => {
+          const btn = document.createElement('button');
+          btn.textContent = cat.name;
+          btn.className = `px-6 py-2 rounded-full border transition-all duration-300 font-bold ${
+            cat.id === currentCategory 
+              ? 'bg-mono-main text-white border-mono-main shadow-md' 
+              : 'bg-white text-gray-600 border-gray-300 hover:bg-orange-50'
+          }`;
+          
+          btn.onclick = () => {
+            currentCategory = cat.id;
+            currentPage = 1;
+            if (cat.id !== 'all') {
+              window.location.hash = cat.id;
+            } else {
+              history.pushState("", document.title, window.location.pathname + window.location.search);
+            }
+            renderCategoryButtons();
+            updateDisplay();
+          };
+
+          container.appendChild(btn);
+        });
+      }
+
+      // メインの表示更新関数
+      function updateDisplay() {
+        // フィルタリング
+        let filteredItems = ALL_ITEMS;
+        if (currentCategory !== 'all') {
+          filteredItems = ALL_ITEMS.filter(item => item.categoryId === currentCategory);
+        }
+
+        // パンくずリスト更新
+        const catName = CATEGORIES.find(c => c.id === currentCategory)?.name || 'すべて';
+        document.getElementById('breadcrumb-current').textContent = catName + '一覧';
+        document.getElementById('current-category-name').textContent = catName;
+        document.getElementById('item-count').textContent = `${filteredItems.length}件`;
+
+        // ソート
+        filteredItems.sort((a, b) => {
+          if (currentSort === 'newest') return new Date(b.date) - new Date(a.date);
+          if (currentSort === 'oldest') return new Date(a.date) - new Date(b.date);
+          if (currentSort === 'recommend') return b.recommendScore - a.recommendScore;
+          return 0;
+        });
+
+        // ページネーション計算
+        const totalPages = Math.ceil(filteredItems.length / ITEMS_PER_PAGE);
+        if (currentPage > totalPages) currentPage = Math.max(1, totalPages);
+        
+        const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+        const visibleItems = filteredItems.slice(startIndex, startIndex + ITEMS_PER_PAGE);
+
+        // グリッド描画
+        const grid = document.getElementById('item-grid');
+        grid.innerHTML = '';
+
+        if (visibleItems.length === 0) {
+          grid.innerHTML = `<div class="col-span-full text-center py-20 text-gray-500">
+            このカテゴリにはまだ商品がありません。<br>
+            今後の更新をお待ちください！
+          </div>`;
+        } else {
+          visibleItems.forEach(item => {
+            const card = createCard(item);
+            grid.appendChild(card);
+          });
+        }
+
+        renderPagination(totalPages);
+      }
+
+      // カードHTMLを生成する関数
+      function createCard(item) {
+        const div = document.createElement('div');
+        div.className = 'bg-white rounded-2xl shadow-sm hover:shadow-lg transition-shadow duration-300 overflow-hidden group border border-gray-100 flex flex-col h-full fade-in';
+        
+        const isArticle = item.type === 'article';
+        const badgeColor = isArticle ? 'bg-blue-500' : 'bg-mono-main';
+        const badgeText = isArticle ? '特集記事' : '商品レビュー';
+        
+        const priceHtml = isArticle 
+          ? '' 
+          : `<span class="text-xl font-bold text-mono-text">¥${item.price.toLocaleString()}</span>`;
+
+        // descriptionがある場合はそれを表示
+        const descHtml = item.description
+          ? `<p class="text-sm text-gray-500 mb-4 line-clamp-2">${item.description}</p>`
+          : `<p class="text-sm text-gray-400 mb-4">★${item.recommendScore} / 5.0</p>`;
+
+        div.innerHTML = `
+          <a href="${item.link}" class="block relative h-48 bg-gray-100 overflow-hidden">
+            <img src="${item.image}" alt="${item.title}" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" loading="lazy">
+            <div class="absolute top-2 left-2 ${badgeColor} text-white text-xs font-bold px-2 py-1 rounded shadow">
+              ${badgeText}
+            </div>
+          </a>
+          <div class="p-5 flex flex-col flex-grow">
+            <div class="flex-grow">
+              <h3 class="font-bold text-lg mb-2 text-gray-800 leading-tight group-hover:text-mono-main transition-colors">
+                <a href="${item.link}">${item.title}</a>
+              </h3>
+              ${descHtml}
+            </div>
+            <div class="flex justify-between items-center mt-4 pt-4 border-t border-gray-50">
+              ${priceHtml}
+              <a href="${item.link}" class="text-sm font-bold text-mono-main border border-mono-main px-4 py-2 rounded-full hover:bg-mono-main hover:text-white transition-colors ml-auto">
+                詳細を見る
+              </a>
+            </div>
+          </div>
+        `;
+        return div;
+      }
+
+      // ページネーションボタンを描画する関数
+      function renderPagination(totalPages) {
+        const container = document.getElementById('pagination');
+        container.innerHTML = '';
+        
+        if (totalPages <= 1) return;
+
+        const prevBtn = document.createElement('button');
+        prevBtn.textContent = '前へ';
+        prevBtn.disabled = currentPage === 1;
+        prevBtn.className = `px-4 py-2 rounded-lg text-sm font-bold ${currentPage === 1 ? 'text-gray-300' : 'text-mono-main hover:bg-orange-50'}`;
+        prevBtn.onclick = () => { if(currentPage > 1) { currentPage--; updateDisplay(); window.scrollTo(0,0); } };
+        container.appendChild(prevBtn);
+
+        for (let i = 1; i <= totalPages; i++) {
+          const btn = document.createElement('button');
+          btn.textContent = i;
+          btn.className = `w-10 h-10 rounded-lg font-bold transition-colors ${
+            i === currentPage 
+              ? 'bg-mono-main text-white shadow-md' 
+              : 'text-gray-600 hover:bg-orange-50'
+          }`;
+          btn.onclick = () => { currentPage = i; updateDisplay(); window.scrollTo(0,0); };
+          container.appendChild(btn);
+        }
+
+        const nextBtn = document.createElement('button');
+        nextBtn.textContent = '次へ';
+        nextBtn.disabled = currentPage === totalPages;
+        nextBtn.className = `px-4 py-2 rounded-lg text-sm font-bold ${currentPage === totalPages ? 'text-gray-300' : 'text-mono-main hover:bg-orange-50'}`;
+        nextBtn.onclick = () => { if(currentPage < totalPages) { currentPage++; updateDisplay(); window.scrollTo(0,0); } };
+        container.appendChild(nextBtn);
+      }
+    </script>
+  </body>
+</html>
