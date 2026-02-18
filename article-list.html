@@ -1,0 +1,298 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="MonoSenseの特集・まとめ記事一覧です。ランキング形式で厳選アイテムを紹介します。" />
+    <title>特集記事一覧 | MonoSense</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              mono: { bg: '#f8f4e9', main: '#ff8c42', accent: '#d4a574', text: '#4a4a4a' },
+            },
+            fontFamily: { sans: ['"Noto Sans JP"', 'sans-serif'], hand: ['"Indie Flower"', 'cursive'] },
+          },
+        },
+      };
+    </script>
+    <style>
+      html { scroll-behavior: smooth; }
+      .fade-in { animation: fadeIn 0.5s ease-in-out; }
+      @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+      .category-btn.active { background-color: #ff8c42; color: white; border-color: #ff8c42; }
+    </style>
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
+  <body class="bg-mono-bg text-mono-text font-sans flex flex-col min-h-screen">
+
+    <header class="sticky top-0 z-50 bg-[#f8f4e9]/95 backdrop-blur-sm shadow-sm border-b border-mono-accent/20">
+      <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+        <a href="index.html" class="flex items-center gap-2 group">
+          <div class="w-10 h-10 group-hover:scale-110 transition-transform shadow-sm rounded-full">
+             <svg viewBox="0 0 100 100" class="w-full h-full" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="50" fill="#ff8c42" /><path d="M15 25 L20 40 H30" fill="none" stroke="white" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><path d="M25 40 H85 L78 75 H35 L25 40 Z" fill="white" stroke="white" stroke-width="2" stroke-linejoin="round"/><circle cx="42" cy="85" r="6" fill="none" stroke="white" stroke-width="4" /><circle cx="70" cy="85" r="6" fill="none" stroke="white" stroke-width="4" /><g transform="translate(0, -2)"><circle cx="45" cy="40" r="11" fill="white" stroke="black" stroke-width="2" /><circle cx="47" cy="40" r="4" fill="black" /><circle cx="67" cy="40" r="11" fill="white" stroke="black" stroke-width="2" /><circle cx="65" cy="40" r="4" fill="black" /></g></svg>
+          </div>
+          <h1 class="text-2xl font-bold tracking-tight text-mono-text">Mono<span class="text-mono-main">Sense</span></h1>
+        </a>
+        <nav class="hidden md:flex gap-2 text-sm font-bold text-gray-600 items-center">
+          <a href="index.html" class="px-4 py-2 rounded-full hover:bg-orange-100 hover:text-mono-main transition-colors">ホーム</a>
+          <a href="index.html#comparison" class="px-4 py-2 rounded-full hover:bg-orange-100 hover:text-mono-main transition-colors">注目アイテム</a>
+          <a href="#" class="px-4 py-2 rounded-full bg-orange-100 text-mono-main transition-colors">特集記事</a>
+          <a href="category-list.html" class="px-4 py-2 rounded-full hover:bg-orange-100 hover:text-mono-main transition-colors">カテゴリ</a>
+          <a href="#contact" class="px-4 py-2 bg-mono-main text-white rounded-full hover:bg-orange-500 transition-colors shadow-md ml-2">お問い合わせ</a>
+        </nav>
+        
+        <!-- Mobile Menu Button -->
+        <button id="menu-btn" class="md:hidden p-2 text-gray-600" aria-label="メニューを開く">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+        </button>
+      </div>
+
+      <!-- Mobile Dropdown -->
+      <nav id="mobile-menu" class="hidden md:hidden bg-white border-b border-gray-100 p-4 absolute w-full shadow-lg z-50">
+        <div class="flex flex-col gap-4 text-center font-bold text-gray-600">
+          <a href="index.html" class="py-2 hover:bg-orange-50 rounded-lg">ホーム</a>
+          <a href="index.html#comparison" class="py-2 hover:bg-orange-50 rounded-lg">注目アイテム</a>
+          <a href="#" class="py-2 bg-orange-50 text-mono-main rounded-lg">特集記事</a>
+          <a href="category-list.html" class="py-2 hover:bg-orange-50 rounded-lg">カテゴリ</a>
+          <a href="#contact" class="py-2 bg-mono-main text-white rounded-lg">お問い合わせ</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="flex-grow container mx-auto px-4 py-8">
+      <nav class="text-sm text-gray-500 mb-6 overflow-x-auto whitespace-nowrap">
+        <a href="index.html" class="hover:underline hover:text-mono-main">ホーム</a>
+        <span class="mx-2">></span>
+        <span id="breadcrumb-current" class="font-bold text-mono-text">特集記事一覧</span>
+      </nav>
+
+      <section class="mb-12 text-center">
+        <span class="font-hand text-mono-accent text-lg">Feature Articles</span>
+        <h1 class="text-3xl md:text-4xl font-bold mb-4">特集・まとめ記事</h1>
+        <p class="text-gray-600 mb-8">ランキング形式で厳選アイテムを紹介。失敗しないモノ選びをサポートします。</p>
+
+        <!-- カテゴリ切り替えボタンエリア -->
+        <div class="flex flex-wrap justify-center gap-3 md:gap-4" id="category-tabs-container">
+          <!-- JSでボタンを生成します -->
+        </div>
+      </section>
+
+      <!-- コントロールバー（件数表示 & 並び替え） -->
+      <section class="flex flex-col md:flex-row justify-between items-center mb-6 bg-white p-4 rounded-xl shadow-sm border border-gray-100">
+        <div class="font-bold text-gray-600 mb-2 md:mb-0">
+          <span id="current-category-name" class="text-mono-main text-lg mr-2">全カテゴリ</span>
+          <span id="item-count" class="text-sm bg-gray-100 px-2 py-1 rounded">0件</span>
+        </div>
+        
+        <div class="flex items-center gap-2">
+          <label for="sort-select" class="text-sm font-bold text-gray-500">並び替え:</label>
+          <select id="sort-select" class="bg-gray-50 border border-gray-200 text-gray-700 text-sm rounded-lg focus:ring-mono-main focus:border-mono-main block p-2.5">
+            <option value="newest">新着順</option>
+            <option value="oldest">古い順</option>
+            <option value="views">閲覧数順</option>
+          </select>
+        </div>
+      </section>
+
+      <div id="article-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12 min-h-[400px]">
+        <!-- JS generates content here -->
+        <div class="col-span-full text-center py-20 text-gray-400">
+          読み込み中...
+        </div>
+      </div>
+
+      <!-- ページネーション -->
+      <div id="pagination" class="flex justify-center items-center gap-2 mb-16">
+        <!-- JSで生成されます -->
+      </div>
+    </main>
+
+    <footer id="contact" class="bg-[#4a4a4a] text-white pt-16 pb-8 mt-auto">
+      <div class="container mx-auto px-4 text-center">
+        <p class="text-gray-400 text-sm mb-4">&copy; 2024 MonoSense. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <script src="products.js"></script>
+    <script>
+      // 1. カテゴリ定義
+      const CATEGORIES = [
+        { id: 'all', name: 'すべて' },
+        { id: 'fitness', name: 'フィットネス' },
+        { id: 'gadget', name: 'ガジェット' },
+        { id: 'health', name: '健康食品' },
+        { id: 'furniture', name: '家具・インテリア' }
+      ];
+
+      // 2. 記事データの取得 (type === 'article' のみ)
+      const ALL_ARTICLES = (window.productData || []).filter(p => p.type === 'article');
+
+      // 3. 設定
+      const ITEMS_PER_PAGE = 6; 
+      let currentPage = 1;
+      let currentCategory = 'all';
+      let currentSort = 'newest';
+
+      document.addEventListener('DOMContentLoaded', () => {
+        lucide.createIcons();
+        
+        // メニュー開閉
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn?.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+        // URLハッシュチェック
+        const hash = window.location.hash.replace('#', '');
+        if (hash && CATEGORIES.some(c => c.id === hash)) {
+          currentCategory = hash;
+        }
+
+        renderCategoryButtons();
+        updateDisplay();
+
+        // ソート変更
+        document.getElementById('sort-select').addEventListener('change', (e) => {
+          currentSort = e.target.value;
+          currentPage = 1;
+          updateDisplay();
+        });
+      });
+
+      function renderCategoryButtons() {
+        const container = document.getElementById('category-tabs-container');
+        container.innerHTML = ''; 
+
+        CATEGORIES.forEach(cat => {
+          const btn = document.createElement('button');
+          btn.textContent = cat.name;
+          btn.className = `px-6 py-2 rounded-full border transition-all duration-300 font-bold ${
+            cat.id === currentCategory 
+              ? 'bg-mono-main text-white border-mono-main shadow-md' 
+              : 'bg-white text-gray-600 border-gray-300 hover:bg-orange-50'
+          }`;
+          
+          btn.onclick = () => {
+            currentCategory = cat.id;
+            currentPage = 1;
+            if (cat.id !== 'all') {
+              window.location.hash = cat.id;
+            } else {
+              history.pushState("", document.title, window.location.pathname + window.location.search);
+            }
+            renderCategoryButtons();
+            updateDisplay();
+          };
+
+          container.appendChild(btn);
+        });
+      }
+
+      function updateDisplay() {
+        // フィルタリング
+        let filteredItems = ALL_ARTICLES;
+        if (currentCategory !== 'all') {
+          filteredItems = ALL_ARTICLES.filter(item => item.categoryId === currentCategory);
+        }
+
+        // ラベル更新
+        const catName = CATEGORIES.find(c => c.id === currentCategory)?.name || 'すべて';
+        document.getElementById('breadcrumb-current').textContent = catName + 'の特集記事';
+        document.getElementById('current-category-name').textContent = catName;
+        document.getElementById('item-count').textContent = `${filteredItems.length}件`;
+
+        // ソート
+        filteredItems.sort((a, b) => {
+          if (currentSort === 'newest') return new Date(b.date) - new Date(a.date);
+          if (currentSort === 'oldest') return new Date(a.date) - new Date(b.date);
+          if (currentSort === 'views') return (b.views || 0) - (a.views || 0);
+          return 0;
+        });
+
+        // ページネーション
+        const totalPages = Math.ceil(filteredItems.length / ITEMS_PER_PAGE);
+        if (currentPage > totalPages) currentPage = Math.max(1, totalPages);
+        
+        const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+        const visibleItems = filteredItems.slice(startIndex, startIndex + ITEMS_PER_PAGE);
+
+        // グリッド描画
+        const grid = document.getElementById('article-grid');
+        grid.innerHTML = '';
+
+        if (visibleItems.length === 0) {
+          grid.innerHTML = `<div class="col-span-full text-center py-20 text-gray-500">
+            この記事カテゴリにはまだ投稿がありません。<br>
+            今後の更新をお待ちください！
+          </div>`;
+        } else {
+          visibleItems.forEach(article => {
+            const el = document.createElement('a');
+            el.href = article.link;
+            el.className = 'block bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden group border border-gray-100 flex flex-col h-full fade-in';
+            el.innerHTML = `
+              <div class="relative aspect-video bg-gray-200 overflow-hidden">
+                <img src="${article.image}" alt="${article.title}" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                <div class="absolute top-2 left-2 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded shadow uppercase">${article.categoryId}</div>
+                <div class="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded">
+                   ${article.specs?.items || 'まとめ'}
+                </div>
+              </div>
+              <div class="p-6 flex flex-col flex-grow">
+                <h3 class="text-xl font-bold mb-3 text-gray-800 leading-snug group-hover:text-mono-main transition-colors">${article.title}</h3>
+                <p class="text-sm text-gray-500 mb-4 line-clamp-2">${article.description}</p>
+                <div class="mt-auto pt-4 border-t border-gray-100 flex justify-between items-center text-xs text-gray-400">
+                   <span class="flex items-center gap-1"><i data-lucide="calendar" width="14"></i> ${article.date}</span>
+                   <span class="text-mono-main font-bold border border-mono-main px-3 py-1 rounded-full">読む</span>
+                </div>
+              </div>
+            `;
+            grid.appendChild(el);
+          });
+          lucide.createIcons();
+        }
+
+        renderPagination(totalPages);
+      }
+
+      function renderPagination(totalPages) {
+        const container = document.getElementById('pagination');
+        container.innerHTML = '';
+        
+        if (totalPages <= 1) return;
+
+        const prevBtn = document.createElement('button');
+        prevBtn.textContent = '前へ';
+        prevBtn.disabled = currentPage === 1;
+        prevBtn.className = `px-4 py-2 rounded-lg text-sm font-bold ${currentPage === 1 ? 'text-gray-300' : 'text-mono-main hover:bg-orange-50'}`;
+        prevBtn.onclick = () => { if(currentPage > 1) { currentPage--; updateDisplay(); window.scrollTo(0,0); } };
+        container.appendChild(prevBtn);
+
+        for (let i = 1; i <= totalPages; i++) {
+          const btn = document.createElement('button');
+          btn.textContent = i;
+          btn.className = `w-10 h-10 rounded-lg font-bold transition-colors ${
+            i === currentPage 
+              ? 'bg-mono-main text-white shadow-md' 
+              : 'text-gray-600 hover:bg-orange-50'
+          }`;
+          btn.onclick = () => { currentPage = i; updateDisplay(); window.scrollTo(0,0); };
+          container.appendChild(btn);
+        }
+
+        const nextBtn = document.createElement('button');
+        nextBtn.textContent = '次へ';
+        nextBtn.disabled = currentPage === totalPages;
+        nextBtn.className = `px-4 py-2 rounded-lg text-sm font-bold ${currentPage === totalPages ? 'text-gray-300' : 'text-mono-main hover:bg-orange-50'}`;
+        nextBtn.onclick = () => { if(currentPage < totalPages) { currentPage++; updateDisplay(); window.scrollTo(0,0); } };
+        container.appendChild(nextBtn);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="【2026年最新】自宅で痩せる！最強フィットネス器具おすすめ5選。ジムに通わなくても効果が出る厳選グッズをランキング形式で紹介。" />
+    <title>【5選】最強フィットネス器具ランキング | MonoSense</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              mono: { bg: '#f8f4e9', main: '#ff8c42', accent: '#d4a574', text: '#4a4a4a' },
+            },
+            fontFamily: { sans: ['"Noto Sans JP"', 'sans-serif'], hand: ['"Indie Flower"', 'cursive'] },
+          },
+        },
+      };
+    </script>
+    <style>
+      html { scroll-behavior: smooth; }
+      /* ランキングバッジ（共通） */
+      .rank-badge-box { position: absolute; top: 0; left: 0; z-index: 50; filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.1)); }
+      
+      /* 1位: 王冠 */
+      /* フォントをNoto Sans JPに変更 */
+      .crown-svg { width: 80px; height: 80px; fill: #FFD700; stroke: #B8860B; stroke-width: 1px; }
+      .crown-number { position: absolute; top: 54%; left: 50%; transform: translate(-50%, -50%); font-size: 2.2rem; font-weight: 900; color: #B8860B; font-family: 'Noto Sans JP', sans-serif; letter-spacing: -2px; }
+      
+      /* 2位・3位: メダル */
+      /* フォントをNoto Sans JPに変更 */
+      .medal-circle { width: 60px; height: 60px; border-radius: 0 0 20px 0; display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: 900; color: white; font-family: 'Noto Sans JP', sans-serif; box-shadow: 2px 2px 4px rgba(0,0,0,0.1); }
+      .rank-2 .medal-circle { background: linear-gradient(135deg, #C0C0C0, #A9A9A9); border: 1px solid #F0F0F0; text-shadow: 1px 1px 0 #666; }
+      .rank-3 .medal-circle { background: linear-gradient(135deg, #CD7F32, #A0522D); border: 1px solid #F0E68C; text-shadow: 1px 1px 0 #5c3a1e; }
+      
+      /* 4位以下 */
+      .rank-other .medal-circle { width: 50px; height: 50px; font-size: 1.8rem; background: #fff; color: #4a4a4a; border-right: 2px solid #ff8c42; border-bottom: 2px solid #ff8c42; border-radius: 0 0 15px 0; font-family: 'Noto Sans JP', sans-serif; font-weight: 700; }
+
+      /* モノくんエリア（横並びレイアウト） */
+      .monokun-box { display: flex; align-items: flex-start; gap: 20px; margin-top: 20px; margin-left: 10px; }
+      
+      /* アイコン */
+      .monokun-icon { width: 80px; height: 80px; flex-shrink: 0; }
+      .monokun-icon img { width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.1)); }
+      
+      /* 吹き出し */
+      .monokun-comment { position: relative; background: #fff; border: 2px solid #ff8c42; border-radius: 15px; padding: 15px; flex-grow: 1; box-shadow: 4px 4px 0 rgba(255, 140, 66, 0.2); }
+      /* 吹き出しのしっぽ */
+      .monokun-comment::before { content: ""; position: absolute; top: 25px; left: -12px; border-top: 10px solid transparent; border-bottom: 10px solid transparent; border-right: 12px solid #ff8c42; }
+      .monokun-comment::after { content: ""; position: absolute; top: 27px; left: -9px; border-top: 8px solid transparent; border-bottom: 8px solid transparent; border-right: 10px solid #fff; }
+    </style>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="products.js"></script>
+  </head>
+  <body class="bg-mono-bg text-mono-text font-sans flex flex-col min-h-screen">
+    <header class="sticky top-0 z-50 bg-[#f8f4e9]/95 backdrop-blur-sm shadow-sm border-b border-mono-accent/20">
+      <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+        <a href="index.html" class="flex items-center gap-2 group">
+          <div class="w-10 h-10 group-hover:scale-110 transition-transform shadow-sm rounded-full bg-orange-100 overflow-hidden"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="50" fill="#ff8c42" /><path d="M15 25 L20 40 H30" fill="none" stroke="white" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><path d="M25 40 H85 L78 75 H35 L25 40 Z" fill="white" stroke="white" stroke-width="2" stroke-linejoin="round"/><circle cx="42" cy="85" r="6" fill="none" stroke="white" stroke-width="4" /><circle cx="70" cy="85" r="6" fill="none" stroke="white" stroke-width="4" /><g transform="translate(0, -2)"><circle cx="45" cy="40" r="11" fill="white" stroke="black" stroke-width="2" /><circle cx="47" cy="40" r="4" fill="black" /><circle cx="67" cy="40" r="11" fill="white" stroke="black" stroke-width="2" /><circle cx="65" cy="40" r="4" fill="black" /></g></svg></div>
+          <h1 class="text-2xl font-bold tracking-tight text-mono-text">Mono<span class="text-mono-main">Sense</span></h1>
+        </a>
+        <nav class="hidden md:flex gap-2 text-sm font-bold text-gray-600 items-center">
+          <a href="index.html" class="px-4 py-2 hover:bg-orange-100 rounded-full">ホーム</a>
+          <a href="article-list.html" class="px-4 py-2 bg-orange-100 rounded-full">特集記事</a>
+          <a href="category-list.html" class="px-4 py-2 hover:bg-orange-100 rounded-full">カテゴリ</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- コンテナ幅を max-w-7xl に設定 -->
+    <main class="flex-grow container mx-auto px-6 md:px-8 py-8 max-w-7xl">
+      <nav class="text-sm text-gray-500 mb-6"><a href="index.html">ホーム</a> > <a href="article-list.html">特集記事</a> > <span class="font-bold">フィットネス器具5選</span></nav>
+
+      <section class="mb-12 text-center">
+        <span class="inline-block bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-bold mb-4 uppercase tracking-widest">Fitness Ranking</span>
+        <h1 class="text-3xl md:text-4xl font-bold mb-6 leading-tight">【2026年最新】自宅で痩せる！<br>最強フィットネス器具おすすめ5選</h1>
+        <p class="text-gray-600 mb-8 max-w-2xl mx-auto">「ジムに通う時間がない」「自宅で効率よく痩せたい」そんな悩みを解決する、買ってよかった宅トレグッズを厳選しました。</p>
+        <img src="https://picsum.photos/800/450?random=100" alt="フィットネス器具まとめ" class="w-full rounded-2xl shadow-lg mb-8">
+      </section>
+
+      <div class="space-y-16">
+        <!-- 1位: adidas 腹筋ローラー -->
+        <article class="relative bg-white rounded-3xl shadow-xl border-2 border-yellow-400 overflow-hidden" id="rank-1">
+          <div class="rank-badge-box">
+            <svg class="crown-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M2 20h20v-2H2v2zm2-3h16v-2H4v2zm16-4V5l-5 4-3-6-3 6-5-4v8h16z" />
+            </svg>
+            <span class="crown-number">1</span>
+          </div>
+          
+          <!-- パディングを pl-16 から pl-24 md:pl-28 に増やして王冠との被りを防ぐ -->
+          <div class="bg-yellow-50/50 p-4 border-b border-yellow-100 text-center md:text-left pl-24 md:pl-28 rounded-t-3xl">
+             <h2 class="text-xl md:text-2xl font-bold text-gray-800">adidas 腹筋ローラー</h2>
+             <div class="text-yellow-500 text-sm font-bold">★★★★★ 4.6</div>
+          </div>
+
+          <div class="p-6 md:p-8">
+            <div class="flex flex-col md:flex-row gap-8 mb-6">
+              <div class="md:w-1/3 flex-shrink-0">
+                <img src="https://m.media-amazon.com/images/I/51Z-6Tl3vTL._AC_SL1000_.jpg" alt="腹筋ローラー" class="w-full rounded-xl border border-gray-100">
+              </div>
+              <div class="md:w-2/3">
+                <p class="text-gray-600 mb-4 leading-relaxed">
+                  <span class="font-bold text-mono-main">「最強の腹筋製造機」</span><br>
+                  場所を取らず、コストも安く、効果は絶大。本気で腹筋を割りたいならコレ一択です。adidas製はグリップが安定しており、初心者でも手首を痛めにくい設計が魅力。
+                </p>
+                <div class="bg-gray-50 rounded-lg p-3 text-xs text-gray-500 space-y-1">
+                  <p><span class="font-bold">サイズ:</span> 18 x 18 x 29.3 cm</p>
+                  <p><span class="font-bold">重量:</span> 485g</p>
+                  <p><span class="font-bold">素材:</span> プラスチック、スチール</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- メリット・デメリット -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+              <div class="bg-green-50 p-4 rounded-xl border border-green-200">
+                <h4 class="text-green-800 font-bold mb-2 flex items-center gap-1"><i data-lucide="thumbs-up" width="16"></i> メリット</h4>
+                <ul class="list-disc list-inside text-sm text-green-900 space-y-1">
+                  <li>短時間で強烈な負荷をかけられる</li>
+                  <li>収納場所を取らないコンパクトさ</li>
+                  <li>ジム代に比べて圧倒的に安い</li>
+                </ul>
+              </div>
+              <div class="bg-gray-100 p-4 rounded-xl border border-gray-200">
+                <h4 class="text-gray-700 font-bold mb-2 flex items-center gap-1"><i data-lucide="alert-circle" width="16"></i> デメリット</h4>
+                <ul class="list-disc list-inside text-sm text-gray-600 space-y-1">
+                  <li>最初は1回もできない可能性がある</li>
+                  <li>腰を痛めないようフォーム習得が必要</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- モノくん (横並び) -->
+            <div class="monokun-box">
+              <div class="monokun-icon">
+                <img src="monokun.png" alt="モノくん">
+              </div>
+              <div class="monokun-comment">
+                <p class="text-xs font-bold text-mono-main mb-0.5">モノくん</p>
+                <p class="text-sm text-gray-700">まずは「膝コロ」から始めよう！翌日の筋肉痛が効いてる証拠だよ！</p>
+              </div>
+            </div>
+
+            <!-- ボタン -->
+            <div class="mt-6 flex flex-col sm:flex-row gap-3">
+              <a href="https://amzn.to/3LXlnmQ" target="_blank" class="flex-1 bg-[#FF9900] hover:bg-[#ffad33] text-white font-bold py-3 rounded-xl text-center shadow transition-colors flex items-center justify-center gap-2">
+                Amazonで見る <i data-lucide="external-link" width="16"></i>
+              </a>
+              <a href="#" class="flex-1 bg-gray-300 text-gray-500 font-bold py-3 rounded-xl text-center cursor-not-allowed flex items-center justify-center gap-2">
+                Yahoo!在庫なし
+              </a>
+            </div>
+            <div class="mt-2 text-center">
+                <a href="fitness1.html" class="text-sm text-mono-main underline hover:text-orange-600">詳細なレビュー記事を読む &gt;</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 2位: ヨガマット -->
+        <article class="relative bg-white rounded-3xl shadow-lg border border-gray-200 overflow-hidden rank-2" id="rank-2">
+          <div class="rank-badge-box">
+            <div class="medal-circle">2</div>
+          </div>
+          <!-- パディングを調整: pl-8 md:pl-16 -> pl-20 md:pl-24 -->
+          <div class="p-6 md:p-8 pt-10 pl-20 md:pl-24">
+            <h2 class="text-xl md:text-2xl font-bold text-gray-800 mb-2">プレミアム ヨガマット Pro</h2>
+            <div class="text-yellow-500 text-sm font-bold mb-4">★★★★☆ 4.5</div>
+
+            <div class="flex flex-col md:flex-row gap-6 mb-6">
+              <div class="md:w-1/3 flex-shrink-0">
+                <img src="https://picsum.photos/400/400?random=1" alt="ヨガマット" class="w-full rounded-xl border border-gray-100">
+              </div>
+              <div class="md:w-2/3">
+                <p class="text-gray-600 mb-4 text-sm">
+                  厚さ10mmの極厚マット。フローリングでトレーニングしても体が痛くならず、防音効果も期待できます。マンション住まいの方には必須アイテム。
+                </p>
+                
+                <div class="grid grid-cols-1 gap-3">
+                   <div class="bg-green-50 p-3 rounded-lg border border-green-100 text-sm">
+                      <span class="text-green-800 font-bold">✔ メリット</span>
+                      <p class="text-gray-600 mt-1">クッション性抜群で膝が痛くない / 防音効果あり</p>
+                   </div>
+                   <div class="bg-gray-100 p-3 rounded-lg border border-gray-200 text-sm">
+                      <span class="text-gray-700 font-bold">✖ デメリット</span>
+                      <p class="text-gray-600 mt-1">厚みがある分、収納時に少し場所をとる</p>
+                   </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- モノくん (横並び) -->
+            <div class="monokun-box">
+              <div class="monokun-icon">
+                <img src="monokun.png" alt="モノくん">
+              </div>
+              <div class="monokun-comment">
+                <p class="text-xs font-bold text-mono-main mb-0.5">モノくん</p>
+                <p class="text-sm text-gray-700">お昼寝にも使えるくらいフカフカ！アパート住まいの人にも必須だよ。</p>
+              </div>
+            </div>
+
+            <div class="mt-6 flex flex-col sm:flex-row gap-3">
+              <a href="#" class="flex-1 bg-[#FF9900] hover:bg-[#ffad33] text-white font-bold py-3 rounded-xl text-center shadow transition-colors">Amazonで見る</a>
+              <a href="https://shopping.yahoo.co.jp/search?p=EXAMPLE1" class="flex-1 bg-[#FF0033] hover:bg-[#ff1a47] text-white font-bold py-3 rounded-xl text-center shadow transition-colors">Yahoo!で見る</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 3位: ダンベル -->
+        <article class="relative bg-white rounded-3xl shadow-lg border border-gray-200 overflow-hidden rank-3" id="rank-3">
+          <div class="rank-badge-box">
+            <div class="medal-circle">3</div>
+          </div>
+          <!-- パディングを調整: pl-20 md:pl-24 -->
+          <div class="p-6 md:p-8 pt-10 pl-20 md:pl-24">
+            <h2 class="text-xl md:text-2xl font-bold text-gray-800 mb-2">可変式ダンベル 24kg</h2>
+            <div class="text-yellow-500 text-sm font-bold mb-4">★★★★☆ 4.2</div>
+
+            <div class="flex flex-col md:flex-row gap-6 mb-6">
+              <div class="md:w-1/3 flex-shrink-0">
+                <img src="https://picsum.photos/400/400?random=2" alt="可変式ダンベル" class="w-full rounded-xl border border-gray-100">
+              </div>
+              <div class="md:w-2/3">
+                <p class="text-gray-600 mb-4 text-sm">
+                  ダイヤルを回すだけで重量変更が可能。場所を取らずに、自宅でジム並みのトレーニングが実現します。
+                </p>
+                <div class="grid grid-cols-1 gap-3">
+                   <div class="bg-green-50 p-3 rounded-lg border border-green-100 text-sm">
+                      <span class="text-green-800 font-bold">✔ メリット</span>
+                      <p class="text-gray-600 mt-1">省スペースで多くの重量を扱える / 切り替えが早い</p>
+                   </div>
+                   <div class="bg-gray-100 p-3 rounded-lg border border-gray-200 text-sm">
+                      <span class="text-gray-700 font-bold">✖ デメリット</span>
+                      <p class="text-gray-600 mt-1">初期投資が少し高い / オンザニーしにくい形状の場合がある</p>
+                   </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- モノくん (横並び) -->
+            <div class="monokun-box">
+              <div class="monokun-icon">
+                <img src="monokun.png" alt="モノくん">
+              </div>
+              <div class="monokun-comment">
+                <p class="text-xs font-bold text-mono-main mb-0.5">モノくん</p>
+                <p class="text-sm text-gray-700">ちょっと高いけど、ジム代数ヶ月分で元が取れるから実質タダ！？</p>
+              </div>
+            </div>
+
+            <div class="mt-6 flex flex-col sm:flex-row gap-3">
+              <a href="#" class="flex-1 bg-[#FF9900] hover:bg-[#ffad33] text-white font-bold py-3 rounded-xl text-center shadow transition-colors">Amazonで見る</a>
+              <a href="#" class="flex-1 bg-[#FF0033] hover:bg-[#ff1a47] text-white font-bold py-3 rounded-xl text-center shadow transition-colors">Yahoo!で見る</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 4位 -->
+        <article class="relative bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden rank-other p-6 flex flex-col md:flex-row gap-6">
+          <div class="rank-badge-box">
+            <div class="medal-circle text-gray-600 border-mono-main bg-white">4</div>
+          </div>
+          <div class="md:w-1/4 flex-shrink-0 pt-6 pl-4 md:pt-0 md:pl-0">
+             <img src="https://picsum.photos/300/300?random=3" alt="フォームローラー" class="w-full rounded-lg border border-gray-100">
+          </div>
+          <div class="md:w-3/4 flex flex-col justify-center pl-4 md:pl-0">
+             <h2 class="text-lg font-bold text-gray-800 mb-2">筋膜リリース フォームローラー</h2>
+             <p class="text-sm text-gray-600 mb-4">トレーニング後のケアに必須。凝り固まった筋肉をほぐして、翌日に疲れを残しません。テレビを見ながらの「ながらケア」に最適。</p>
+             <div class="flex gap-2">
+               <a href="#" class="text-xs bg-[#FF9900] text-white px-3 py-1.5 rounded shadow hover:opacity-80">Amazon</a>
+               <a href="#" class="text-xs bg-[#FF0033] text-white px-3 py-1.5 rounded shadow hover:opacity-80">Yahoo!</a>
+             </div>
+          </div>
+        </article>
+
+        <!-- 5位 -->
+        <article class="relative bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden rank-other p-6 flex flex-col md:flex-row gap-6">
+          <div class="rank-badge-box">
+            <div class="medal-circle text-gray-600 border-mono-main bg-white">5</div>
+          </div>
+          <div class="md:w-1/4 flex-shrink-0 pt-6 pl-4 md:pt-0 md:pl-0">
+             <img src="https://picsum.photos/300/300?random=4" alt="プッシュアップバー" class="w-full rounded-lg border border-gray-100">
+          </div>
+          <div class="md:w-3/4 flex flex-col justify-center pl-4 md:pl-0">
+             <h2 class="text-lg font-bold text-gray-800 mb-2">プッシュアップバー</h2>
+             <p class="text-sm text-gray-600 mb-4">普通の腕立て伏せより深く体を沈められるので、大胸筋への負荷がアップ。手首の負担も軽減できる隠れた名品。</p>
+             <div class="flex gap-2">
+               <a href="#" class="text-xs bg-[#FF9900] text-white px-3 py-1.5 rounded shadow hover:opacity-80">Amazon</a>
+               <a href="#" class="text-xs bg-[#FF0033] text-white px-3 py-1.5 rounded shadow hover:opacity-80">Yahoo!</a>
+             </div>
+          </div>
+        </article>
+      </div>
+    </main>
+
+    <footer class="bg-[#4a4a4a] text-white pt-16 pb-8 mt-auto">
+        <div class="container mx-auto px-4 text-center">
+          <p class="text-gray-400 text-sm mb-4">&copy; 2024 MonoSense. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script>document.addEventListener('DOMContentLoaded', () => { lucide.createIcons(); });</script>
+  </body>
+</html>

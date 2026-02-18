@@ -111,6 +111,7 @@
         <nav class="hidden md:flex gap-2 text-sm font-bold text-gray-600 items-center">
           <a href="index.html" class="px-4 py-2 rounded-full hover:bg-orange-100 hover:text-mono-main transition-colors">ホーム</a>
           <a href="#comparison" class="px-4 py-2 rounded-full hover:bg-orange-100 hover:text-mono-main transition-colors">注目アイテム</a>
+          <a href="#top-articles" class="px-4 py-2 rounded-full hover:bg-orange-100 hover:text-mono-main transition-colors">特集記事</a>
           <a href="category-list.html" class="px-4 py-2 rounded-full hover:bg-orange-100 hover:text-mono-main transition-colors">カテゴリ</a>
           <a href="#contact" class="px-4 py-2 bg-mono-main text-white rounded-full hover:bg-orange-500 transition-colors shadow-md ml-2">お問い合わせ</a>
         </nav>
@@ -126,6 +127,7 @@
         <div class="flex flex-col gap-4 text-center">
           <a href="index.html" class="py-2 hover:bg-orange-50 rounded-lg mobile-menu-link">ホーム</a>
           <a href="#comparison" class="py-2 hover:bg-orange-50 rounded-lg mobile-menu-link">注目アイテム</a>
+          <a href="article-list.html" class="py-2 hover:bg-orange-50 rounded-lg mobile-menu-link">特集記事一覧</a>
           <a href="category-list.html" class="py-2 hover:bg-orange-50 rounded-lg mobile-menu-link">カテゴリ</a>
           <a href="#contact" class="py-2 bg-mono-main text-white rounded-lg mobile-menu-link">お問い合わせ</a>
         </div>
@@ -193,7 +195,7 @@
         </div>
       </section>
 
-      <!-- 3. Comparison Section -->
+      <!-- 3. Comparison Section (Products) -->
       <section id="comparison" class="py-20 bg-gradient-to-b from-orange-50/50 to-white relative">
         <div class="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-white to-transparent"></div>
         <div class="container mx-auto px-4">
@@ -220,8 +222,36 @@
         </div>
       </section>
 
-      <!-- 4. Categories -->
-      <section id="categories" class="py-16">
+      <!-- 4. TOP Articles Section (New) -->
+      <section id="top-articles" class="py-20 bg-white border-t border-orange-100">
+        <div class="container mx-auto px-4">
+          <div class="text-center mb-16 relative">
+            <div class="inline-block bg-orange-100 px-6 py-2 rounded-full shadow-sm mb-4">
+              <span class="font-hand text-mono-main text-xl font-bold flex items-center gap-2 justify-center">
+                <i data-lucide="book-open" class="text-mono-main" width="20" height="20"></i>
+                Feature Articles
+                <i data-lucide="book-open" class="text-mono-main" width="20" height="20"></i>
+              </span>
+            </div>
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-800">注目の特集・まとめ記事</h2>
+            <p class="text-gray-500">比較・ランキング形式で、あなたに最適なモノ選びをサポート</p>
+          </div>
+
+          <!-- JS Generated Grid for Articles -->
+          <div id="featured-articles-grid" class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 px-2 md:px-8 max-w-5xl mx-auto">
+            <!-- JS content -->
+          </div>
+          
+          <div class="text-center mt-10">
+            <a href="article-list.html" class="inline-block border-2 border-mono-main text-mono-main hover:bg-mono-main hover:text-white font-bold py-3 px-8 rounded-full transition-colors">
+              記事一覧を見る
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. Categories -->
+      <section id="categories" class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
           <div class="text-center mb-12">
             <span class="font-hand text-mono-accent text-lg">Category</span>
@@ -269,7 +299,7 @@
         </div>
       </section>
 
-      <!-- 5. Ad Space (広告エリア) -->
+      <!-- 6. Ad Space (広告エリア) -->
       <section class="py-10 bg-gray-50">
         <div class="container mx-auto px-4 text-center">
           <p class="text-xs text-gray-400 mb-2">スポンサーリンク</p>
@@ -285,7 +315,7 @@
 
     </main>
 
-    <!-- 6. Footer -->
+    <!-- 7. Footer -->
     <footer id="contact" class="bg-[#4a4a4a] text-white pt-16 pb-8 mt-auto">
       <div class="container mx-auto px-4">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
@@ -355,7 +385,7 @@
       </div>
     </footer>
 
-    <!-- Modal -->
+    <!-- Modal (Products Only) -->
     <div id="product-modal" class="hidden fixed inset-0 z-[100] flex items-center justify-center p-4" role="dialog" aria-modal="true">
       <div id="modal-overlay" class="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
       <div class="bg-white rounded-2xl shadow-2xl w-full max-w-2xl overflow-hidden relative z-10 animate-fade-in-up flex flex-col md:flex-row max-h-[90vh] md:max-h-none overflow-y-auto">
@@ -423,16 +453,18 @@
         // Copyright Year
         document.getElementById('year').textContent = new Date().getFullYear();
 
-        // --- 1. Load & Render Featured Products ---
-        const container = document.getElementById('featured-products-grid');
-        
         // Ensure productData exists (from products.js)
-        if (typeof window.productData !== 'undefined') {
-          const featured = window.productData
-            .filter(p => p.featured === true)
-            .sort((a, b) => (b.views || 0) - (a.views || 0));
+        if (typeof window.productData === 'undefined') return;
 
-          featured.forEach((product, index) => {
+        // --- 1. Load & Render Featured Products (Limit 3) ---
+        const container = document.getElementById('featured-products-grid');
+        const featuredProducts = window.productData
+          .filter(p => p.featured === true && p.type === 'product')
+          .sort((a, b) => (b.views || 0) - (a.views || 0))
+          .slice(0, 3); // 3つに制限
+
+        featuredProducts.forEach((product, index) => {
+            // ... (Product Rendering Logic remains the same as previous index.html) ...
             // Rank Styles
             let rankStyle = "bg-white/90 text-gray-600";
             let rankIconHtml = '<i data-lucide="trending-up" width="16" height="16"></i>';
@@ -460,27 +492,22 @@
               shadowClass = "shadow-xl";
             }
 
-            // Create Article Element
             const article = document.createElement('article');
             article.className = `bg-white rounded-3xl overflow-hidden group cursor-pointer border-2 flex flex-col h-full relative transform transition-all duration-300 hover:-translate-y-2 ${cardBorder} ${shadowClass}`;
             article.setAttribute('role', 'button');
             article.setAttribute('tabindex', '0');
             article.onclick = () => openModal(product);
-            article.onkeydown = (e) => { if(e.key === 'Enter') openModal(product); };
-
-            // Winner Badge for #1
+            
             const winnerBadge = index === 0 ? `
               <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 z-20 bg-yellow-500 text-white px-6 py-1 rounded-b-lg font-bold shadow-md text-sm flex items-center gap-1">
                  <i data-lucide="crown" width="16" height="16" fill="white"></i> WINNER
               </div>` : '';
 
-            // Views HTML
             const viewsHtml = product.views ? `
               <div class="text-xs text-gray-400 flex items-center justify-end gap-1 mb-1">
                 <i data-lucide="activity" width="12" height="12"></i> ${product.views.toLocaleString()} views
               </div>` : '';
 
-            // Button Style
             const btnClass = index === 0 
               ? 'bg-gradient-to-r from-orange-400 to-mono-main text-white shadow-lg hover:shadow-orange-200 hover:scale-[1.02]' 
               : 'bg-white border-2 border-mono-main text-mono-main hover:bg-mono-main hover:text-white';
@@ -531,10 +558,48 @@
               </div>
             `;
             container.appendChild(article);
-          });
-        }
+        });
 
-        // --- 2. Mobile Menu ---
+        // --- 2. Load & Render Featured Articles (New) ---
+        const articleContainer = document.getElementById('featured-articles-grid');
+        const featuredArticles = window.productData
+          .filter(p => p.featured === true && p.type === 'article')
+          .sort((a, b) => (b.views || 0) - (a.views || 0));
+
+        featuredArticles.forEach(article => {
+            const articleEl = document.createElement('a');
+            articleEl.href = article.link;
+            articleEl.className = "block bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden group border border-gray-100 flex flex-col";
+            
+            articleEl.innerHTML = `
+                <div class="relative aspect-video bg-gray-200 overflow-hidden">
+                    <img src="${article.image}" alt="${article.title}" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" loading="lazy">
+                    <div class="absolute top-2 left-2 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md uppercase tracking-wide">
+                        ${article.categoryId}
+                    </div>
+                    <div class="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded">
+                       ${article.specs.items}
+                    </div>
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <h3 class="text-xl font-bold mb-3 text-gray-800 leading-snug group-hover:text-mono-main transition-colors">
+                        ${article.title}
+                    </h3>
+                    <p class="text-sm text-gray-500 mb-4 line-clamp-2 leading-relaxed">
+                        ${article.description}
+                    </p>
+                    <div class="mt-auto flex items-center justify-between text-xs text-gray-400 border-t border-gray-100 pt-4">
+                        <span class="flex items-center gap-1"><i data-lucide="calendar" width="14" height="14"></i> ${article.date}</span>
+                        <span class="flex items-center gap-1"><i data-lucide="eye" width="14" height="14"></i> ${article.views.toLocaleString()}</span>
+                    </div>
+                </div>
+            `;
+            articleContainer.appendChild(articleEl);
+        });
+
+
+        // --- 3. Mobile Menu & Modal (Existing logic) ---
+        // ... (Keep existing mobile menu & modal logic) ...
         const menuBtn = document.getElementById('mobile-menu-btn');
         const menuNav = document.getElementById('mobile-menu-nav');
         const menuIcon = document.getElementById('mobile-menu-icon');
@@ -560,25 +625,27 @@
           });
         });
 
-        // --- 3. Modal Logic ---
+        // Modal Logic
         const modal = document.getElementById('product-modal');
         const modalOverlay = document.getElementById('modal-overlay');
         const closeBtn = document.getElementById('modal-close-btn');
 
         function openModal(product) {
+          if (product.type === 'article') {
+             window.location.href = product.link;
+             return;
+          }
+          // ... (Rest of existing modal logic) ...
           document.getElementById('modal-title').textContent = product.title;
           document.getElementById('modal-img').src = product.image;
           document.getElementById('modal-img').alt = product.title;
           document.getElementById('modal-score').textContent = product.recommendScore;
           document.getElementById('modal-desc').textContent = product.description;
           document.getElementById('modal-price').textContent = product.price.toLocaleString();
-          
-          // Specs
           document.getElementById('modal-size').textContent = product.specs?.size || '-';
           document.getElementById('modal-weight').textContent = product.specs?.weight || '-';
           document.getElementById('modal-material').textContent = product.specs?.material || '-';
           
-          // Views
           const viewsContainer = document.getElementById('modal-views-container');
           if (product.views) {
              document.getElementById('modal-views').textContent = product.views.toLocaleString();
@@ -587,7 +654,6 @@
              viewsContainer.classList.add('hidden');
           }
 
-          // Links
           document.getElementById('modal-link-detail').href = product.link;
 
           const amzLink = document.getElementById('modal-link-amazon');
@@ -612,7 +678,6 @@
              noYahoo.classList.remove('hidden');
           }
 
-          // Show Modal
           modal.classList.remove('hidden');
           document.body.style.overflow = 'hidden';
           lucide.createIcons();
@@ -626,7 +691,6 @@
         modalOverlay.addEventListener('click', closeModal);
         closeBtn.addEventListener('click', closeModal);
 
-        // --- 4. Initialize Icons ---
         lucide.createIcons();
       });
     </script>

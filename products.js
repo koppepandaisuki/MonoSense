@@ -4,13 +4,52 @@
 // ==========================================
 // このファイルが「唯一の商品データベース」です。
 // IDルール:
-// A = Fitness (フィットネス)
-// B = Gadget (ガジェット)
-// C = Health (健康食品)
-// D = Furniture (家具・インテリア)
+// A = Fitness (フィットネス) -> 記事は AA
+// B = Gadget (ガジェット) -> 記事は BB
+// C = Health (健康食品) -> 記事は CC
+// D = Furniture (家具・インテリア) -> 記事は DD
 
 window.productData = [
-  // --- A: Fitness ---
+  // --- AA: Fitness Articles ---
+  {
+    id: 'AA1',
+    type: 'article', // 記事タイプ
+    categoryId: 'fitness',
+    title: '【2026年最新】自宅で痩せる！最強フィットネス器具おすすめ5選',
+    price: 0, // 記事なので0
+    // YouTubeサムネイルサイズ (16:9)
+    image: 'https://picsum.photos/640/360?random=100',
+    description: 'ジム通いは続かない…そんなあなたへ。自宅で手軽に、でも本気でボディメイクできる厳選アイテムをランキング形式で紹介します。',
+    date: '2026-02-18',
+    recommendScore: 5.0,
+    link: 'R.fitness1.html',
+    featured: true, // TOP記事に表示
+    views: 15000,
+    specs: { type: "まとめ記事", items: "5選" },
+    affiliateLink: "",
+    yahooLink: "" 
+  },
+
+  // --- BB: Gadget Articles ---
+  {
+    id: 'BB1',
+    type: 'article',
+    categoryId: 'gadget',
+    title: 'デスクワークが快適になる！神ガジェットおすすめ10選',
+    price: 0,
+    image: 'https://picsum.photos/640/360?random=101',
+    description: '生産性爆上がり間違いなし。デスク周りを快適にするガジェットを、ガジェットオタクが厳選して10個紹介します。',
+    date: '2026-02-17',
+    recommendScore: 4.9,
+    link: 'R.gadget1.html',
+    featured: true,
+    views: 22000,
+    specs: { type: "まとめ記事", items: "10選" },
+    affiliateLink: "",
+    yahooLink: "" 
+  },
+
+  // --- A: Fitness Products ---
   {
     id: 'A1',
     type: 'product',
@@ -29,7 +68,7 @@ window.productData = [
     yahooLink: "" 
   },
 
-  // --- B: Gadget ---
+  // --- B: Gadget Products ---
   {
     id: 'B1',
     type: 'product',
