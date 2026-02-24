@@ -65,7 +65,7 @@ window.productData = [
     views: 1250,
     specs: { weight: "485g", size: "18 x 18 x 29.3 cm", material: "プラスチック" },
     affiliateLink: "https://amzn.to/3LXlnmQ",
-    yahooLink: "" 
+    yahooLink: "https://shopping.yahoo.co.jp/search?p=adidas+%E8%85%B9%E7%AD%8B%E3%83%AD%E3%83%BC%E3%83%A9%E3%83%BC" 
   },
 
   // --- B: Gadget Products ---
@@ -84,7 +84,7 @@ window.productData = [
     views: 3400,
     specs: { weight: "36g", size: "118 x 63 x 38mm", material: "プラスチック" },
     affiliateLink: "https://amzn.to/4kFEONN",
-    yahooLink: "https://yahoo.jp/P-JZC3" 
+    yahooLink: "https://shopping.yahoo.co.jp/search?p=SCYROX+V8" 
   },
   {
     id: 'B2',
@@ -101,7 +101,7 @@ window.productData = [
     views: 2800,
     specs: { weight: "145g", size: "118 x 84 x 25mm", material: "プラスチック" },
     affiliateLink: "https://amzn.to/4rlMnvE",
-    yahooLink: "https://store.shopping.yahoo.co.jp/tsukumo-y/9760098502268.html"
+    yahooLink: "https://shopping.yahoo.co.jp/search?p=Stream+Deck+MK.2"
   },
   {
     id: 'B3',
@@ -118,7 +118,7 @@ window.productData = [
     views: 1500,
     specs: { weight: "2.5kg", size: "対応:17-32インチ", material: "スチール/アルミ" },
     affiliateLink: "https://amzn.to/40gecJD",
-    yahooLink: "https://yahoo.jp/Tp8JBv"
+    yahooLink: "https://shopping.yahoo.co.jp/search?p=AS-MABM03"
   },
   {
     id: 'B4',
@@ -135,7 +135,7 @@ window.productData = [
     views: 4200,
     specs: { weight: "605g", size: "302 x 116 x 38mm", material: "ABS/PBT" },
     affiliateLink: "https://amzn.to/3ZyvMZh",
-    yahooLink: "https://yahoo.jp/9K6RDT"
+    yahooLink: "https://shopping.yahoo.co.jp/search?p=Wooting+60HE%2B"
   },
   {
     id: 'B5',
@@ -152,7 +152,7 @@ window.productData = [
     views: 1800,
     specs: { weight: "1.8kg", size: "320 x 140 x 40mm", material: "アルミ" },
     affiliateLink: "https://amzn.to/3OpoVik",
-    yahooLink: "https://yahoo.jp/Yma5bA"
+    yahooLink: "https://shopping.yahoo.co.jp/search?p=WOBKEY+Rainy"
   },
 
   // --- C: Health ---
@@ -171,7 +171,7 @@ window.productData = [
     views: 800,
     specs: { weight: "29g x 12袋", size: "-", material: "ホエイプロテイン" },
     affiliateLink: "https://amzn.to/3MpSvn8", 
-    yahooLink: "https://store.shopping.yahoo.co.jp/real-style/blts12aas.html"
+    yahooLink: "https://shopping.yahoo.co.jp/search?p=%E3%83%93%E3%83%BC%E3%83%AC%E3%82%B8%E3%82%A7%E3%83%B3%E3%83%89+%E3%81%8A%E8%A9%A6%E3%81%97+12%E7%A8%AE%E3%82%BB%E3%83%83%E3%83%88+%E3%83%9B%E3%82%A8%E3%82%A4+%E3%83%97%E3%83%AD%E3%83%86%E3%82%A4%E3%83%B3"
   },
 
   // --- D: Furniture ---
@@ -190,7 +190,7 @@ window.productData = [
     views: 950, 
     specs: { weight: "11.5kg", size: "幅60×奥行25×高さ200-260cm", material: "スチール/木目調シート" },
     affiliateLink: "https://amzn.to/4bDSTsC",
-    yahooLink: "https://shopping.yahoo.co.jp/search?p=EXAMPLE4"
+    yahooLink: "https://shopping.yahoo.co.jp/search?p=%E6%A3%9A+%E5%A3%81%E9%9D%A2%E5%8F%8E%E7%B4%8D+%E3%82%A6%E3%82%A9%E3%83%BC%E3%83%AB%E3%83%A9%E3%83%83%E3%82%AF"
   },
   {
     id: 'D2',
@@ -207,6 +207,27 @@ window.productData = [
     views: 1100,
     specs: { weight: "28kg", size: "幅158×奥行75×高さ73cm", material: "ファブリック" },
     affiliateLink: "", // Amazonなし
-    yahooLink: "https://yahoo.jp/sByA2u"
+    yahooLink: "https://shopping.yahoo.co.jp/search?p=BONIR+%E3%82%BD%E3%83%95%E3%82%A1"
   }
 ];
+
+// ==========================================
+// リンク挙動の修正 (SPAルーター対策 & #リンク無効化)
+// ==========================================
+document.addEventListener('DOMContentLoaded', () => {
+  document.body.addEventListener('click', (e) => {
+    const target = e.target.closest('a');
+    if (target && (target.classList.contains('js-yahoo-link') || target.classList.contains('js-amazon-link'))) {
+      const href = target.getAttribute('href');
+      
+      // 有効なリンクの場合: ルーターによる干渉を防ぐ
+      if (href && href !== '#' && href !== '' && !href.startsWith('javascript')) {
+        e.stopPropagation(); 
+      } 
+      // 無効なリンク (#) の場合: ページトップへのジャンプを防ぐ
+      else {
+        e.preventDefault();
+      }
+    }
+  }, true); // Capture phase to ensure it runs before other handlers
+});
