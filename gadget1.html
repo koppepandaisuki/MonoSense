@@ -272,11 +272,19 @@
             document.querySelectorAll('.js-yahoo-link').forEach(el => {
                 if (item.yahooLink) {
                     el.setAttribute('href', item.yahooLink);
+                    el.textContent = "Yahoo!ショッピングで見る";
+                    el.classList.remove('bg-gray-300', 'text-gray-500', 'cursor-not-allowed', 'pointer-events-none', 'shadow-none');
+                    
+                    if (el.classList.contains('js-yahoo-link-top')) {
+                        el.classList.add('bg-[#FF0033]', 'hover:bg-[#ff1a47]', 'text-white', 'shadow', 'transform', 'hover:-translate-y-1');
+                    } else {
+                        el.classList.add('bg-[#FF0033]', 'hover:bg-[#ff1a47]', 'text-white', 'shadow-lg', 'transform', 'hover:scale-105');
+                    }
                 } else {
                     el.removeAttribute('href');
                     el.textContent = "Yahoo!在庫なし";
                     el.classList.add('bg-gray-300', 'text-gray-500', 'cursor-not-allowed', 'pointer-events-none', 'shadow-none');
-                    el.classList.remove('bg-[#FF0033]', 'hover:bg-[#ff1a47]', 'text-white', 'shadow-lg', 'transform', 'hover:scale-105', 'hover:-translate-y-1');
+                    el.classList.remove('bg-[#FF0033]', 'hover:bg-[#ff1a47]', 'text-white', 'shadow-lg', 'shadow', 'transform', 'hover:scale-105', 'hover:-translate-y-1');
                 }
             });
           }
