@@ -56,7 +56,7 @@ window.productData = [
     categoryId: 'furniture',
     title: '【2026年最新】おしゃれでコスパ最強な家具ランキングTOP5',
     price: 0,
-    image: 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: 'https://pbs.twimg.com/media/HDRBSGpbQAAyQuE?format=jpg&name=large',
     description: '一人暮らしや同棲の新生活で「とりあえず」で家具を選ぶと、あとから買い替えでムダ出費になりがち。この記事では、SNSやレビューで評価の高い“おしゃれでコスパの良い家具”を厳選して5つご紹介するよ。',
     date: '2026-03-13',
     recommendScore: 4.8,
