@@ -404,9 +404,6 @@
           <h3 id="modal-title" class="text-2xl font-bold mb-4 text-mono-text leading-tight"></h3>
           <p class="text-gray-600 mb-6 text-sm leading-relaxed">
             <span id="modal-desc"></span>
-            <br/><br/>
-            <span class="font-bold text-mono-main">ブログ風コメント：</span><br/>
-            「実際に使ってみて、手触りの良さに驚きました。毎日の習慣にするなら、このくらいの品質がちょうど良いですね。」
           </p>
           
           <div class="bg-orange-50 p-4 rounded-lg mb-6 text-sm">
@@ -431,12 +428,12 @@
                    Amazon在庫なし
                 </span>
 
-                <!-- Yahoo Link -->
-                <a id="modal-link-yahoo" href="#" target="_blank" rel="noopener noreferrer" class="block w-full text-center bg-[#FF0033] hover:bg-[#ff1a47] text-white font-bold py-3 rounded-xl shadow-lg hover:shadow-xl transition-all">
-                  Yahoo!ショッピングで見る
+                <!-- Rakuten Link -->
+                <a id="modal-link-rakuten" href="#" target="_blank" rel="noopener noreferrer" class="block w-full text-center bg-[#BF0000] hover:bg-[#cc0000] text-white font-bold py-3 rounded-xl shadow-lg hover:shadow-xl transition-all">
+                  楽天市場で見る
                 </a>
-                <span id="modal-no-yahoo" class="hidden block w-full text-center bg-gray-300 text-gray-500 font-bold py-3 rounded-xl cursor-not-allowed pointer-events-none">
-                  Yahoo!在庫なし
+                <span id="modal-no-rakuten" class="hidden block w-full text-center bg-gray-300 text-gray-500 font-bold py-3 rounded-xl cursor-not-allowed pointer-events-none">
+                  楽天在庫なし
                 </span>
             </div>
             <p class="text-xs text-gray-400 text-center mt-3">
@@ -667,15 +664,15 @@
              noAmz.classList.remove('hidden');
           }
 
-          const yahooLink = document.getElementById('modal-link-yahoo');
-          const noYahoo = document.getElementById('modal-no-yahoo');
-          if (product.yahooLink) {
-             yahooLink.href = product.yahooLink;
-             yahooLink.classList.remove('hidden');
-             noYahoo.classList.add('hidden');
+          const rakutenLink = document.getElementById('modal-link-rakuten');
+          const noRakuten = document.getElementById('modal-no-rakuten');
+          if (product.rakutenLink) {
+             rakutenLink.href = product.rakutenLink;
+             rakutenLink.classList.remove('hidden');
+             noRakuten.classList.add('hidden');
           } else {
-             yahooLink.classList.add('hidden');
-             noYahoo.classList.remove('hidden');
+             rakutenLink.classList.add('hidden');
+             noRakuten.classList.remove('hidden');
           }
 
           modal.classList.remove('hidden');
