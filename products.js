@@ -27,7 +27,7 @@ window.productData = [
     views: 15000,
     specs: { type: "まとめ記事", items: "5選" },
     affiliateLink: "",
-    yahooLink: "" 
+    rakutenLink: "" 
   },
 
   // --- BB: Gadget Articles ---
@@ -46,7 +46,26 @@ window.productData = [
     views: 22000,
     specs: { type: "まとめ記事", items: "5選" },
     affiliateLink: "",
-    yahooLink: "" 
+    rakutenLink: "" 
+  },
+
+  // --- DD: Furniture Articles ---
+  {
+    id: 'DD1',
+    type: 'article',
+    categoryId: 'furniture',
+    title: '【2026年最新】おしゃれでコスパ最強な家具ランキングTOP5',
+    price: 0,
+    image: 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=800',
+    description: '一人暮らしや同棲の新生活で「とりあえず」で家具を選ぶと、あとから買い替えでムダ出費になりがち。この記事では、SNSやレビューで評価の高い“おしゃれでコスパの良い家具”を厳選して5つご紹介するよ。',
+    date: '2026-03-13',
+    recommendScore: 4.8,
+    link: 'R.Furniture2.html',
+    featured: true,
+    views: 15000,
+    specs: { type: "まとめ記事", items: "5選" },
+    affiliateLink: "",
+    rakutenLink: ""
   },
 
   // --- A: Fitness Products ---
@@ -208,6 +227,91 @@ window.productData = [
     specs: { weight: "28kg", size: "幅158×奥行75×高さ73cm", material: "ファブリック" },
     affiliateLink: "", // Amazonなし
     rakutenLink: "https://item.rakuten.co.jp/bonir/61175-61176/" // 楽天アフィリエイトURLをここに挿入
+  },
+  {
+    id: 'D3',
+    type: 'product',
+    categoryId: 'furniture',
+    title: 'LOWYA 木目調ネストテーブル 円形[幅50/幅70]',
+    price: 15000,
+    image: 'https://m.media-amazon.com/images/I/81SOOdMicoL._AC_SL1500_.jpg',
+    description: '北欧テイストの円形天板を大小2枚ネストさせたローテーブル。リアルな木目調の天板とスリムなT字脚で圧迫感が少なく、狭いワンルームでも抜け感のあるおしゃれなリビングをつくれるよ。',
+    date: '2026-03-13',
+    recommendScore: 4.8,
+    link: 'furniture3.html',
+    featured: false,
+    views: 1000,
+    specs: { size: "大:幅70×奥行70×高さ35cm/小:幅50×奥行50×高さ30cm", material: "合成樹脂化粧繊維板/スチール" },
+    affiliateLink: "https://amzn.to/4un0we1",
+    rakutenLink: "https://item.rakuten.co.jp/low-ya/s5t8w/"
+  },
+  {
+    id: 'D4',
+    type: 'product',
+    categoryId: 'furniture',
+    title: 'ニトリ Nシールド 2人用合皮ソファ（ポケットコイル座面）',
+    price: 30000,
+    image: 'https://m.media-amazon.com/images/I/91VBgOoWiOL._AC_SL1500_.jpg',
+    description: '傷や汚れに強いニトリ独自の合皮「Nシールド」を採用した2人掛けソファ。しっかりしたポケットコイル入りの座面で、へたりにくく長く使える。',
+    date: '2026-03-13',
+    recommendScore: 4.6,
+    link: 'furniture4.html',
+    featured: false,
+    views: 1000,
+    specs: { material: "合皮(Nシールド)/ポケットコイル" },
+    affiliateLink: "https://amzn.to/4deCtrm",
+    rakutenLink: "https://item.rakuten.co.jp/nitori/1134411/"
+  },
+  {
+    id: 'D5',
+    type: 'product',
+    categoryId: 'furniture',
+    title: 'ニトリ 4枚セット遮光カーテン（レース付き）',
+    price: 5000,
+    image: 'https://m.media-amazon.com/images/I/51-W-okg8fL._AC_.jpg',
+    description: 'ドレープカーテン2枚とミラーレース2枚がセットになった、ニトリの定番4枚組カーテン。1窓分がまとめてそろうので、サイズさえ合えば「とりあえずこれでOK」という安心感があるアイテムだよ。',
+    date: '2026-03-13',
+    recommendScore: 4.3,
+    link: 'furniture5.html',
+    featured: false,
+    views: 1000,
+    specs: { items: "ドレープ2枚/レース2枚" },
+    affiliateLink: "https://amzn.to/3NBqObE",
+    rakutenLink: "https://item.rakuten.co.jp/nitori/2114100218352s/"
+  },
+  {
+    id: 'D6',
+    type: 'product',
+    categoryId: 'furniture',
+    title: 'LOWYA ミッドセンチュリー風オープンシェルフ[幅90]',
+    price: 10000,
+    image: 'https://m.media-amazon.com/images/I/61K8THnX1wL._AC_SL1500_.jpg',
+    description: '木目×ブラックスチールの組み合わせがかっこいい、オープンタイプの収納シェルフ。教科書や本、ゲーム機、小物をまとめて“見せながら収納”できる。',
+    date: '2026-03-13',
+    recommendScore: 4.5,
+    link: 'furniture6.html',
+    featured: false,
+    views: 1000,
+    specs: { size: "幅90cm" },
+    affiliateLink: "https://amzn.to/40XYumW",
+    rakutenLink: "https://item.rakuten.co.jp/low-ya/4kzs7/"
+  },
+  {
+    id: 'D7',
+    type: 'product',
+    categoryId: 'furniture',
+    title: 'LOWYA ロースタイルベッド（すのこ×木目フレーム）',
+    price: 15000,
+    image: 'https://m.media-amazon.com/images/I/813uQ6Yg-PL._AC_SL1500_.jpg',
+    description: '床からの高さを抑えたロースタイルのすのこベッド。フレームが低いぶん部屋が広く見えやすく、マットレスを置いても圧迫感が出にくいのがポイントだよ。',
+    date: '2026-03-13',
+    recommendScore: 4.5,
+    link: 'furniture7.html',
+    featured: false,
+    views: 1000,
+    specs: { material: "すのこ/木目フレーム" },
+    affiliateLink: "https://amzn.to/4cEWozv",
+    rakutenLink: "https://item.rakuten.co.jp/hahaprice/n511p318930/"
   }
 ];
 
