@@ -54,7 +54,7 @@ window.productData = [
     categoryId: 'gadget',
     title: '【2026年最新】失敗しないコスパ最強タブレット5選｜安くて快適なおすすめモデル',
     price: 0,
-    image: 'https://images-na.ssl-images-amazon.com/images/I/71m3j2ZVd8L._AC_SL1500_.jpg',
+    image: 'https://pbs.twimg.com/media/HDdgnFAb0AAz0ku?format=jpg&name=large',
     description: '「動画やネットがサクサク動くタブレットがほしいけど、高すぎるのはちょっと…」という人向けに、2〜4万円台中心のコスパ重視モデルだけを編集部が厳選しました。',
     date: '2026-03-15',
     recommendScore: 4.8,
