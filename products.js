@@ -71,11 +71,7 @@ window.productData = [
     categoryId: 'gadget',
     title: '【2026年最新】AIボイスレコーダーおすすめ5選',
     price: 0,
-<<<<<<< HEAD
-    image: 'https://pbs.twimg.com/media/HDiZuwubgAIklcl?format=jpg&name=large',
-=======
     image: 'https://images.pexels.com/photos/6898859/pexels-photo-6898859.jpeg?auto=compress&cs=tinysrgb&w=800',
->>>>>>> c690731009d03f59b5d2fc253341c0fb0e4fb6fb
     description: '会議やインタビューの文字起こしを自動化したい人必見。Plaud Note ProやNotta Memoなど話題のAIボイスレコーダーおすすめ5選を徹底比較します。',
     date: '2026-03-16',
     recommendScore: 4.8,
