@@ -65,6 +65,23 @@ window.productData = [
     affiliateLink: "",
     rakutenLink: "" 
   },
+  {
+    id: 'BB3',
+    type: 'article',
+    categoryId: 'gadget',
+    title: '【2026年最新】AIボイスレコーダーおすすめ5選',
+    price: 0,
+    image: 'https://pbs.twimg.com/media/HDiZuwubgAIklcl?format=jpg&name=large',
+    description: '会議やインタビューの文字起こしを自動化したい人必見。Plaud Note ProやNotta Memoなど話題のAIボイスレコーダーおすすめ5選を徹底比較します。',
+    date: '2026-03-16',
+    recommendScore: 4.8,
+    link: 'R.Gadget3.html',
+    featured: true,
+    views: 12000,
+    specs: { type: "まとめ記事", items: "5選" },
+    affiliateLink: "",
+    rakutenLink: "" 
+  },
 
   // --- DD: Furniture Articles ---
   {
