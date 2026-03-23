@@ -82,6 +82,40 @@ window.productData = [
     affiliateLink: "",
     rakutenLink: "" 
   },
+  {
+    id: 'BB4',
+    type: 'article',
+    categoryId: 'gadget',
+    title: '【2026年最新】もう元のデスクには戻れない。作業効率爆上がりガジェット10選【リモートワーカー必見】',
+    price: 0,
+    image: 'https://images.pexels.com/photos/4065876/pexels-photo-4065876.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    description: '在宅ワークが当たり前になった今、「なんとなく整えたデスク環境」のままだと集中力も生産性も頭打ちになりがち。この記事では、ノートPCスタンドやスマートデスクマット、ドッキングステーションなど、導入するだけで作業効率が一気に上がる“デスク周りガジェット”を厳選して紹介するよ。',
+    date: '2026-03-23',
+    recommendScore: 4.9,
+    link: 'R.Gadget4.html',
+    featured: true,
+    views: 15000,
+    specs: { type: "まとめ記事", items: "10選" },
+    affiliateLink: "",
+    rakutenLink: "" 
+  },
+  {
+    id: 'BB5',
+    type: 'article',
+    categoryId: 'gadget',
+    title: '【2026年最新】新生活で“作業環境”が一気に変わるデスク周りガジェット5選',
+    price: 0,
+    image: 'https://pbs.twimg.com/media/HEFoJ50bUAAgq1O?format=jpg&name=large',
+    description: '新生活でパソコン作業や在宅ワークが増えると、「とにかくデスク周りを快適にしたい…！」と感じる人も多いはず。この記事では、モニターライトやキーボード、デスクマットなど、導入するだけで作業効率と集中力がグッと上がる人気デスクガジェットを厳選して紹介します。',
+    date: '2026-03-23',
+    recommendScore: 4.8,
+    link: 'R.Gadget5.html',
+    featured: true,
+    views: 12000,
+    specs: { type: "まとめ記事", items: "5選" },
+    affiliateLink: "",
+    rakutenLink: "" 
+  },
 
   // --- DD: Furniture Articles ---
   {
